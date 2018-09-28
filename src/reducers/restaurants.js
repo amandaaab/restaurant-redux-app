@@ -3,21 +3,21 @@ const initialState = {
              { 
                 name: 'Bellini',
                 address: 'Linnegatan 20',
-                //img: require('images/spizo.jpg'),
+                img: require('../images/spizo.jpg'),
                 id: 0,
                 category: 'italienskt'
               },
               { 
                 name: 'Un Poco L',
                 address: 'Vasagatan 4',
-               // img: require('images/unpoco.jpg'),
+               img: require('../images/unpoco.jpg'),
                 id: 1,
                 category: 'libanesiskt' 
               },
               { 
                 name: 'Spizo L',
                 address: 'Vasagatan 4',
-               // img: require('images/spizo.jpg'),
+                img: require('../images/spizo.jpg'),
                 id: 2,
                 category: 'libanesiskt' 
                 
@@ -25,14 +25,14 @@ const initialState = {
               { 
                 name: 'Food Corner',
                 address: 'Vasagatan 4',
-                //img: require('images/unpoco.jpg'),
+                img: require('../images/foodcorner.jpeg'),
                 id: 3,
                 category: 'spanskt'         
               },
               { 
                 name: 'Un Poco L',
                 address: 'Vasagatan 4',
-                //img: require('images/unpoco.jpg'),
+                img: require('../images/spizo.jpg'),
                 id: 4,
                 category: 'libanesiskt'
                 
@@ -40,21 +40,21 @@ const initialState = {
               { 
                 name: 'Un Poco',
                 address: 'Vasagatan 4',
-                //img: require('images/unpoco.jpg'),
+                img: require('../images/unpoco.jpg'),
                 id: 5,
                 category: 'italienskt'        
               },
               { 
                 name: 'Un Poco',
-                address: 'Vasagatan 4',
-                //img: require('images/unpoco.jpg'),
+                address: '../Vasagatan 4',
+                img: require('../images/unpoco.jpg'),
                 id: 6,
                 category: 'italienskt'        
               },
               { 
                 name: 'Un Pocosist L',
                 address: 'Vasagatan 4',
-                //img: require('images/unpoco.jpg'),
+                img: require('../images/unpoco.jpg'),
                 id: 7,
                 category: 'libanesiskt'        
               }

@@ -35,9 +35,20 @@ class ReviewParent extends Component {
         })
     }
 
-    saveReview = (newName,newText, newId) => {
-       
-        this.setState(prevState => ({
+    saveReview = (newName, newText, newId) => {
+        
+        /*let newReview = {
+            name: newName,
+            text: newText,
+            id: newId
+        }*/
+
+            this.props.onCreate(newName, newText, newId)
+            console.log('NYTTTT NAMN', newName)
+        
+    
+        //this.props.onCreate(newReview)
+        /*this.setState(prevState => ({
                 reviews: [
                     ...prevState.reviews,
                     {
@@ -46,7 +57,7 @@ class ReviewParent extends Component {
                         id : newId 
                     }
                 ]
-            }))
+            }))*/
     
             this.setState({
               displayForm : !this.state.displayForm,
@@ -93,11 +104,11 @@ const mapStateToProps = (state) => {
     }
   }
   
-  /*const mapDispatchToProps = (dispatch) => {
+  const mapDispatchToProps = (dispatch) => {
     return {
-    onShow: () => dispatch({type:'SHOW'})
+    onCreate: (newName, newText, newId) => dispatch({type:'CREATE', name: newName, text: newText, id: newId})
     }
-  }*/
+  }
 
 
 
@@ -105,7 +116,7 @@ const mapStateToProps = (state) => {
 
   
   
-  export default connect(mapStateToProps)(ReviewParent);
+  export default connect(mapStateToProps, mapDispatchToProps)(ReviewParent);
 
 
 

@@ -36,14 +36,14 @@ const initialState = {
 
 const reviews = (state = initialState, action) => {
     const newState = {...state};
-    /*if(action.type === 'SHOW') {
+    if(action.type === 'CREATE') {
         return {
             ...state,
-            reviews: state.reviews
+            reviews: state.reviews.concat({name: action.name, text: action.text, id: action.id})
         }
         
-    }*/
-
+    }
+console.log('NYTT STATE', newState);
     return newState;
 }
 

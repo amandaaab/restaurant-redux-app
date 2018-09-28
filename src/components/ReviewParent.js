@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
+import { connect } from 'react-redux';
+import store from '../index'
 
 
 class ReviewParent extends Component {
@@ -11,44 +13,7 @@ class ReviewParent extends Component {
         this.state = {
             displayList : false,
             displayForm : false,
-            reviews : [
-                {
-                    name : "Alice",
-                    text : "Trevlig personal och god mat!",
-                    id : 0
-                },
-                {
-                    name : "Stefan",
-                    text : "Fin utsikt, bra mat.",
-                    id: 1
-                },
-                {
-                    name : "Anna",
-                    text : "Mysigt ställe, bästa personalen.",
-                    id: 1
-                },
-                {
-                    name : "Anna",
-                    text : "Mysigt ställe, bästa personalen.",
-                    id: 2
-                },
-                {
-                    name : "Anna",
-                    text : "Mysigt ställe, bästa personalen.",
-                    id: 2
-                },
-                {
-                    name : "Alice",
-                    text : "Trevlig personal och god mat!",
-                    id : 4
-                },
-                {
-                    name : "Alice",
-                    text : "Trevlig personal och god mat!",
-                    id : 5
-                },
-
-            ]
+           
         }
 
 
@@ -93,14 +58,15 @@ class ReviewParent extends Component {
 
     render() {
 
-        const { reviews, displayList, displayForm} = this.state;
+        const { displayList, displayForm} = this.state;
         const { id } = this.props;
 
         return (
             <div>
+                <button>hej</button>
 
                 <Reviews    id={id}
-                            reviews={reviews}
+                            reviews={this.props.reviews}
                             isDisplayed={displayList}
                             display={this.displayReviews} 
                             />
@@ -109,7 +75,7 @@ class ReviewParent extends Component {
                             id={id}
                             isDisplayed={displayForm} 
                             display={this.displayForm} 
-                            reviews={reviews} 
+                            reviews={this.props.reviews} 
                             saveThis={this.saveReview}
                             />
 
@@ -119,4 +85,31 @@ class ReviewParent extends Component {
     }
 }
 
-export default ReviewParent;
+
+
+const mapStateToProps = (state) => {
+    return {
+        reviews: state.reviews.reviews
+    }
+  }
+  
+  /*const mapDispatchToProps = (dispatch) => {
+    return {
+    onShow: () => dispatch({type:'SHOW'})
+    }
+  }*/
+
+
+
+
+
+  
+  
+  export default connect(mapStateToProps)(ReviewParent);
+
+
+
+
+
+
+

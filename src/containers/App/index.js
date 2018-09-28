@@ -16,23 +16,8 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from '../../components/HomePage';
 import RestaurantPage from '../../components/RestaurantPage';
 import NavBar from '../../components/NavBar';
-import SubCats from '../../components/RestaurantPage';
 import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt } from 'react-router-dom';
 
-const Cat = (params) => {
-  console.log(params.cat)
-return (
-  <div>
-    
-<h1>Welcome {params.cat} </h1>
-<h1>Welcome {params.cat} </h1>
-
-<h1>Welcome {params.cat} </h1>
-
-
-</div>
-);
-  }
 
 export default function App() {
   return (

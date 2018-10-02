@@ -30,9 +30,9 @@ class RestaurantListItem extends React.Component {
 
         return (
           <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
-              
+
               <img className="listImage" src={img}/>
-              <h3>{name}</h3>
+              <h3 className="inCardText">{name}</h3>
               
           </div>
         )

@@ -4,18 +4,17 @@
  *
  */
 
-import React from "react";
-import SavedRestaurants from './SavedRestaurants'
+import React, {Component} from "react";
+//import SavedRestaurants from './SavedRestaurants'
 
 
 
-class HomePage extends React.Component {
+class HomePage extends Component {
    
   render() {
     return (
       <div className="homePage">
-        <h1>Dina favorit restauranger</h1>
-        <SavedRestaurants />
+        <h1>Välkommen!</h1>
       </div>
     );
     

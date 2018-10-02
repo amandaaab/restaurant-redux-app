@@ -25,11 +25,10 @@ class SaveRestaurant extends Component {
     }
 }*/
 
-
-        this.save = this.save.bind(this)
+       
     }
 
-
+/*
     save = () => {
         console.log('Resturang att spara', this.props.restaurantToSave)
 
@@ -59,6 +58,11 @@ class SaveRestaurant extends Component {
     
     
     }
+*/
+   /* save = (props) => {
+        console.log("restauranger i save", this.props.restaurantToSave)
+        this.props.onSave(this.props.restaurantToSave)
+    }*/
 
 
     render() {

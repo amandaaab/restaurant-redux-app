@@ -54,8 +54,6 @@ class RestaurantList extends React.Component {
             <React.Fragment>
 
             <div className="restaurantListWrap">
-
-             
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
 
               {this.props.cat === undefined ? 

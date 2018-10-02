@@ -8,7 +8,8 @@ const Navbar = () => {
     return (
     <div className="navbar">
     <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
-    <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>restauranger</NavLink>   
+    <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>Restauranger</NavLink> 
+    <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>Favoriter</NavLink>     
 </div>
     )
 }

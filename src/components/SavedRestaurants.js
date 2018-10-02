@@ -2,10 +2,8 @@ import React from 'react';
 
     const SavedRestaurants = (props) => {
 
-
         if(localStorage.savedArray){
         let showRestaurants = JSON.parse(localStorage.getItem("savedArray"));    
-        console.log('sparade', showRestaurants);
 
         const restaurantItems = showRestaurants.map((item,i) => {
         return (
@@ -19,6 +17,7 @@ import React from 'react';
         return (
             <div>{restaurantItems}</div>
         )
+        
         } else {
             return <div>inga sparade</div>
         }

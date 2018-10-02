@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
 import { connect } from 'react-redux';
-import store from '../index'
+//import store from '../index'
 
 
 class ReviewParent extends Component {

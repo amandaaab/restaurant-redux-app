@@ -6,7 +6,6 @@
 
 import React from "react";
 import RestaurantList from './RestaurantList';
-import PropTypes from 'prop-types';
 import CategoryNavbar from './CategoryNavbar';
 import { connect } from 'react-redux';
 
@@ -20,10 +19,12 @@ class RestaurantPage extends React.Component {
   
   render() {    
     return (
-      <div className="restaurantPage">
+      <div className="restaurantPage"> 
         <CategoryNavbar/>
+        <div className="wrap-restaurantpage">
            {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
         <RestaurantList cat={this.props.cat} restaurants={this.props.restaurants}/>
+        </div>
       </div>
     );
     

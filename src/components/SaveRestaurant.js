@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class SaveRestaurant extends Component {
 
@@ -23,11 +24,10 @@ if(localStorage.savedArray){
     }
 }
 
-
-        this.save = this.save.bind(this)
+       
     }
 
-
+/*
     save = () => {
         console.log('Resturang att spara', this.props.restaurantToSave)
 
@@ -57,16 +57,36 @@ if(localStorage.savedArray){
     
     
     }
+*/
+   /* save = (props) => {
+        console.log("restauranger i save", this.props.restaurantToSave)
+        this.props.onSave(this.props.restaurantToSave)
+    }*/
 
 
     render() {
         return (
             <div>
-                 <button onClick={this.save}>{this.state.isSaved}</button>
+                 <button onClick={() => this.props.onSave(this.props.restaurantToSave)}>hej</button>
             </div>
            
         )
     }
 }
 
-export default SaveRestaurant;
+
+const mapStateToProps = (state) => {
+    return {
+        save: state.save.save
+    }
+}
+  
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+    onSave: (restaurantSaveID) => dispatch({type:'SAVE', payload: restaurantSaveID})
+    }
+  }
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SaveRestaurant);

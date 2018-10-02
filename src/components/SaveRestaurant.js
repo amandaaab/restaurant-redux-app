@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class SaveRestaurant extends Component {
 
     constructor(props) {
         super(props)
 
-if(localStorage.savedArray){
+/*if(localStorage.savedArray){
       let ParsedArray = JSON.parse(localStorage.getItem("savedArray"));
       const result = ParsedArray.find(parsedObj => parsedObj.id === this.props.restaurantToSave.id)
       if(result !== undefined){
@@ -21,7 +23,7 @@ if(localStorage.savedArray){
     this.state = {
         isSaved : 'Spara'
     }
-}
+}*/
 
 
         this.save = this.save.bind(this)
@@ -48,7 +50,7 @@ if(localStorage.savedArray){
         console.log('sparad array: ',ParsedArray);
 
         this.setState({
-            isSaved : 'Sparad!'
+            //isSaved : 'Sparad!'
         })
 
     } else {
@@ -62,11 +64,24 @@ if(localStorage.savedArray){
     render() {
         return (
             <div>
-                 <button onClick={this.save}>{this.state.isSaved}</button>
+                 <button onClick={() => this.props.onSave(this.props.restaurantToSave)}>Spara</button>
             </div>
            
         )
     }
 }
 
-export default SaveRestaurant;
+const mapStateToProps = (state) => {
+    return {
+        save: state.save.save,
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+    onSave: (newRestaurant) => dispatch({type:'SAVE', payload: newRestaurant})
+    }
+  }
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SaveRestaurant);

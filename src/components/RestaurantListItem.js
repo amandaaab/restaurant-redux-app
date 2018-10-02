@@ -7,7 +7,7 @@ import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 //import Reviews from './Reviews'
-import ReviewForm from './ReviewForm'
+//import ReviewForm from './ReviewForm'
 import SaveRestaurant from './SaveRestaurant';
 //import ReviewList from './ReviewList';
 import ReviewParent from './ReviewParent';

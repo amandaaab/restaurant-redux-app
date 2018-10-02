@@ -43,7 +43,7 @@ const reviews = (state = initialState, action) => {
         }
         
     }
-console.log('NYTT STATE', newState);
+//console.log('NYTT STATE', newState);
     return newState;
 }
 

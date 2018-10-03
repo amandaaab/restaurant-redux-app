@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const jsonParser= require('body-parser').json;
+
+app.use(jsonParser());
 
 var mongoose = require("mongoose");
 
@@ -14,6 +17,29 @@ var dog = new Animal({
   type: 'Dog'
 })
 dog.save();
+
+var restaurantSchema = new mongoose.Schema({ name: 'string', food: 'string'});
+var Restaurant = mongoose.model('Restaurant', restaurantSchema);
+
+app.get('/restaurants', function(req, res, next){
+    Restaurant.find({})
+        .exec(function(err, restaurants){
+        if(err) return next(err);
+        res.json(restaurants)
+    })
+})
+
+app.post('/restaurants', function(req, res, next){
+    var restaurant = new Restaurant(req.body);
+    restaurant.save(function(err, restaurant){
+        if(err) return next(err);
+        res.status(201)
+        res.json(restaurant)
+    })
+})
+
+
+
 
 app.get('/api/customers', (req,res) => {
   const customers = [

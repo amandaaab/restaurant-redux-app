@@ -1,27 +1,25 @@
 {
   "name": "restaurant-redux-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "mongoose": "^5.3.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4",
     "react-icons": "^3.1.0",
-    "react-redux": "^5.0.7",
-    "react-responsive-modal": "^3.4.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
-    "redux": "^4.0.0",
+    "redux-devtools": "^3.4.1",
     "redux-logger": "^3.0.6"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "cd server && node server.js",
+    "server": "cd server && nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
-  }
+  "author": "",
+  "license": "ISC"
 }

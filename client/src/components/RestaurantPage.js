@@ -5,6 +5,7 @@
  */
 
 import React from "react";
+import ReactLoading from 'react-loading';
 import RestaurantList from './RestaurantList';
 import CategoryNavbar from './CategoryNavbar';
 import { connect } from 'react-redux';
@@ -24,7 +25,19 @@ class RestaurantPage extends React.Component {
   
   }
 
-  render() {    
+  render() {
+    
+
+   const { error, loading } = this.props;
+    
+    if (error) {
+            return <div>Error! {error.message}</div>;
+        }
+
+    if (loading) {
+       return <ReactLoading type={'spinningBubbles'} color={'green'} height={30} width={30} />
+      }
+    
     return (
       <div className="restaurantPage"> 
         <CategoryNavbar/>
@@ -40,7 +53,9 @@ class RestaurantPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-      restaurants: state.restaurants.restaurants
+      restaurants: state.restaurants.restaurants,
+      loading: state.restaurants.loading,
+      error: state.restaurants.error
   }
 }
 

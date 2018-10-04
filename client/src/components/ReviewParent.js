@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
 import { connect } from 'react-redux';
+import { fetchReviews, fetchCreateReview } from '../actions/reviewAction';
 //import store from '../index'
 
 
@@ -21,6 +22,21 @@ class ReviewParent extends Component {
         this.displayForm = this.displayForm.bind(this)
         this.saveReview = this.saveReview.bind(this)
     }
+
+    componentDidMount() {
+
+        this.props.dispatch(fetchReviews());
+      
+      }
+
+/*
+    componentDidMount() {
+
+        this.props.dispatch(fetchCreateReview(newName, newText, newId));
+    
+    }
+
+    */
 
     displayReviews = () => {
         this.setState({
@@ -43,7 +59,8 @@ class ReviewParent extends Component {
             id: newId
         }*/
 
-            this.props.onCreate(newName, newText, newId)
+           // this.props.onCreate(newName, newText, newId)
+           this.props.dispatch(fetchCreateReview(newName, newText, newId));
             console.log('NYTTTT NAMN', newName)
         
     
@@ -104,19 +121,22 @@ const mapStateToProps = (state) => {
     }
   }
   
+  /*
+  
   const mapDispatchToProps = (dispatch) => {
     return {
-    onCreate: (newName, newText, newId) => dispatch({type:'CREATE', name: newName, text: newText, id: newId})
+    onCreate: (newName, newText, newId) => dispatch(fetchCreateReview({name: newName, text: newText, id: newId}))
     }
   }
 
+*/
 
 
 
 
   
   
-  export default connect(mapStateToProps, mapDispatchToProps)(ReviewParent);
+  export default connect(mapStateToProps)(ReviewParent);
 
 
 

@@ -33,7 +33,7 @@ class HomePage extends Component {
       <div className="homePage">
          <br></br><br></br>
           <h1>Välkommen!</h1>
-          <div>{this.props.restaurantList.map(restaurant => <li>{restaurant.name}</li>)}</div>
+          <div>{this.props.restaurantList.map(restaurant => <li key={restaurant.id}>{restaurant.name + restaurant.description}</li>)}</div>
       </div>
     );
     

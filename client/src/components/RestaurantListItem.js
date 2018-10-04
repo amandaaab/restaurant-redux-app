@@ -23,15 +23,18 @@ class RestaurantListItem extends React.Component {
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
   }
+  
 
     renderRestaurant = (props) => {
         const { name, img } = this.props.restaurant;    
         const { id } = this.props;
-
+      //console.log(require('../images/' + this.props.restaurant.img))
+      //  const imgSrc = require('../images/' + this.props.restaurant.img);
+      
         return (
           <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
 
-              <img className="listImage" src={img}/>
+              <img className="listImage" src={require(`../images/${img}`)}/>
               <h3 className="inCardText">{name}</h3>
               
           </div>
@@ -44,17 +47,18 @@ class RestaurantListItem extends React.Component {
 
           console.log('matching restaurant: ', this.props.restaurant)
         
-            const { img, name, address } = this.props.restaurant;
+            const { name, address, img } = this.props.restaurant;
+//const imgSrc = require('../images/' + this.props.restaurant.img);
     
           return (
              <React.Fragment>
                 <div className="restaurantCard">
                   <h2>{name}</h2>
-                  <img className="listImage" src={img}/>
+                  <img className="listImage" src={require(`../images/${img}`)}/>
                 </div>
 
                 <Modal open={true} onClose={this.props.handleClose}>
-                  <img className="modalImage" src={img} />
+                  <img className="modalImage" src={require(`../images/${img}`)} />
                   <div className="infoWrapper">
 
                       <div className="boxOne">

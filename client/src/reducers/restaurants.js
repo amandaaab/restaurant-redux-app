@@ -1,6 +1,7 @@
+import { FETCH_PRODUCTS_SUCCESS } from '../actions/restaurantAction';
 const initialState = {
    restaurants: [
-             { 
+            /* { 
                 name: 'Bellini',
                 address: 'Linnegatan 20',
                 img: require('../images/spizo.jpg'),
@@ -57,13 +58,30 @@ const initialState = {
                 img: require('../images/unpoco.jpg'),
                 id: 7,
                 category: 'libanesiskt'        
-              }
+              }*/
         ]
         
 }
 
-const restaurants = (state = initialState, action) => {
-    const newState = {...state};
+export default function restaurants(state = initialState, action) {
+  switch(action.type) {
+    case FETCH_PRODUCTS_SUCCESS:
+       //All done: set loading "false".
+     //  Also, replace the items with the ones from the server
+      return {
+        ...state,
+        restaurants: action.payload.restaurants
+      };
+
+    }
+
+    return state;
+
+ 
+}
+
+//const restaurants = (state = initialState, action) => {
+    //const newState = {...state};
     /*if(action.type === 'SHOW') {
         return {
             ...state,
@@ -72,8 +90,8 @@ const restaurants = (state = initialState, action) => {
         
     }*/
 
-    return newState;
-}
+    //return newState;
+//}
 
 
-export default restaurants;
+//export default restaurants;

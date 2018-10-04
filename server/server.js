@@ -4,22 +4,12 @@ const jsonParser= require('body-parser').json;
 
 app.use(jsonParser());
 
-var mongoose = require("mongoose");
+global.mongoose = require("mongoose");
 
 mongoose.connect('mongodb://localhost/restaurant');
 
-
-var schema = new mongoose.Schema({ name: 'string', type: 'string' });
-var Animal = mongoose.model('Animal', schema);
-
-var dog = new Animal({
-  name: 'Harry',
-  type: 'Dog'
-})
-dog.save();
-
-var restaurantSchema = new mongoose.Schema({ name: 'string', food: 'string'});
-var Restaurant = mongoose.model('Restaurant', restaurantSchema);
+// Restaurant CRUD
+const Restaurant = require('./models/restaurant')
 
 app.get('/restaurants', function(req, res, next){
     Restaurant.find({})
@@ -38,6 +28,24 @@ app.post('/restaurants', function(req, res, next){
     })
 })
 
+const Review = require('./models/review')
+
+app.get('/reviews', function(req, res, next){
+    Review.find({})
+        .exec(function(err, reviews){
+        if(err) return next(err);
+        res.json(reviews)
+    })
+})
+
+app.post('/reviews', function(req, res, next){
+  var review = new Review(req.body);
+  review.save(function(err, review){
+      if(err) return next(err);
+      res.status(201)
+      res.json(review)
+  })
+})
 
 
 

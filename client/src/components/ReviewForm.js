@@ -4,10 +4,8 @@ class ReviewForm extends Component {
     constructor(props){
         super(props)
 
-        this.save = this.save.bind(this)
-        
+        this.save = this.save.bind(this)   
     }
-
 
     save = (e) => {
         e.preventDefault()
@@ -15,7 +13,6 @@ class ReviewForm extends Component {
         this.props.saveThis(this._newName.value, this._newText.value, this.props.id)
         console.log('recensionID', this.props.id)
     }
-
 
     render(){
     return(

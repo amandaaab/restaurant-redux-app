@@ -24,31 +24,27 @@ export function fetchReviews() {
 
       })
         .then(res => res.json())
-        /*.then(json => {
+        .then(json => {
           dispatch(fetchCreateReviewsSuccess(json));
           return json;
-        })*/
+        })
     };
   }
 
- // export const FETCH_CREATE_REVIEW_SUCCESS = 'FETCH_CREATE_REVIEW_SUCCESS';
-  /*
-  export const fetchCreateReviewsSuccess = (reviews) => ({
+  export const FETCH_CREATE_REVIEW_SUCCESS = 'FETCH_CREATE_REVIEW_SUCCESS';
+  
+  export const fetchCreateReviewsSuccess = (json) => ({
     type: FETCH_CREATE_REVIEW_SUCCESS,
-    payload: { reviews }
-   /* name: newName,
-    text: newText,
-    id: newId
-*/
-  //});
-  /*
+    payload: json
+  });
+
   // Handle HTTP errors since fetch won't.
   function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);
     }
     return response;
-  }*/
+  }
 
 
 export const FETCH_REVIEWS_SUCCESS = 'FETCH_REVIEWS_SUCCESS';

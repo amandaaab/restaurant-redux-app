@@ -14,13 +14,12 @@ export default function reviews(state = initialState, action) {
         reviews: action.payload.reviews
       }
 
-      /*case FETCH_CREATE_REVIEW_SUCCESS: 
+      case FETCH_CREATE_REVIEW_SUCCESS: 
 
       return {
           ...state,
-          reviews: [ {name: action.name}, {text: action.text}, {id: action.id}]
-      }
-*/
+          reviews: state.reviews.concat(action.payload)      }
+
     }
 
     return state;

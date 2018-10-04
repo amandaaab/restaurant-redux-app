@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS_SUCCESS } from '../actions/restaurantAction';
+import { FETCH_RESTAURANTS_SUCCESS } from '../actions/restaurantAction';
 
 const initialState = {
   restaurantList: []
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function restaurantList(state = initialState, action) {
   switch(action.type) {
-    case FETCH_PRODUCTS_SUCCESS:
+    case FETCH_RESTAURANTS_SUCCESS:
       // All done: set loading "false".
       // Also, replace the items with the ones from the server
       return {

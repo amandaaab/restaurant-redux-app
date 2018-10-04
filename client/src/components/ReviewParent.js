@@ -40,10 +40,17 @@ class ReviewParent extends Component {
     */
 
     displayReviews = () => {
+        if(this.props.loading){
+            return (<p>loading...</p>)
+        }
+
+        return(
         this.setState({
             displayList : !this.state.displayList
-        })
+             })
+        )
         
+    
     }
 
     displayForm = () => {
@@ -95,8 +102,12 @@ class ReviewParent extends Component {
             }
 
     if (loading) {
-      return <ReactLoading type={'spinningBubbles'} color={'green'} height={30} width={30} />
-    }
+      return (
+          <div className="wrap-spinner">
+           <ReactLoading className='spinning' type={'spinningBubbles'} color={'green'} height={30} width={30} />
+           </div>
+      )
+        }
 
         const { displayList, displayForm} = this.state;
         const { id } = this.props;

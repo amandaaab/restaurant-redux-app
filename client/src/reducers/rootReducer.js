@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
     reviews, 
     restaurants,
     save, 
-    restaurantList,
+    restaurantList,//alltså för homepagen
     //reviewList
 });
 

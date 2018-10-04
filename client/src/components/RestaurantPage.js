@@ -35,7 +35,11 @@ class RestaurantPage extends React.Component {
         }
 
     if (loading) {
-       return <ReactLoading type={'spinningBubbles'} color={'green'} height={30} width={30} />
+       return (
+         <div className="wrap-spinner">
+            <ReactLoading className='spinning' type={'spinningBubbles'} color={'green'} height={30} width={30} />
+        </div>
+       )
       }
     
     return (

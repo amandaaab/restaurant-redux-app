@@ -1,7 +1,9 @@
 export function fetchReviews() {
 
     return dispatch => {
+      dispatch(fetchReviewsBegin())
       return fetch("/reviews")
+        .then(handleErrors)
         .then(res => res.json())
         .then(json => {
           dispatch(fetchReviewsSuccess(json));
@@ -11,9 +13,20 @@ export function fetchReviews() {
     };
 }
 
+// Handle HTTP errors since fetch won't.
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
+
+
+
   export function fetchCreateReview(newName, newText, newId) {
 
     return dispatch => {
+      dispatch(fetchCreateReviewBegin())
       return fetch("/reviews", {
         method: 'POST',
         headers: {
@@ -23,32 +36,42 @@ export function fetchReviews() {
         body: JSON.stringify({name: newName, text: newText, id: newId})
 
       })
+        .then(handleErrors)
         .then(res => res.json())
         .then(json => {
-          dispatch(fetchCreateReviewsSuccess(json));
+          dispatch(fetchCreateReviewSuccess(json));
           return json;
         })
+        .catch(error => dispatch(fetchCreateReviewError(error)));
     };
   }
 
+  export const FETCH_CREATE_REVIEW_BEGIN = 'FETCH_CREATE_REVIEW_BEGIN';
   export const FETCH_CREATE_REVIEW_SUCCESS = 'FETCH_CREATE_REVIEW_SUCCESS';
-  
-  export const fetchCreateReviewsSuccess = (json) => ({
+  export const FETCH_CREATE_REVIEW_FAILURE = 'FETCH_CREATE_REVIEW_FAILURE';
+
+  export const fetchCreateReviewBegin = () => ({
+    type: FETCH_CREATE_REVIEW_BEGIN
+  });
+
+  export const fetchCreateReviewSuccess = (json) => ({
     type: FETCH_CREATE_REVIEW_SUCCESS,
     payload: json
   });
 
-  // Handle HTTP errors since fetch won't.
-  function handleErrors(response) {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response;
-  }
+  export const fetchCreateReviewError = error => ({
+    type: FETCH_CREATE_REVIEW_FAILURE,
+    payload: { error }
+  });
 
-
+  
+export const FETCH_REVIEWS_BEGIN   = 'FETCH_REVIEWS_BEGIN';
 export const FETCH_REVIEWS_SUCCESS = 'FETCH_REVIEWS_SUCCESS';
 export const FETCH_REVIEWS_FAILURE = 'FETCH_REVIEWS_FAILURE';
+
+export const fetchReviewsBegin = () => ({
+  type: FETCH_REVIEWS_BEGIN
+});
 
 export const fetchReviewsSuccess = reviews => ({
   type: FETCH_REVIEWS_SUCCESS,

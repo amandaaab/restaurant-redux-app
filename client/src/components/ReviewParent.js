@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
 import { connect } from 'react-redux';
@@ -86,12 +87,22 @@ class ReviewParent extends Component {
 
     render() {
 
+
+        const { error, loading } = this.props;
+    
+        if (error) {
+                return <div>Error! {error.message}</div>;
+            }
+
+    if (loading) {
+      return <ReactLoading type={'spinningBubbles'} color={'green'} height={30} width={30} />
+    }
+
         const { displayList, displayForm} = this.state;
         const { id } = this.props;
 
         return (
             <div>
-                <button>hej</button>
 
                 <Reviews    id={id}
                             reviews={this.props.reviews}
@@ -117,7 +128,9 @@ class ReviewParent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        reviews: state.reviews.reviews
+        reviews: state.reviews.reviews,
+        loading: state.reviews.loading,
+        error: state.reviews.error
     }
   }
   

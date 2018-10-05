@@ -58,7 +58,7 @@ export default function save(state = initialState, action) {
   
         return {
             ...state,
-            //savedRestaurants: state.save.concat(action.payload),
+            savedRestaurants: state.savedRestaurants.concat(action.payload),
             loading: false 
            }
   

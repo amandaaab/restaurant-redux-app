@@ -1,30 +1,79 @@
+import { 
+    FETCH_SAVED_RESTAURANTS_BEGIN,
+    FETCH_SAVED_RESTAURANTS_SUCCESS,
+    FETCH_SAVED_RESTAURANTS_FAILURE,
+    FETCH_SAVE_RESTAURANT_BEGIN,
+    FETCH_SAVE_RESTAURANT_SUCCESS,
+    FETCH_SAVE_RESTAURANT_FAILURE
+    } from '../actions/saveAction';
+
+
 const initialState = {
     savedRestaurants: [],
+    loading: false,
+    error: null
 }
 
-const save = (state = initialState, action) => {
-    const newState = {...state};
-    if(action.type === 'SAVE') {
-      //console.log('det vi har fått med', action.payload);
 
+export default function save(state = initialState, action) {
+    switch(action.type) {
 
-     const findRestaurant = state.savedRestaurants.find(function(restaurant) {
-        return restaurant === action.payload//if restaurant dont exist in the array it returns undefined
-      });
+        case FETCH_SAVED_RESTAURANTS_BEGIN:
+      // All done: set loading "false".
+      // Also, replace the items with the ones from the server
+      return {
+        ...state,
+        loading: true,
+        error: null
+      }
+    case FETCH_SAVED_RESTAURANTS_SUCCESS:
+      // All done: set loading "false".
+      // Also, replace the items with the ones from the server
+      return {
+        ...state,
+        loading: false,
+        savedRestaurants: action.payload.restaurants
+      }
 
-      if(findRestaurant === undefined){
-
+      case FETCH_SAVED_RESTAURANTS_FAILURE:
+      // All done: set loading "false".
+      // Also, replace the items with the ones from the server
+      return {
+        ...state,
+      loading: false,
+      error: action.payload.error,
+      savedRestaurants: []
+      }
+  
+        case FETCH_SAVE_RESTAURANT_BEGIN:
+        // All done: set loading "false".
+        // Also, replace the items with the ones from the server
+        return {
+          ...state,
+          loading: true,
+          error: null
+        }
+  
+        case FETCH_SAVE_RESTAURANT_SUCCESS: 
+  
         return {
             ...state,
-                  savedRestaurants: state.savedRestaurants.concat(action.payload),
-            }
+            //savedRestaurants: state.save.concat(action.payload),
+            loading: false 
+           }
+  
+  
+         case FETCH_SAVE_RESTAURANT_FAILURE:
+        // All done: set loading "false".
+        // Also, replace the items with the ones from the server
+        return {
+          ...state,
+        loading: false,
+        error: action.payload.error,
+        savedRestaurants: []
         }
-
+  
+           default: return state;
+      }
       
-    }
-      //console.log('NYTT STATE', newState);
-
-    return newState;
-}
-
-export default save;
+  }

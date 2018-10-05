@@ -47,6 +47,27 @@ app.post('/reviews', function(req, res, next){
   })
 })
 
+//**save restaurants */
+
+const SaveRestaurant = require('./models/save')
+
+app.get('/saveRestaurant', function(req, res, next){
+    SaveRestaurant.find({})
+        .exec(function(err, saveRestaurant){
+        if(err) return next(err);
+        res.json(saveRestaurant)
+    })
+})
+
+app.post('/saveRestaurant', function(req, res, next){
+  var saveRestaurant = new SaveRestaurant(req.body);
+  saveRestaurant.save(function(err, saveRestaurant){
+      if(err) return next(err);
+      res.status(201)
+      res.json(saveRestaurant)
+  })
+})
+
 
 
 const port = 5000;

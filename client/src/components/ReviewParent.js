@@ -40,16 +40,10 @@ class ReviewParent extends Component {
     */
 
     displayReviews = () => {
-        if(this.props.loading){
-            return (<p>loading...</p>)
-        }
-
-        return(
+        
         this.setState({
             displayList : !this.state.displayList
              })
-        )
-        
     
     }
 

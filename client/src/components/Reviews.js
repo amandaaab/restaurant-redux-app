@@ -2,7 +2,6 @@ import React from 'react';
 
 
     const Reviews = (props) => {
-        
         return(
         <React.Fragment>
             <button onClick={props.display}>Se recenssioner</button>

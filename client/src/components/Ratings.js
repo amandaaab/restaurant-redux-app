@@ -3,18 +3,20 @@ import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 class StarRating extends Component {
-    constructor() {
+    constructor(
+        
+    ) {
       super();
    
       this.state = {
         rating:undefined,
         ratingSum: [],
         totalSum: null
-      };
+      }
 
       this.calculate = this.calculate.bind(this)
     }
-   
+    
     onStarClick(nextValue) {
       this.setState({
         rating: nextValue       
@@ -46,13 +48,24 @@ class StarRating extends Component {
 
             this.setState({
                 totalSum:  total / numberOfRates 
+            }, function () {
+                this.trimSum()
             })         
-     }
+         }
         console.log("totalen", this.state.totalSum)
 
-        return this.state.totalSum;    
+       // return this.state.totalSum;    
     //  console.log(this.state.ratingSum.indexOf(this.state.ratingSum))
     // console.log("i calculate function", this.state.ratingSum.length)
+    }
+
+    trimSum = () => {
+        var n = this.state.totalSum
+
+        this.setState({
+            totalSum: n.toFixed(1)
+        })
+        return this.state.totalSum
     }
      
     

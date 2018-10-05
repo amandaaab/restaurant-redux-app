@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import SaveRestaurant from './SaveRestaurant';
 //import ReviewList from './ReviewList';
 import ReviewParent from './ReviewParent';
-
+import StarRating from './Ratings';
 
 
 
@@ -68,6 +68,7 @@ class RestaurantListItem extends React.Component {
 
                       <div className="boxTwo">
                         <SaveRestaurant restaurantToSave={this.props.restaurant} />
+                        <StarRating />
                       </div>
 
                   </div>

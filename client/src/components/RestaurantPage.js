@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import ReactLoading from 'react-loading';
+//import ReactLoading from 'react-loading';
 import RestaurantList from './RestaurantList';
 import CategoryNavbar from './CategoryNavbar';
 import { connect } from 'react-redux';
@@ -37,7 +37,7 @@ class RestaurantPage extends React.Component {
     if (loading) {
        return (
          <div className="wrap-spinner">
-            <ReactLoading className='spinning' type={'spinningBubbles'} color={'green'} height={30} width={30} />
+          
         </div>
        )
       }

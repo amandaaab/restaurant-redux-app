@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactLoading from 'react-loading';
+//import ReactLoading from 'react-loading';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
 import { connect } from 'react-redux';
@@ -104,7 +104,7 @@ class ReviewParent extends Component {
     if (loading) {
       return (
           <div className="wrap-spinner">
-           <ReactLoading className='spinning' type={'spinningBubbles'} color={'green'} height={30} width={30} />
+           
            </div>
       )
         }

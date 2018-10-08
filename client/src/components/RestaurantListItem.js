@@ -58,7 +58,11 @@ class RestaurantListItem extends Component {
 
                       <div className="boxTwo">
                         <SaveRestaurant restaurantToSave={this.props.restaurant} />
-                        <StarRating />
+
+                        {this.props.reviews.filter(review => review.id === this.props.id).map((review, i) => 
+                                <div key={i}>
+                                    <p>{review.rating}</p>
+                                </div>)}
                       </div>
 
                   </div>

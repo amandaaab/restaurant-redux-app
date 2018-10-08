@@ -23,7 +23,7 @@ function handleErrors(response) {
 
 
 
-  export function fetchCreateReview(newName, newText, newId) {
+  export function fetchCreateReview(newName, newText, newId, newRating) {
 
     return dispatch => {
       dispatch(fetchCreateReviewBegin())
@@ -33,7 +33,7 @@ function handleErrors(response) {
           'Accept': 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: newName, text: newText, id: newId})
+        body: JSON.stringify({name: newName, text: newText, id: newId, rating: newRating})
 
       })
         .then(handleErrors)

@@ -44,6 +44,7 @@ class RestaurantList extends Component {
                       selectedId={this.state.selected}
                       handleClick={this.onOpenModal}
                       handleClose={this.onCloseModal}
+                      reviews={this.props.reviews}
       /> )
 
     }

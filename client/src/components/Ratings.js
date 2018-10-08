@@ -3,17 +3,14 @@ import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 class StarRating extends Component {
-    constructor(
-        
-    ) {
-      super();
-   
+    constructor(){
+        super();
+    
       this.state = {
         rating:undefined,
         ratingSum: [],
         totalSum: null
       }
-
       this.calculate = this.calculate.bind(this)
     }
     
@@ -24,7 +21,6 @@ class StarRating extends Component {
           this.together() 
         }
     );  
-
 }
    
     together = () => {
@@ -68,8 +64,6 @@ class StarRating extends Component {
         return this.state.totalSum
     }
      
-    
-   
     render() {
       const { rating } = this.state;
       

@@ -4,7 +4,7 @@
  *
  */
 
-import React from "react";
+import React, {Component} from "react";
 //import ReactLoading from 'react-loading';
 import RestaurantList from './RestaurantList';
 import CategoryNavbar from './CategoryNavbar';
@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import {fetchProducts} from '../actions/restaurantAction';
 
 
-class RestaurantPage extends React.Component {
+class RestaurantPage extends Component {
   constructor(props){
     super(props)
     console.log('params:', this.props.cat);

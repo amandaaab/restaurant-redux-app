@@ -3,19 +3,15 @@
  * RestaurantListItem
  *
  */
-import React from "react";
+import React, {Component} from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
-//import Reviews from './Reviews'
-//import ReviewForm from './ReviewForm'
 import SaveRestaurant from './SaveRestaurant';
-//import ReviewList from './ReviewList';
 import ReviewParent from './ReviewParent';
 import StarRating from './Ratings';
 
 
-
-class RestaurantListItem extends React.Component {
+class RestaurantListItem extends Component {
 
   constructor(props){
     super(props) 
@@ -24,12 +20,9 @@ class RestaurantListItem extends React.Component {
     this.renderRestaurant = this.renderRestaurant.bind(this)
   }
   
-
     renderRestaurant = (props) => {
         const { name, img } = this.props.restaurant;    
         const { id } = this.props;
-      //console.log(require('../images/' + this.props.restaurant.img))
-      //  const imgSrc = require('../images/' + this.props.restaurant.img);
       
         return (
           <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
@@ -43,12 +36,9 @@ class RestaurantListItem extends React.Component {
 
 
       renderRestaurantDetails = () => {
-     
-
           console.log('matching restaurant: ', this.props.restaurant)
         
             const { name, address, img } = this.props.restaurant;
-//const imgSrc = require('../images/' + this.props.restaurant.img);
     
           return (
              <React.Fragment>

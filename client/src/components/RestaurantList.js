@@ -4,12 +4,12 @@
  *
  */
 
-import React from "react";
+import React, {Component} from "react";
 import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
 import CategoryNavbar from './CategoryNavbar';
 
-class RestaurantList extends React.Component {  
+class RestaurantList extends Component {  
   constructor(props) {
     super(props)
       this.state = {
@@ -23,7 +23,6 @@ class RestaurantList extends React.Component {
     }
 
     onOpenModal = (id) => {
-      //console.log('this is the selected id', id)
       this.setState({
         selected: id
       })

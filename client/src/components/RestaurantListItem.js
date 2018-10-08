@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import SaveRestaurant from './SaveRestaurant';
 import ReviewParent from './ReviewParent';
 import StarRating from './Ratings';
+import CalculateRate from './CalculateRate'
 
 
 class RestaurantListItem extends Component {
@@ -59,10 +60,10 @@ class RestaurantListItem extends Component {
                       <div className="boxTwo">
                         <SaveRestaurant restaurantToSave={this.props.restaurant} />
 
-                        {this.props.reviews.filter(review => review.id === this.props.id).map((review, i) => 
-                                <div key={i}>
-                                    <p>{review.rating}</p>
-                                </div>)}
+                        <CalculateRate 
+                                  reviews={this.props.reviews}
+                                  id={this.props.id} 
+                                  />
                       </div>
 
                   </div>

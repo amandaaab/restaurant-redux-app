@@ -47,7 +47,10 @@ class RestaurantPage extends React.Component {
         <CategoryNavbar/>
         <div className="wrap-restaurantpage">
            {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
-        <RestaurantList cat={this.props.cat} restaurants={this.props.restaurants}/>
+        <RestaurantList cat={this.props.cat}
+                        restaurants={this.props.restaurants}
+                        reviews={this.props.reviews}
+                        />
         </div>
       </div>
     );
@@ -59,7 +62,8 @@ const mapStateToProps = (state) => {
   return {
       restaurants: state.restaurants.restaurants,
       loading: state.restaurants.loading,
-      error: state.restaurants.error
+      error: state.restaurants.error,
+      reviews: state.reviews.reviews
   }
 }
 

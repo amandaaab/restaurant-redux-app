@@ -53,7 +53,7 @@ class ReviewParent extends Component {
         })
     }
 
-    saveReview = (newName, newText, newId) => {
+    saveReview = (newName, newText, newId, newRating) => {
         
         /*let newReview = {
             name: newName,
@@ -62,8 +62,8 @@ class ReviewParent extends Component {
         }*/
 
            // this.props.onCreate(newName, newText, newId)
-           this.props.dispatch(fetchCreateReview(newName, newText, newId));
-            console.log('NYTTTT NAMN', newName)
+           this.props.dispatch(fetchCreateReview(newName, newText, newId, newRating));
+            console.log('NYTTTT NAMN', newName, newRating)
         
     
         //this.props.onCreate(newReview)

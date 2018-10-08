@@ -35,29 +35,28 @@ class SaveRestaurant extends Component {
     
 
        
-        let buttonText;
+        let button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
+
         save.map(saves => {
            
             if(saves.name === restaurantToSave.name){
-            buttonText = 'ta bort som sparad';
+            button = <button>Ta bort som sparad</button>;
             } else {
-            buttonText = 'spara';
+            button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
+
             }
-            return buttonText;
+            return button;
         })
 
         return (
 
             <div>
-                 <button onClick={() => this.save(restaurantToSave)}>{buttonText}</button>
+                {button}
             </div>
            
            
         )
       
-    
-           
-
     
     }
 }

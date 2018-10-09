@@ -6,6 +6,13 @@
     
   }
 
+  .show-hide {
+      border: none;
+      background: none;
+      font-weight: bold;
+      
+  }
+
   .wrap-star {
     display: flex;
     justify-content: center;
@@ -32,7 +39,7 @@
   }
 
   .table {
-      width: 80%;
+      width: 90%;
   }
 
 
@@ -42,6 +49,30 @@
     height: 200px;
 }
 
+.reviewWrap {
+    display: flex;
+}
+
+.see-review, .create-review {
+
+}
+
+.see-review{
+    width: 75%;
+}
+
+.create-review {
+    width: 25%;
+    margin-top: 30px;
+    margin: 20px;
+}
+
+.label-for-rating {
+    margin-bottom: -20px;
+}
+.label-for-name {
+    margin-top:-50px;
+}
 .inCardText {
     width: 100%;
     bottom: 0;

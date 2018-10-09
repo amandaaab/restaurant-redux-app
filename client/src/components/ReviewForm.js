@@ -34,19 +34,25 @@ class ReviewForm extends Component {
 
 
     <div>
-        <button onClick={this.props.display}>Skriv recenssion</button>
-
+        {this.props.isDisplayed ? null: (
+               <button onClick={this.props.display}>Skriv recenssion</button>
+        )}
 
         {this.props.isDisplayed ? (
         <form onSubmit={this.save}>
+        <div class="form-group">
+        <label className="label-for-rating">Ge ditt betyg</label>
         <StarRating sendSum={this.showSum}/>
 
-        <input type="text" placeholder="Namn" ref={(input)=> this._newName = input}/>
-            <textarea 
+        <label for="namn">Ditt namn</label>
+        <input  className="label-for-name" name="namn" type="text" class="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
+        <label for="text">Ditt omdöme</label>
+            <textarea name="text" class="form-control" placeholder="Berätta om din upplevelse..."
                     ref={(input) => this._newText = input}/>
 
 
-            <button id="save">Spara</button>
+            <button class="btn btn-primary" id="save">Spara</button>
+            </div>
             </form> ) : null
         }
     </div>

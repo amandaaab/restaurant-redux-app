@@ -10,6 +10,7 @@ import SaveRestaurant from './SaveRestaurant';
 import ReviewParent from './ReviewParent';
 import StarRating from './Ratings';
 import CalculateRate from './CalculateRate'
+import ReviewForm from "./ReviewForm";
 
 
 class RestaurantListItem extends Component {
@@ -72,6 +73,7 @@ class RestaurantListItem extends Component {
                           </div>
                             <div className="saveDiv">
                             <SaveRestaurant restaurantToSave={this.props.restaurant} />
+                           
                             </div>
                         
                       </div>

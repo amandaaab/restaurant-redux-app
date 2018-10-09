@@ -5,7 +5,7 @@ const Reviews = (props) => {
     return(
         <React.Fragment>
             
-
+<h3>Omdömen</h3>
 <table className="table">
 <thead>
     <tr>
@@ -51,9 +51,9 @@ const Reviews = (props) => {
 
 
                     {props.isDisplayed ? (
-                                     <button onClick={props.display}>Visa mi...</button>
+                                     <button className="show-hide" onClick={props.display}>Visa mindre...</button>
 
-                    ) :              <button onClick={props.display}>Visa mer...</button>}
+                    ) :              <button className="show-hide" onClick={props.display}>Visa mer...</button>}
 
 
 

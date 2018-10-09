@@ -92,13 +92,16 @@ class ReviewParent extends Component {
         const { id } = this.props;
 
         return (
-          <div>
+          <div className="reviewWrap">
+
+          <div className="see-review">
                 <Reviews    id={id}
                             reviews={this.props.reviews}
                             isDisplayed={displayList}
                             display={this.displayReviews} 
                             />
-
+</div>
+<div className="create-review">
                 <ReviewForm 
                             id={id}
                             isDisplayed={displayForm} 
@@ -106,6 +109,7 @@ class ReviewParent extends Component {
                             reviews={this.props.reviews} 
                             saveThis={this.saveReview}
                             />
+                            </div>
             </div>
         )
     }

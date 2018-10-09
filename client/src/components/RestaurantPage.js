@@ -9,7 +9,8 @@ import React, {Component} from "react";
 import RestaurantList from './RestaurantList';
 import CategoryNavbar from './CategoryNavbar';
 import { connect } from 'react-redux';
-import {fetchProducts} from '../actions/restaurantAction';
+import {fetchRestaurants} from '../actions/restaurantAction';
+import {fetchReviews} from '../actions/reviewAction';
 
 
 class RestaurantPage extends Component {
@@ -21,7 +22,8 @@ class RestaurantPage extends Component {
 
   componentDidMount() {
 
-    this.props.dispatch(fetchProducts());
+    this.props.dispatch(fetchRestaurants());
+    this.props.dispatch(fetchReviews());
   
   }
 

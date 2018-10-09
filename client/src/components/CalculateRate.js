@@ -20,18 +20,12 @@ const CalculateRate = (props) => {
    console.log("ratin resultatet", ratingResult)
 
 const starTotal = 5;
-//for(const rating in numbersArray) {  
-  // 2
   const starPercentage = (ratingResult / starTotal) * 100;
-  // 3
- // console.log("rating i numbersarray", numbersArray[rating])
   const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-  // 4
   var starStyle = {
       width: starPercentageRounded
   }
- //document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
-//}
+ 
 
   /*  var numberOfRates = numbersArray.length;
     let ratingResult = numbersArray.reduce((a,b) => a+b,0) / numberOfRates;

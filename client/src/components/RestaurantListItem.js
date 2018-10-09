@@ -30,6 +30,8 @@ class RestaurantListItem extends Component {
 
               <img className="listImage" src={require(`../images/${img}`)}/>
               <h3 className="inCardText">{name}</h3>
+              <CalculateRate reviews={this.props.reviews}
+                                  id={id}/>
               
           </div>
         )
@@ -39,7 +41,7 @@ class RestaurantListItem extends Component {
       renderRestaurantDetails = () => {
           console.log('matching restaurant: ', this.props.restaurant)
         
-            const { name, address, img } = this.props.restaurant;
+            const { name, address, img, id } = this.props.restaurant;
     
           return (
              <React.Fragment>

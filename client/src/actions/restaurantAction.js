@@ -1,4 +1,4 @@
-export function fetchProducts() {
+export function fetchRestaurants() {
     return dispatch => {
       dispatch(fetchRestaurantsBegin())
       return fetch("/restaurants")
@@ -11,7 +11,6 @@ export function fetchProducts() {
         .catch(error => dispatch(fetchRestaurantsError(error)));
     };
   }
-  
   
    //Handle HTTP errors since fetch won't.
   function handleErrors(response) {

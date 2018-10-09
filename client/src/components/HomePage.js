@@ -6,7 +6,7 @@
 
 import React, {Component} from "react";
 import {connect} from 'react-redux';
-import {fetchProducts} from '../actions/restaurantAction';
+import {fetchRestaurants} from '../actions/restaurantAction';
 //import SavedRestaurants from './SavedRestaurants'
 
 
@@ -24,7 +24,7 @@ class HomePage extends Component {
       .then(restaurants => this.setState({
         restaurants
       }))*/
-        this.props.dispatch(fetchProducts());
+        this.props.dispatch(fetchRestaurants());
      }
 
   render() {

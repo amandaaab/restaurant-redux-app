@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SavedRestaurants from './SavedRestaurants'
 import { fetchSavedRestaurants } from "../actions/saveAction";
+import { fetchReviews } from "../actions/reviewAction";
 
 
 class SavePage extends Component {
@@ -18,6 +19,7 @@ class SavePage extends Component {
   componentDidMount() {
 
     this.props.dispatch(fetchSavedRestaurants());
+    this.props.dispatch(fetchReviews()); //need to fetch othervise favorites dont have any reviews/ratings
   
   }
    
@@ -25,7 +27,7 @@ class SavePage extends Component {
     return (
       <div className="savePage">
         <h1>Dina favorit restauranger</h1>
-        <SavedRestaurants restaurants={this.props.save} />
+        <SavedRestaurants reviews={this.props.reviews} restaurants={this.props.save} />
       </div>
     );
     
@@ -36,7 +38,8 @@ const mapStateToProps = (state) => {
   return {
       save: state.save.savedRestaurants,
       loading: state.save.loading,
-      error: state.save.error
+      error: state.save.error,
+      reviews: state.reviews.reviews
   }
 }
 

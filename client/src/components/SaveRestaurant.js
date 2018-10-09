@@ -42,7 +42,7 @@ class SaveRestaurant extends Component {
        
         let button;
 
-        if (save === undefined || save.length == 0) {
+        if (!Array.isArray(save) || !save.length) {
             button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
         } else {
 
@@ -50,6 +50,7 @@ class SaveRestaurant extends Component {
             
            
             if(saves.name === restaurantToSave.name){
+
             button = <button onClick={()=> this.delete(restaurantToSave.id)}>Ta bort som sparad</button>;
             } 
             else if(saves.name !== restaurantToSave.name) {

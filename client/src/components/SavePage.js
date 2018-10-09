@@ -26,7 +26,8 @@ class SavePage extends Component {
   render() {
     return (
       <div className="savePage">
-        <h1>Dina favorit restauranger</h1>
+        <h3>Sparade restauranger</h3>
+        {(this.props.save).length == 0 ? <p>Du har inga sparade restauranger</p> : null} 
         <SavedRestaurants reviews={this.props.reviews} restaurants={this.props.save} />
       </div>
     );

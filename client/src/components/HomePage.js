@@ -7,33 +7,24 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 import {fetchRestaurants} from '../actions/restaurantAction';
+import Carousel from 'nuka-carousel';
+
 //import SavedRestaurants from './SavedRestaurants'
 
 
 class HomePage extends Component {
 
-    componentDidMount () {
-      /* fetch('/api/customers')
-       .then(res => res.json())
-       .then(customers => this.setState({
-         customers
-       }))
-  
-      fetch('/restaurants')
-      .then(res => res.json())
-      .then(restaurants => this.setState({
-        restaurants
-      }))*/
-        this.props.dispatch(fetchRestaurants());
-     }
-
+    
   render() {
-    //console.log("loggar lie", this.props.restaurantList.map(restaurant => restaurant.name))
     return (
       <div className="homePage">
          <br></br><br></br>
           <h1>Välkommen!</h1>
-          <div>{this.props.restaurantList.map(restaurant => <li key={restaurant.id}>{restaurant.name + restaurant.description}</li>)}</div>
+      <Carousel autoplay={true} autoplayInterval={2000}>
+      <img src={require("../images/spizo.jpg")}/>
+      <img src={require("../images/foodcorner.jpeg")}/>
+      <img src={require("../images/unpoco.jpg")}/>
+      </Carousel>
       </div>
     );
     

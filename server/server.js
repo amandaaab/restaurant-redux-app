@@ -68,6 +68,15 @@ app.post('/saveRestaurant', function(req, res, next){
   })
 })
 
+app.delete('/saveRestaurant/:id', function (req, res, next){
+    //res.send('We would delete a product');
+    // delete the product from the db
+    SaveRestaurant.deleteOne({id: req.params.id})
+        .exec(function(err, restaurant){
+        if(err) return next(err);
+        res.json(restaurant)
+    })
+  });
 
 
 const port = 5000;

@@ -13,6 +13,18 @@ export function fetchSavedRestaurants() {
     };
 }
 
+export function deleteSavedRestaurant(id) {
+
+  return dispatch => {
+    return fetch(`/saveRestaurant/${id}`, {
+      method: 'DELETE'
+    })
+      .then(handleErrors)
+      .then(json => {
+        return json;
+      })
+    };
+}
 
 
 export function fetchSaveRestaurant(restaurant) {

@@ -4,8 +4,7 @@ import React from 'react';
 const Reviews = (props) => {
     return(
         <React.Fragment>
-            <button onClick={props.display}>Se recenssioner</button>
-            {props.isDisplayed ? (
+            
 
 <table className="table">
 <thead>
@@ -15,7 +14,7 @@ const Reviews = (props) => {
     <th>Betyg</th>
     </tr>
 </thead>
-               {props.reviews.filter(review => review.id === props.id)
+               {props.reviews.filter(review => review.id === props.id).slice(0,3)
 
                                 .map((review, i) => 
                                         
@@ -28,9 +27,39 @@ const Reviews = (props) => {
                                             </tbody>
                                           
                                        )}
+            {props.isDisplayed ? (
+
+
+               props.reviews.filter(review => review.id === props.id).slice(3)
+
+                .map((review, i) => 
+                        
+                            <tbody>
+                                <tr>
+                                    <td>{review.name}</td>
+                                    <td>{review.text}</td>
+                                    <td>{review.rating}</td>
+                                </tr>
+                            </tbody>
+                          
+                       )
+
+
+
+            ) : null}
                                        </table>
 
-            ) : null }
+
+                    {props.isDisplayed ? (
+                                     <button onClick={props.display}>Visa mi...</button>
+
+                    ) :              <button onClick={props.display}>Visa mer...</button>}
+
+
+
+
+
+
 
         </React.Fragment>
     )

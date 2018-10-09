@@ -56,7 +56,7 @@ export function fetchSaveRestaurant(restaurant) {
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
-          dispatch(deleteRestaurantSuccess(json));
+          dispatch(deleteRestaurantSuccess(id));
           return json;
         })
         .catch(error => dispatch(deleteRestaurantError(error)));
@@ -116,9 +116,9 @@ function handleErrors(response) {
     type: DELETE_RESTAURANT_BEGIN
   });
 
-  export const deleteRestaurantSuccess = (json) => ({
+  export const deleteRestaurantSuccess = (id) => ({
     type: DELETE_RESTAURANT_SUCCESS,
-    payload: json
+    payload: id
   });
 
   export const deleteRestaurantError = error => ({

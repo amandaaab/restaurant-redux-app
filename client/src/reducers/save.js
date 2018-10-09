@@ -90,6 +90,7 @@ export default function save(state = initialState, action) {
         return {
             ...state,
             //savedRestaurants: state.savedRestaurants.concat(action.payload),
+            savedRestaurants: state.savedRestaurants.filter(restaurant => action.payload !== restaurant.id),
             loading: false 
            }
   

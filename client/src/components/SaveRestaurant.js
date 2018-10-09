@@ -37,33 +37,12 @@ class SaveRestaurant extends Component {
         const { restaurantToSave, save } = this.props;
         console.log('sparade restauranger??', save)
         console.log('vill spara denna restaurang:', restaurantToSave)
-    
-
        
-        let button;
+        let button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
 
-        if (!Array.isArray(save) || !save.length) {
-            button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
-        } else {
-
-        save.map(saves => {
-            
-           
-            if(saves.name === restaurantToSave.name){
-
-            button = <button className="delButton" onClick={()=> this.delete(restaurantToSave.id)}>Ta bort som favorit</button>;
-            } 
-            else if(saves.name !== restaurantToSave.name) {
-            button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Lägg till i favorit</button>
-            }
-            
-
-            return button;
-        })
-
-        return button;
-
-    }
+        if(save.filter(saved => saved.id === restaurantToSave.id).length !== 0){
+            button = <button onClick={() => this.delete(restaurantToSave.id)}>Ta bort</button>
+        }
 
         return (
             <div>

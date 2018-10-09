@@ -8,7 +8,7 @@ const CalculateRate = (props) => {
     let numbersArray = [];
     props.reviews.filter(review => review.id === props.id).map((review, i) => { 
         numbersArray.push(review.rating)
-        console.log("nummer arayensssss", numbersArray)
+        //console.log("nummer arayensssss", numbersArray)
     })
 
     var numberOfRates = numbersArray.length;
@@ -16,7 +16,7 @@ const CalculateRate = (props) => {
     let result = ratingResult.toFixed(1);
    // console.log(result);
 
-   console.log("ratin resultatet", ratingResult)
+   //console.log("ratin resultatet", ratingResult)
 
 const starTotal = 5;
   const starPercentage = (result / starTotal) * 100;

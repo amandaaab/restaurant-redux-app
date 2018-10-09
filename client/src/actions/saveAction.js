@@ -13,19 +13,6 @@ export function fetchSavedRestaurants() {
     };
 }
 
-export function deleteSavedRestaurant(id) {
-
-  return dispatch => {
-    return fetch(`/saveRestaurant/${id}`, {
-      method: 'DELETE'
-    })
-      .then(handleErrors)
-      .then(json => {
-        return json;
-      })
-    };
-}
-
 
 export function fetchSaveRestaurant(restaurant) {
     console.log('HÄR FINNS DEN', restaurant.name);
@@ -58,6 +45,24 @@ export function fetchSaveRestaurant(restaurant) {
         .catch(error => dispatch(fetchSaveRestaurantError(error)));
     };
   }
+
+  export function deleteSavedRestaurant(id) {
+
+    return dispatch => {
+      dispatch(deleteRestaurantBegin())
+      return fetch(`/saveRestaurant/${id}`, {
+        method: 'DELETE'
+      })
+        .then(handleErrors)
+        .then(res => res.json())
+        .then(json => {
+          dispatch(deleteRestaurantSuccess(json));
+          return json;
+        })
+        .catch(error => dispatch(deleteRestaurantError(error)));
+      };
+  }
+  
 
   // Handle HTTP errors since fetch won't.
 function handleErrors(response) {
@@ -100,6 +105,24 @@ function handleErrors(response) {
 
   export const fetchSaveRestaurantError = error => ({
     type: FETCH_SAVE_RESTAURANT_FAILURE,
+    payload: { error }
+  });
+
+  export const DELETE_RESTAURANT_BEGIN = 'DELETE_RESTAURANT_BEGIN';
+  export const DELETE_RESTAURANT_SUCCESS = 'DELETE_RESTAURANT_SUCCESS';
+  export const DELETE_RESTAURANT_FAILURE = 'DELETE_RESTAURANT_FAILURE';
+
+  export const deleteRestaurantBegin = () => ({
+    type: DELETE_RESTAURANT_BEGIN
+  });
+
+  export const deleteRestaurantSuccess = (json) => ({
+    type: DELETE_RESTAURANT_SUCCESS,
+    payload: json
+  });
+
+  export const deleteRestaurantError = error => ({
+    type: DELETE_RESTAURANT_FAILURE,
     payload: { error }
   });
 

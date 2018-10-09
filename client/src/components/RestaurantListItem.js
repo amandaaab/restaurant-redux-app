@@ -41,7 +41,7 @@ class RestaurantListItem extends Component {
       renderRestaurantDetails = () => {
           console.log('matching restaurant: ', this.props.restaurant)
         
-            const { name, address, img, id } = this.props.restaurant;
+            const { name, address, img, id, web, category } = this.props.restaurant;
     
           return (
              <React.Fragment>
@@ -52,20 +52,28 @@ class RestaurantListItem extends Component {
 
                 <Modal open={true} onClose={this.props.handleClose}>
                   <img className="modalImage" src={require(`../images/${img}`)} />
-                  <div className="infoWrapper">
+                    <div className="restauranten">
+                    <h2 className="nameR">{name}</h2>
+                    </div>
 
-                      <div className="boxOne">
-                        <h2>{name}</h2>
-                        <p>{address}</p>
+                  <div className="infoWrapper">
+                      <div className="boxOne">   
+                          <div className="info">{category}</div>
+                          <div className="info">{web}</div>
+                        
                       </div>
 
                       <div className="boxTwo">
-                        <SaveRestaurant restaurantToSave={this.props.restaurant} />
-
-                        <CalculateRate 
-                                  reviews={this.props.reviews}
-                                  id={this.props.id} 
-                                  />
+                          <div className="rateDiv">
+                            <CalculateRate 
+                                      reviews={this.props.reviews}
+                                      id={this.props.id} 
+                                      />
+                          </div>
+                            <div className="saveDiv">
+                            <SaveRestaurant restaurantToSave={this.props.restaurant} />
+                            </div>
+                        
                       </div>
 
                   </div>

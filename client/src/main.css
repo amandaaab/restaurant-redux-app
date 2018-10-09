@@ -2,10 +2,17 @@
     display: inline-block;
     position: relative;
     font-family: FontAwesome;
+    
+  }
+
+  .wrap-star {
+    display: flex;
+    justify-content: center;
   }
    
   .stars-outer::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: rgb(196, 196, 196);
   }
    
   .stars-inner {
@@ -174,8 +181,12 @@ p{
    
 }
 
+.nameR {
+    margin-left:35px;
+}
+
 .boxOne {
-    width: 50%;
+    width: 80%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -184,12 +195,37 @@ p{
 }
 
 .boxTwo {
-    width: 50%;
+    width: 20%;
     height: auto;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: flex-end;
-    padding: 0px 40px;
+    padding: 0px 34px;
+
+}
+
+.rateDiv, .saveDiv {
+    margin:4px;
+}
+
+.delButton {
+    width: 150px;
+    height: 25px;
+    border-style: none;
+    background: #ff4e4e;;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 3px 2px 4px#975454;
+    cursor: pointer;
+}
+.saveButton{
+    width: 150px;
+    height: 25px;
+    border-style: none;
+    background: rgb(189, 220, 255);
+    border-radius: 3px;
+    box-shadow: 3px 2px 4px#918f8f;
+    cursor: pointer;
 }
 .categoryButton {
     cursor: pointer;

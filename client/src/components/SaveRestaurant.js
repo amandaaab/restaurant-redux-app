@@ -51,10 +51,10 @@ class SaveRestaurant extends Component {
            
             if(saves.name === restaurantToSave.name){
 
-            button = <button onClick={()=> this.delete(restaurantToSave.id)}>Ta bort som sparad</button>;
+            button = <button className="delButton" onClick={()=> this.delete(restaurantToSave.id)}>Ta bort som favorit</button>;
             } 
             else if(saves.name !== restaurantToSave.name) {
-            button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
+            button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Lägg till i favorit</button>
             }
             
 
@@ -66,7 +66,6 @@ class SaveRestaurant extends Component {
     }
 
         return (
-
             <div>
                 {button}
             </div>

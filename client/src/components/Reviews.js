@@ -7,10 +7,28 @@ const Reviews = (props) => {
             <button onClick={props.display}>Se recenssioner</button>
             {props.isDisplayed ? (
                 props.reviews.filter(review => review.id === props.id)
+                
                                 .map((review, i) => 
                                         <div key={i}>
-                                            <p>{review.name} : {review.text} </p>
-                                        </div>)
+                                        <table className="table">
+                                            <thead>
+                                                <tr>
+                                                <th>Namn</th>
+                                                <th>Recension</th>
+                                                <th>Betyg</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{review.name}</td>
+                                                    <td>{review.text}</td>
+                                                    <td>{review.rating}</td>
+                                                </tr>
+                                            </tbody>
+                                       </table>
+                                        </div>
+                                          
+                                       )
             ) : null }
 
         </React.Fragment>

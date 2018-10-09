@@ -86,11 +86,13 @@ class ReviewParent extends Component {
             )
         }
 
+        
+
         const { displayList, displayForm} = this.state;
         const { id } = this.props;
 
         return (
-            <div>
+          <div>
                 <Reviews    id={id}
                             reviews={this.props.reviews}
                             isDisplayed={displayList}

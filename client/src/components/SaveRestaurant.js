@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSaveRestaurant, fetchSavedRestaurants, deleteSavedRestaurant } from '../actions/saveAction';
 
-
-
 class SaveRestaurant extends Component {
     
     constructor(props) {
@@ -13,12 +11,10 @@ class SaveRestaurant extends Component {
         this.delete = this.delete.bind(this)
     }
 
-
     componentDidMount() {
-
         this.props.dispatch(fetchSavedRestaurants());
-      
-      }
+
+    }
 
     delete = (id) => {
         console.log('att radera', id);
@@ -29,30 +25,24 @@ class SaveRestaurant extends Component {
         console.log("restaurangen jag vill spara", restaurant)
         //this.props.onSave(this.props.restaurantToSave)
         this.props.dispatch(fetchSaveRestaurant(restaurant));
-
     }
-
 
     render() {
         const { restaurantToSave, save } = this.props;
         console.log('sparade restauranger??', save)
         console.log('vill spara denna restaurang:', restaurantToSave)
        
-        let button = <button onClick={() => this.save(restaurantToSave)}>Spara</button>
+        let button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Spara</button>
 
         if(save.filter(saved => saved.id === restaurantToSave.id).length !== 0){
-            button = <button onClick={() => this.delete(restaurantToSave.id)}>Ta bort</button>
+            button = <button className="delButton" onClick={() => this.delete(restaurantToSave.id)}>Ta bort</button>
         }
 
         return (
             <div>
                 {button}
-            </div>
-           
-           
+            </div>  
         )
-      
-    
     }
 }
 
@@ -62,7 +52,5 @@ const mapStateToProps = (state) => {
         save: state.save.savedRestaurants,
     }
   }
-
-
 
 export default connect(mapStateToProps)(SaveRestaurant);

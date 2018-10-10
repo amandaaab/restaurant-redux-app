@@ -1,6 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 
 

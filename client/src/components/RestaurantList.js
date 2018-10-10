@@ -7,7 +7,6 @@
 import React, {Component} from "react";
 import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
-import CategoryNavbar from './CategoryNavbar';
 
 class RestaurantList extends Component {  
   constructor(props) {

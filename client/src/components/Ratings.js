@@ -39,9 +39,9 @@ class StarRating extends Component {
 
         var numberOfRates =  this.state.ratingSum.length;
         var total= null;
-        i= 0;   
+        var i= 0;   
 
-        for(var i in this.state.ratingSum) { 
+        for(i in this.state.ratingSum) { 
             total += this.state.ratingSum[i];
 
             this.setState({

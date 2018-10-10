@@ -12,11 +12,10 @@ export default function restaurantList(state = initialState, action) {
       return {
         ...state,
         restaurantList: action.payload.restaurants
-      };
+      }
+
+      default: return state;    
 
     }
 
-    return state;
-
- 
   }

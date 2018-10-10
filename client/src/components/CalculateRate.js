@@ -9,12 +9,16 @@ const CalculateRate = (props) => {
         //console.log("nummer arayensssss", numbersArray)
     })
 
-    var numberOfRates = numbersArray.length;
-    let ratingResult = numbersArray.reduce((a,b) => a+b,0) / numberOfRates;
-    let result = ratingResult.toFixed(1);
+    let result;
 
     //if the restaurant don't have reviews/ratings yet. 
-    numbersArray.length === 0 ? result = 0 : null
+    if(numbersArray.length === 0){
+        result = 0
+    } else { 
+            var numberOfRates = numbersArray.length;
+            let ratingResult = numbersArray.reduce((a,b) => a+b,0) / numberOfRates;
+            result = ratingResult.toFixed(1);
+    }
    // console.log(result);
 
    //console.log("ratin resultatet", ratingResult)

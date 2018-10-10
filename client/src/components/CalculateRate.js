@@ -29,7 +29,8 @@ return (
         <div className="stars-outer">
             <div className="stars-inner" style={starStyle}></div>
         </div>
-        <div className="result">({result})</div>
+        {result > 0 ? 
+        <div className="result">({result})</div> : <div className="result">(0)</div>  }
     </div>
 )
 

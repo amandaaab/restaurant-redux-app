@@ -29,7 +29,6 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  restaurantList: state.restaurantList.restaurantList,
 });
 
 export default connect(mapStateToProps)(HomePage);

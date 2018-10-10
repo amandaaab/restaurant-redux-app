@@ -94,7 +94,6 @@
     left: 0;
     white-space: nowrap;
     overflow: hidden;
-   
   }
    
   .stars-inner::before {
@@ -108,9 +107,9 @@
 
 
 .listImage {
-    width: 300px;
-    height: 200px;
     cursor: pointer;
+    width: 340px;
+    height: 220px;
 }
 
 .reviewWrap {

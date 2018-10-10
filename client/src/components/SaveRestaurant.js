@@ -18,20 +18,20 @@ class SaveRestaurant extends Component {
     }
 
     delete = (id) => {
-        console.log('att radera', id);
+        //console.log('att radera', id);
         this.props.dispatch(deleteSavedRestaurant(id));
     }
 
     save = (restaurant) => {
-        console.log("restaurangen jag vill spara", restaurant)
+        //console.log("restaurangen jag vill spara", restaurant)
         //this.props.onSave(this.props.restaurantToSave)
         this.props.dispatch(fetchSaveRestaurant(restaurant));
     }
 
     render() {
         const { restaurantToSave, save } = this.props;
-        console.log('sparade restauranger??', save)
-        console.log('vill spara denna restaurang:', restaurantToSave)
+        //console.log('sparade restauranger??', save)
+        //console.log('vill spara denna restaurang:', restaurantToSave)
 
         let button; 
 

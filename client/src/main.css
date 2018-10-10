@@ -10,8 +10,27 @@
       border: none;
       background: none;
       font-weight: bold;
+
       
   }
+
+  .create-review-button {
+      border: none;
+      background: none;
+      text-decoration: underline;
+      font-size: 16px;
+      font-weight: bolder;
+      color: rgb(58, 59, 61);
+  }
+
+ .create-review-button:hover {
+    color: rgb(98, 100, 100);
+  }
+
+  .create-review-button:active {
+    color: rgb(0, 0, 0);
+  }
+
 
   .wrap-star {
     display: flex;
@@ -43,7 +62,6 @@
   }
 
 
-
 .listImage {
     width: 300px;
     height: 200px;
@@ -51,20 +69,20 @@
 
 .reviewWrap {
     display: flex;
+    margin-top:20px;
 }
 
-.see-review, .create-review {
-
-}
 
 .see-review{
-    width: 75%;
+    width: 70%;
 }
 
 .create-review {
-    width: 25%;
-    margin-top: 30px;
-    margin: 20px;
+    width: 30%;
+   
+    padding: 0px 34px;
+    display: flex;
+    justify-content: center;
 }
 
 .label-for-rating {

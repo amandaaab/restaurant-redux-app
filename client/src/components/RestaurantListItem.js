@@ -25,13 +25,16 @@ class RestaurantListItem extends Component {
         const { id } = this.props;
       
         return (
-          <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
+        <div className="restaurantCard">
+          <div onClick={() => this.props.handleClick(id)}>
 
               <img alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
               <h3 className="inCardText">{name}</h3>
               <CalculateRate reviews={this.props.reviews}
                                   id={id}/>
-              
+          </div>
+
+          <SaveRestaurant from={'renderRestaurant'} restaurantToSave={this.props.restaurant} />
           </div>
         )
       }

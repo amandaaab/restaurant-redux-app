@@ -16,8 +16,13 @@ import {fetchReviews} from '../actions/reviewAction';
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      search: null,
+      searchedRestaurant: null
+    }
     console.log('params:', this.props.cat);
-    
+    this.updateSearch = this.updateSearch.bind(this)
+    this.finalSearch = this.finalSearch.bind(this)
   }
 
   componentDidMount() {
@@ -27,8 +32,32 @@ class RestaurantPage extends Component {
   
   }
 
+  updateSearch = (event) => {
+    this.setState({
+      search: event.target.value.substring(0,20)
+    })
+    this.finalSearch()
+  }
+
+
+
+  finalSearch = () => {
+    this.setState({ searchedRestaurant: this.props.restaurants.filter(
+      (restaurant) =>{
+         return restaurant.name.indexOf(
+           this.state.search) !== -1
+      }
+    )
+  })
+  }
+
   render() {
-    
+
+
+    // Sök funktion
+
+  //console.log("filteredad array", filteredRestaurants)
+  console.log("state searched", this.state.searchedRestaurant)
 
    const { error, loading } = this.props;
     
@@ -46,17 +75,28 @@ class RestaurantPage extends Component {
     
     return (
       <div className="restaurantPage"> 
-        <CategoryNavbar/>
+      
         <div className="wrap-restaurantpage">
-           {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
-        <RestaurantList cat={this.props.cat}
+        
+
+<div className="restaurant-page-wrap-items">
+
+
+<div className="restaurant-category-wrap">
+            <CategoryNavbar/>
+</div>
+      <div className="restaurant-wrap">
+       {this.props.cat ? <h3 className="breadCrumbs">{this.props.cat}</h3> : <h3 className="breadCrumbs">Restauranger</h3>}
+       <RestaurantList cat={this.props.cat}
                         restaurants={this.props.restaurants}
                         reviews={this.props.reviews}
+                        searchedRestaurant={this.state.searchedRestaurant}
                         />
+             </div>
+          </div>
         </div>
       </div>
-    );
-    
+    ); 
   }
 }
 

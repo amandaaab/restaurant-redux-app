@@ -26,23 +26,25 @@ class RestaurantListItem extends Component {
       
         return (
         <div className="restaurantCard">
-          <div onClick={() => this.props.handleClick(id)}>
 
-              <img alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
+              <img onClick={() => this.props.handleClick(id)} alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
 
               <div className="restaurant-card-info">
-              <div class="restaurant-card-text">
-                <h4 className="inCardText">{name}</h4>
+                 <div class="restaurant-card-text">
+                <h4 onClick={() => this.props.handleClick(id)} className="inCardText">{name}</h4>
+                
                 <h5 className="inCardCategory">{category}</h5>
               </div>
-               
+
+              <div className="restaurant-card-stars-icons">
+                
+                <div className="icon"><SaveRestaurant from={'renderRestaurant'} restaurantToSave={this.props.restaurant} /></div>
                 <CalculateRate reviews={this.props.reviews}
                                     id={id}/>
               </div>
-             
+                                    
               </div>
-              <SaveRestaurant from={'renderRestaurant'} restaurantToSave={this.props.restaurant} />
-          </div>
+            </div>
         )
       }
 

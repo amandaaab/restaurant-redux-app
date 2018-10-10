@@ -24,13 +24,12 @@ const starTotal = 5;
   }
  
 return (
-    <div> 
+    
         <div className="wrap-star">
         <div className="stars-outer">
             <div className="stars-inner" style={starStyle}></div>
         </div>
         <div className="result">({result})</div>
-    </div>
     </div>
 )
 

@@ -16,6 +16,7 @@
 
   .restaurant-card-info {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 90%;
   }
@@ -27,6 +28,34 @@
       flex-direction: column;
       align-items: center;
       
+  }
+
+  .icon {
+   cursor: pointer;
+  }
+
+  .saveHeart {
+    opacity: 0.4;
+    color: rgb(32, 92, 172);
+  }
+  .saveHeart:hover{
+    color:#e03f3f;
+    opacity: 1;
+  }
+
+  .delHeart {
+    color:#e03f3f;
+    opacity: 1;
+  }
+  .delHeart:hover{
+    opacity: 0.4;
+    color: rgb(32, 92, 172);
+  }
+
+  .restaurant-card-stars-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .create-review-button {
@@ -51,7 +80,7 @@
     display: flex;
     justify-content: center;
     width: 100px auto;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
   }
    
   .stars-outer::before {
@@ -81,6 +110,7 @@
 .listImage {
     width: 300px;
     height: 200px;
+    cursor: pointer;
 }
 
 .reviewWrap {
@@ -111,7 +141,11 @@
     width: 100%;
     bottom: 0;
     margin-bottom: -5px;
-    
+    cursor: pointer;
+}
+
+.inCardText:hover {
+    color: rgb(98, 100, 100);
 
 }
 
@@ -121,9 +155,7 @@
 }
 .restaurantCard{
     margin: 1% 1%;
-    font-family: 'Ubuntu', sans-serif;
-    cursor: pointer;
-   
+    font-family: 'Ubuntu', sans-serif;   
     box-shadow: 4px 4px 8px #cec4c4;
     color: rgb(0, 0, 0);
     /*margin:20px;*/
@@ -295,7 +327,7 @@ p{
     width: 150px;
     height: 25px;
     border-style: none;
-    background: #e03f3f;;
+    background: #e03f3f;
     border-radius: 3px;
     color: white;
     box-shadow: 3px 2px 4px#a52626;

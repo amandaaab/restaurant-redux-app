@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSaveRestaurant, fetchSavedRestaurants, deleteSavedRestaurant } from '../actions/saveAction';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 
 class SaveRestaurant extends Component {
     
@@ -32,12 +32,21 @@ class SaveRestaurant extends Component {
         const { restaurantToSave, save } = this.props;
         console.log('sparade restauranger??', save)
         console.log('vill spara denna restaurang:', restaurantToSave)
+
+        let button; 
+
+        if(this.props.from === 'renderRestaurant'){
+            button = <FaHeart className='saveHeart' onClick={() => this.save(restaurantToSave)}></FaHeart>
+                } else {
+             button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Spara</button>
+                }
+        
+
        
-        let button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Spara</button>
 
         if(save.filter(saved => saved.id === restaurantToSave.id).length !== 0){
             if(this.props.from === 'renderRestaurant'){
-            button = <FaTrashAlt onClick={() => this.delete(restaurantToSave.id)}></FaTrashAlt>
+            button = <FaHeart className="delHeart" onClick={() => this.delete(restaurantToSave.id)}></FaHeart>
                 } else {
             button = <button className="delButton" onClick={() => this.delete(restaurantToSave.id)}>Ta bort</button>
                 }

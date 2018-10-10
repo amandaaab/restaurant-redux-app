@@ -21,16 +21,24 @@ class RestaurantListItem extends Component {
   }
   
     renderRestaurant = (props) => {
-        const { name, img } = this.props.restaurant;    
+        const { name, img, category} = this.props.restaurant;    
         const { id } = this.props;
       
         return (
           <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
 
               <img alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
-              <h3 className="inCardText">{name}</h3>
-              <CalculateRate reviews={this.props.reviews}
-                                  id={id}/>
+
+              <div className="restaurant-card-info">
+              <div class="restaurant-card-text">
+                <h4 className="inCardText">{name}</h4>
+                <h5 className="inCardCategory">{category}</h5>
+              </div>
+               
+                <CalculateRate reviews={this.props.reviews}
+                                    id={id}/>
+              </div>
+             
               
           </div>
         )

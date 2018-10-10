@@ -8,9 +8,7 @@ import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 import SaveRestaurant from './SaveRestaurant';
 import ReviewParent from './ReviewParent';
-import StarRating from './Ratings';
 import CalculateRate from './CalculateRate'
-import ReviewForm from "./ReviewForm";
 
 
 class RestaurantListItem extends Component {
@@ -29,7 +27,7 @@ class RestaurantListItem extends Component {
         return (
           <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
 
-              <img className="listImage" src={require(`../images/${img}`)}/>
+              <img alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
               <h3 className="inCardText">{name}</h3>
               <CalculateRate reviews={this.props.reviews}
                                   id={id}/>
@@ -42,17 +40,17 @@ class RestaurantListItem extends Component {
       renderRestaurantDetails = () => {
           console.log('matching restaurant: ', this.props.restaurant)
         
-            const { name, address, img, id, web, category } = this.props.restaurant;
+            const { name, address, img, web, category } = this.props.restaurant;
     
           return (
              <React.Fragment>
                 <div className="restaurantCard">
                   <h2>{name}</h2>
-                  <img className="listImage" src={require(`../images/${img}`)}/>
+                  <img alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
                 </div>
 
                 <Modal open={true} onClose={this.props.handleClose}>
-                  <img className="modalImage" src={require(`../images/${img}`)} />
+                  <img alt="restaurant" className="modalImage" src={require(`../images/${img}`)} />
                     <div className="restauranten">
                     <h2 className="nameR">{name}</h2>
                     </div>
@@ -61,7 +59,8 @@ class RestaurantListItem extends Component {
                       <div className="boxOne">   
                           <div className="info">{category}</div>
                           <div className="info">{web}</div>
-                        
+                          <div className="info">{address}</div>
+
                       </div>
 
                       <div className="boxTwo">

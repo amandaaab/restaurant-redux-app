@@ -11,10 +11,7 @@ import { fetchSavedRestaurants } from "../actions/saveAction";
 import { fetchReviews } from "../actions/reviewAction";
 
 
-class SavePage extends Component {
-  constructor(props){
-    super(props)
-  }
+class SavePage extends Component { 
 
   componentDidMount() {
 
@@ -27,7 +24,7 @@ class SavePage extends Component {
     return (
       <div className="savePage">
         <h3>Sparade restauranger</h3>
-        {(this.props.save).length == 0 ? <p>Du har inga sparade restauranger</p> : null} 
+        {(this.props.save).length === 0 ? <p>Du har inga sparade restauranger</p> : null} 
         <SavedRestaurants reviews={this.props.reviews} restaurants={this.props.save} />
       </div>
     );

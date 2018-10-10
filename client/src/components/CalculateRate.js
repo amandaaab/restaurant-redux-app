@@ -1,13 +1,11 @@
 import React from 'react';
-import StarRatingComponent from 'react-star-rating-component';
-import { FaStar } from 'react-icons/fa';
-
 
 const CalculateRate = (props) => {
 
     let numbersArray = [];
     props.reviews.filter(review => review.id === props.id).map((review, i) => { 
         numbersArray.push(review.rating)
+        return numbersArray;
         //console.log("nummer arayensssss", numbersArray)
     })
 

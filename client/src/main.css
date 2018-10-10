@@ -14,6 +14,21 @@
       
   }
 
+  .restaurant-card-info {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .restaurant-card-text {
+      margin-right: 40px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      
+  }
+
   .create-review-button {
       border: none;
       background: none;
@@ -36,6 +51,7 @@
     display: flex;
     justify-content: center;
     width: 100px auto;
+    margin-top: 20px;
   }
    
   .stars-outer::before {
@@ -94,10 +110,17 @@
 .inCardText {
     width: 100%;
     bottom: 0;
+    margin-bottom: -5px;
+    
 
 }
+
+.inCardCategory{
+    font-style: italic;
+    font-size: 12px;
+}
 .restaurantCard{
-    margin: 0% 1%;
+    margin: 1% 1%;
     font-family: 'Ubuntu', sans-serif;
     cursor: pointer;
    
@@ -148,7 +171,7 @@
 
 .restaurantListWrap{
    
-    max-width: 75%; 
+    max-width: 77%; 
     justify-content: center;
     height: auto;
     flex-direction: column;

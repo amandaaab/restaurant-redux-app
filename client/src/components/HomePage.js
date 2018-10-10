@@ -4,24 +4,49 @@
  *
  */
 
-import React, {Component} from "react";
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import { connect } from 'react-redux';
 import Carousel from 'nuka-carousel';
+import { fetchRestaurants } from '../actions/restaurantAction';
+import { fetchReviews } from '../actions/reviewAction';
+import RestaurantList from './RestaurantList'
 
 
 class HomePage extends Component {
 
+  componentDidMount() {
+
+    this.props.dispatch(fetchRestaurants())
+    this.props.dispatch(fetchReviews()) 
+  }
+
     
   render() {
+    console.log('reviews',this.props.reviews);
+
+
+
     return (
       <div className="homePage">
-         <br></br><br></br>
-          <h1>Välkommen!</h1>
-      <Carousel autoplay={true} autoplayInterval={2000}>
-      <img alt="restaurang" src={require("../images/rest1.jpg")}/>
-      <img alt="restaurang" src={require("../images/foodcorner.jpeg")}/>
-      <img alt="restaurang" src={require("../images/rest2.jpg")}/>
-      </Carousel>
+      <h3>Sök bland Sveriges bästa restauranger</h3>
+        <div className="wrapTop">
+          <div className="carousel">
+            <Carousel width='600px' autoplay={true} withoutControls={true} autoplayInterval={3000}>
+            {this.props.restaurants.map((restaurant, i) => <img className='carouselImg' key={i} alt="restaurang" src={require(`../images/${restaurant.img}`)}/>)}
+            </Carousel>
+          </div>
+          <div className="textBox">
+                <p>Sök bland flera tusen restauranger ...</p>
+                <button>Kom igång</button>
+          </div>
+        </div>
+
+        <div className="wrapBottom">
+        <h4>Bäst omdömen</h4>
+        <RestaurantList restaurants={this.props.restaurants}
+                        reviews={this.props.reviews}
+                        />
+        </div>
       </div>
     );
     
@@ -29,6 +54,8 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  restaurants: state.restaurants.restaurants,
+  reviews: state.reviews.reviews
 });
 
 export default connect(mapStateToProps)(HomePage);

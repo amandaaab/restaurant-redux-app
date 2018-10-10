@@ -419,3 +419,48 @@ p{
     flex-direction: column;
     align-items: center;
 }
+
+.homePage {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.carouselImg {
+   height: 440px;
+
+}
+
+.textBox {
+margin-right: 5%;
+width: 600px;
+height: 440px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column
+
+}
+
+.carousel {
+    margin-left: 5%;
+}
+
+.wrapTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 5%;
+}
+
+.wrapBottom {
+    display: flex;
+    flex-direction: column;;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+}

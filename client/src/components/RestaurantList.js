@@ -35,18 +35,34 @@ class RestaurantList extends Component {
       })
     }
 
+    eachRestaurant = (restaurant, filterRestaurant) => {
+      console.log('valt id!!',this.state.selected)
 
-    eachRestaurant = (restaurant) => {
+      if(this.props.filterRestaurant){
+        return(
+        <RestaurantListItem 
       
-      <RestaurantListItem
-                      restaurantP={this.state.selectedRest}
-                      cat={this.props.cat}
+        key={restaurant.id}
+        id={restaurant.id}
+        selectedId={this.state.selected}
+        handleClick={this.onOpenModal}
+        handleClose={this.onClose}
+        reviews={this.props.reviews}
+        filterRestaurant={this.props.filterRestaurant}
+/> )
+      }else{
+      return (
+      <RestaurantListItem 
                       restaurant={restaurant}
                       key={restaurant.id}
                       id={restaurant.id}
+                      selectedId={this.state.selected}
+                      handleClick={this.onOpen}
                       handleClose={this.onCloseModal}
                       reviews={this.props.reviews}
-      /> 
+                      filterRestaurant={this.props.filterRestaurant}
+      /> )
+    }
   }
 
       render() {
@@ -69,12 +85,12 @@ class RestaurantList extends Component {
           return (
             <div className="restaurantListWrap">
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
-              {this.props.cat === undefined || this.state.selectedCat === undefined ? 
+              {this.props.cat === undefined ? 
               this.props.restaurants.map((restaurant) => 
               this.eachRestaurant(restaurant)) 
 
             : this.props.restaurants.filter(restaurant =>
-              restaurant.category === this.props.cat /*&& restaurant.name === this.props.restaurantP*/).map((restaurant) =>
+              restaurant.category === this.props.cat).map((restaurant) =>
                this.eachRestaurant(restaurant)) }
               }
                

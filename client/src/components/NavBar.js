@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 
 
-const Navbar = (props) => {
+const Navbar = () => {
     return (
     <div className="navbar">
     <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>

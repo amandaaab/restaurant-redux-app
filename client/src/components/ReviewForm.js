@@ -16,7 +16,7 @@ class ReviewForm extends Component {
 
     save = (e) => {
         e.preventDefault()
-        console.log('recenssion:' , this._newText.value, this._newName.value, this.state.ratingNumber);  
+            console.log('recenssion:' , this._newText.value, this._newName.value, this.state.ratingNumber);  
         this.props.saveThis(this._newName.value, this._newText.value, this.props.id, this.state.ratingNumber)
         console.log('recensionID', this.props.id, this.state.ratingNumber)
     }
@@ -34,25 +34,25 @@ class ReviewForm extends Component {
 
 
     <div>
-        {this.props.isDisplayed ? null : (
+        {this.props.isDisplayed ? null: (
                <button className="create-review-button" onClick={this.props.display}>Ge ditt omdöme</button>
         )}
 
         {this.props.isDisplayed ? (
-            <form onSubmit={this.save}>
-                <div class="form-group">
-                    <label className="label-for-rating">Ge ditt betyg</label>
-                    <StarRating sendSum={this.showSum}/>
+        <form onSubmit={this.save}>
+        <div class="form-group">
+        <label className="label-for-rating">Ge ditt betyg</label>
+        <StarRating sendSum={this.showSum}/>
 
-                    <label for="namn">Ditt namn</label>
-                    <input  className="label-for-name" name="namn" type="text" class="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
+        <label for="namn">Ditt namn</label>
+        <input  className="label-for-name" name="namn" type="text" class="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
+        <label for="text">Ditt omdöme</label>
+            <textarea name="text" class="form-control" placeholder="Berätta om din upplevelse..."
+                    ref={(input) => this._newText = input}/>
 
-                    <label for="text">Ditt omdöme</label>
-                    <textarea name="text" class="form-control" placeholder="Berätta om din upplevelse..."
-                              ref={(input) => this._newText = input}/>
-                              
-                    <button class="btn btn-primary" id="save">Spara</button>
-                </div>
+
+            <button class="btn btn-primary" id="save">Spara</button>
+            </div>
             </form> ) : null
         }
     </div>

@@ -39,6 +39,8 @@ class RestaurantPage extends Component {
     this.finalSearch()
   }
 
+
+
   finalSearch = () => {
     this.setState({ searchedRestaurant: this.props.restaurants.filter(
       (restaurant) =>{
@@ -50,29 +52,30 @@ class RestaurantPage extends Component {
   }
 
   render() {
+
+
     // Sök funktion
 
   //console.log("filteredad array", filteredRestaurants)
   console.log("state searched", this.state.searchedRestaurant)
-  
 
    const { error, loading } = this.props;
-  
-      if (error) {
-          return (
-             <div>Error! {error.message}</div>
-          );
+    
+    if (error) {
+            return <div>Error! {error.message}</div>;
         }
 
-      if (loading) {
-        return (
-            <div className="wrap-spinner">      
-            </div>
-        )
+    if (loading) {
+       return (
+         <div className="wrap-spinner">
+          
+        </div>
+       )
       }
     
     return (
       <div className="restaurantPage"> 
+      
         <div className="wrap-restaurantpage">
         
 

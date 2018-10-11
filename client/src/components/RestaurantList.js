@@ -4,9 +4,11 @@
  *
  */
 
-import React, {Component} from "react";
+import React, { Component } from "react";
 import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
+import { FaThumbsDown } from "react-icons/fa";
+import RestaurantItem from './RestaurantItem';
 
 class RestaurantList extends Component {  
   constructor(props) {
@@ -14,26 +16,29 @@ class RestaurantList extends Component {
       this.state = {
           selected: -1,
           selectedCat: 'alla'
+
       }
 
-      this.onOpenModal = this.onOpenModal.bind(this)
+      this.onOpen = this.onOpen.bind(this)
       this.eachRestaurant = this.eachRestaurant.bind(this)
-      this.onCloseModal = this.onCloseModal.bind(this)
+      this.onClose = this.onClose.bind(this)
     }
 
-    onOpenModal = (id) => {
+    onOpen = (id) => {
       this.setState({
         selected: id
       })
     }
 
-    onCloseModal = () => {
+    onClose = () => {
       this.setState({
         selected: -1
       })
     }
 
     eachRestaurant = (restaurant, filterRestaurant) => {
+      console.log('valt id!!',this.state.selected)
+
       if(this.props.filterRestaurant){
         return(
         <RestaurantListItem 
@@ -42,7 +47,7 @@ class RestaurantList extends Component {
         id={restaurant.id}
         selectedId={this.state.selected}
         handleClick={this.onOpenModal}
-        handleClose={this.onCloseModal}
+        handleClose={this.onClose}
         reviews={this.props.reviews}
         filterRestaurant={this.props.filterRestaurant}
 /> )
@@ -53,16 +58,26 @@ class RestaurantList extends Component {
                       key={restaurant.id}
                       id={restaurant.id}
                       selectedId={this.state.selected}
-                      handleClick={this.onOpenModal}
+                      handleClick={this.onOpen}
                       handleClose={this.onCloseModal}
                       reviews={this.props.reviews}
                       filterRestaurant={this.props.filterRestaurant}
       /> )
-
     }
   }
 
       render() {
+
+        if(this.state.selected !== -1){
+          return <RestaurantItem 
+                        restaurant={this.props.restaurants}
+                        //id={restaurant.id}
+                        selectedId={this.state.selected}
+                        handleClick={this.onOpen}
+                        handleClose={this.onClose}
+                        reviews={this.props.reviews}
+                        filterRestaurant={this.props.filterRestaurant} />
+        }
 
         if(this.props.filterRestaurant){
           return (
@@ -71,7 +86,6 @@ class RestaurantList extends Component {
           )
         }else{
           return (
-            <React.Fragment>
             <div className="restaurantListWrap">
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
               {this.props.cat === undefined ? 
@@ -84,7 +98,6 @@ class RestaurantList extends Component {
               }
                
             </div>
-            </React.Fragment>
                 )
         }}}
   

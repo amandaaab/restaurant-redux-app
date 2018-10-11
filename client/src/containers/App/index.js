@@ -46,10 +46,6 @@ export default function App() {
            <RestaurantPage cat={match.params.cat}/>
         )}/>
 
-         <Route path="/restauranger/:cat/:restaurant" exact strict render={({match})=>(
-           <RestaurantPage cat={match.params.restaurant}/>
-        )}/>
-
         <Route path="/favoriter" exact strict render={
         ()=> {
 

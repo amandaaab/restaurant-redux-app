@@ -44,13 +44,12 @@ export default function App() {
       }/>
 
       <Route path="/restauranger/:cat" exact strict render={({match})=>(
-           <RestaurantPage cat={match.params.cat}/>
+          <RestaurantPage cat={match.params.cat}/>
         )}/>
 
         <Route path="/favoriter" exact strict render={
         ()=> {
-
-          return (<SavePage />);
+              return (<SavePage />);
         }
       }/>
 

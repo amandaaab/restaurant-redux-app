@@ -1,8 +1,3 @@
-/**
- *
- * RestaurantListItem
- *
- */
 import React, {Component} from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';

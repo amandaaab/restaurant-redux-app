@@ -1,9 +1,3 @@
-/**
- *
- * RestaurantList
- *
- */
-
 import React, { Component } from "react";
 import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
@@ -16,7 +10,6 @@ class RestaurantList extends Component {
       this.state = {
           selected: -1,
           selectedCat: 'alla'
-
       }
 
       this.onOpen = this.onOpen.bind(this)
@@ -41,28 +34,27 @@ class RestaurantList extends Component {
 
       if(this.props.filterRestaurant){
         return(
-        <RestaurantListItem 
-      
-        key={restaurant.id}
-        id={restaurant.id}
-        selectedId={this.state.selected}
-        handleClick={this.onOpenModal}
-        handleClose={this.onClose}
-        reviews={this.props.reviews}
-        filterRestaurant={this.props.filterRestaurant}
-/> )
-      }else{
-      return (
-      <RestaurantListItem 
-                      restaurant={restaurant}
-                      key={restaurant.id}
-                      id={restaurant.id}
-                      selectedId={this.state.selected}
-                      handleClick={this.onOpen}
-                      handleClose={this.onCloseModal}
-                      reviews={this.props.reviews}
-                      filterRestaurant={this.props.filterRestaurant}
-      /> )
+          <RestaurantListItem key={restaurant.id}
+                              id={restaurant.id}
+                              selectedId={this.state.selected}
+                              handleClick={this.onOpenModal}
+                              handleClose={this.onClose}
+                              reviews={this.props.reviews}
+                              filterRestaurant={this.props.filterRestaurant}
+          /> )
+
+      } else {
+
+         return (
+            <RestaurantListItem restaurant={restaurant}
+                                key={restaurant.id}
+                                id={restaurant.id}
+                                selectedId={this.state.selected}
+                                handleClick={this.onOpen}
+                                handleClose={this.onCloseModal}
+                                reviews={this.props.reviews}
+                                filterRestaurant={this.props.filterRestaurant}
+            /> )
     }
   }
 
@@ -79,32 +71,27 @@ class RestaurantList extends Component {
                         filterRestaurant={this.props.filterRestaurant} />
         }
 
-        if(this.props.filterRestaurant){
-          return (
-           this.props.searchedRestaurant.map(filterRestaurant => 
-              this.eachRestaurant(filterRestaurant))
-          )
-        }else{
+  
           return (
             <div className="restaurantListWrap">
-              {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
-              {this.props.cat === undefined ? 
-              this.props.restaurants.map((restaurant) => 
-              this.eachRestaurant(restaurant)) 
+                {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
+                {this.props.cat === undefined ? 
+                    this.props.restaurants.map((restaurant) => 
+                    this.eachRestaurant(restaurant)) 
 
-            : this.props.restaurants.filter(restaurant =>
-              restaurant.category === this.props.cat).map((restaurant) =>
-               this.eachRestaurant(restaurant)) }
-              }
+                  : this.props.restaurants.filter(restaurant =>
+                    restaurant.category === this.props.cat).map((restaurant) =>
+                    this.eachRestaurant(restaurant))}
+                }
                
             </div>
-                )
-        }}}
+          )
+    }
+}
   
 
 
   RestaurantList.propTypes = {
-
     restaurants: PropTypes.array.isRequired
   };
 

@@ -39,8 +39,6 @@ class RestaurantPage extends Component {
     this.finalSearch()
   }
 
-
-
   finalSearch = () => {
     this.setState({ searchedRestaurant: this.props.restaurants.filter(
       (restaurant) =>{
@@ -52,47 +50,50 @@ class RestaurantPage extends Component {
   }
 
   render() {
-
-
     // Sök funktion
 
   //console.log("filteredad array", filteredRestaurants)
   console.log("state searched", this.state.searchedRestaurant)
+  
 
    const { error, loading } = this.props;
-    
-    if (error) {
-            return <div>Error! {error.message}</div>;
+  
+      if (error) {
+          return (
+             <div>Error! {error.message}</div>
+          );
         }
 
-    if (loading) {
-       return (
-         <div className="wrap-spinner">
-          
-        </div>
-       )
+      if (loading) {
+        return (
+            <div className="wrap-spinner">      
+            </div>
+        )
       }
     
     return (
       <div className="restaurantPage"> 
-      
         <div className="wrap-restaurantpage">
-        
+          <div className="restaurant-page-wrap-items">
 
-<div className="restaurant-page-wrap-items">
+            <div className="restaurant-category-wrap">
+              <CategoryNavbar />
+            </div>
 
+            <div className="restaurant-wrap">
+              {this.props.cat ? 
+                <h3 className="breadCrumbs">{this.props.cat}</h3> 
+              : <h3 className="breadCrumbs">Restauranger</h3>}
+              
+                  <RestaurantList cat={this.props.cat}
+                                    restaurant={this.props.restaurant}
+                                    restaurants={this.props.restaurants}
+                                    reviews={this.props.reviews}
+                                    searchedRestaurant={this.state.searchedRestaurant}
+                              
+                              />                       
+            </div>
 
-<div className="restaurant-category-wrap">
-            <CategoryNavbar/>
-</div>
-      <div className="restaurant-wrap">
-       {this.props.cat ? <h3 className="breadCrumbs">{this.props.cat}</h3> : <h3 className="breadCrumbs">Restauranger</h3>}
-       <RestaurantList cat={this.props.cat}
-                        restaurants={this.props.restaurants}
-                        reviews={this.props.reviews}
-                        searchedRestaurant={this.state.searchedRestaurant}
-                        />
-             </div>
           </div>
         </div>
       </div>

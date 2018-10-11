@@ -88,6 +88,7 @@ class RestaurantPage extends Component {
       <div className="restaurant-wrap">
        {this.props.cat ? <h3 className="breadCrumbs">{this.props.cat}</h3> : <h3 className="breadCrumbs">Restauranger</h3>}
        <RestaurantList cat={this.props.cat}
+                        restaurantP={this.props.restaurantP}
                         restaurants={this.props.restaurants}
                         reviews={this.props.reviews}
                         searchedRestaurant={this.state.searchedRestaurant}

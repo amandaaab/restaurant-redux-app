@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import SaveRestaurant from './SaveRestaurant';
 import ReviewParent from './ReviewParent';
 import CalculateRate from './CalculateRate'
+import { NavLink } from 'react-router-dom';
+
 
 
 class RestaurantListItem extends Component {
@@ -21,16 +23,17 @@ class RestaurantListItem extends Component {
   
     renderRestaurant = (props) => {
         const { name, img, category} = this.props.restaurant;    
-        const { id } = this.props;
+        const { id, cat, restaurantP } = this.props;
+        console.log(cat, restaurantP)
       
         return (
         <div className="restaurantCard">
 
-              <img onClick={() => this.props.handleClick(id)} alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
+              <NavLink to={`/restauranger/${category}/${name}`} exact><img /*onClick={() => this.props.handleClick(id)}*/ alt="restaurant" className="listImage" src={require(`../images/${img}`)}/></NavLink>
 
               <div className="restaurant-card-info">
                  <div class="restaurant-card-text">
-                <h4 onClick={() => this.props.handleClick(id)} className="inCardText">{name}</h4>
+                 <NavLink to={`/restauranger/${category}/${name}`} exact><h4 /*onClick={() => this.props.handleClick(id)} */className="inCardText">{name}</h4></NavLink>
                 
                 <h5 className="inCardCategory">{category}</h5>
               </div>
@@ -45,14 +48,17 @@ class RestaurantListItem extends Component {
               </div>
             </div>
         )
-      
+      }
 
-    }
+
+      
 
       render() {
         return this.renderRestaurant()
+
+      }
     }
-  }
+
     RestaurantListItem.propTypes = {
       restaurant: PropTypes.shape({
         name: PropTypes.string,

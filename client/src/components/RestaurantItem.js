@@ -7,13 +7,16 @@ import CalculateRate from './CalculateRate'
 const RestaurantItem = (props) => {
         console.log('matching restaurant: ', props.restaurant)
         console.log('matching ID', props.selectedId)
+        console.log('RESTAURANT PARAM', props.restaurantP)
       
           //const { name, address, img, web, category } = props.restaurant;
 
         
         return (
+            //props.restaurant.filter(restaurant => restaurant.name === props.restaurantP).map(restaurant) =>
 
-            props.restaurant.filter(restaurant => restaurant.id === props.selectedId).map((restaurant) => 
+
+            props.restaurant.filter(restaurant => restaurant.name === props.restaurantP).map((restaurant) => 
             
                 <div>
                     <button onClick={props.handleClose}>Stäng</button>

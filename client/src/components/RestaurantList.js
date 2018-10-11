@@ -13,71 +13,52 @@ import RestaurantItem from './RestaurantItem';
 class RestaurantList extends Component {  
   constructor(props) {
     super(props)
-      this.state = {
-          selected: -1,
-          selectedCat: 'alla'
 
+      this.state = {
+          selectedCat: 'alla',
+          selectedRest: this.props.restaurantP
       }
 
-      this.onOpen = this.onOpen.bind(this)
+
+
       this.eachRestaurant = this.eachRestaurant.bind(this)
       this.onClose = this.onClose.bind(this)
     }
 
-    onOpen = (id) => {
-      this.setState({
-        selected: id
-      })
-    }
+    
 
     onClose = () => {
+      //console.log('URL!!', window.location.href)
       this.setState({
-        selected: -1
+        selectedRest: undefined,
+        selectedCat: undefined
       })
     }
 
-    eachRestaurant = (restaurant, filterRestaurant) => {
-      console.log('valt id!!',this.state.selected)
 
-      if(this.props.filterRestaurant){
-        return(
-        <RestaurantListItem 
+    eachRestaurant = (restaurant) => {
       
-        key={restaurant.id}
-        id={restaurant.id}
-        selectedId={this.state.selected}
-        handleClick={this.onOpenModal}
-        handleClose={this.onClose}
-        reviews={this.props.reviews}
-        filterRestaurant={this.props.filterRestaurant}
-/> )
-      }else{
-      return (
-      <RestaurantListItem 
+      <RestaurantListItem
+                      restaurantP={this.state.selectedRest}
+                      cat={this.props.cat}
                       restaurant={restaurant}
                       key={restaurant.id}
                       id={restaurant.id}
-                      selectedId={this.state.selected}
-                      handleClick={this.onOpen}
                       handleClose={this.onCloseModal}
                       reviews={this.props.reviews}
-                      filterRestaurant={this.props.filterRestaurant}
-      /> )
-    }
+      /> 
   }
 
       render() {
-
-        if(this.state.selected !== -1){
+        if(this.state.selectedRest !== undefined){
           return <RestaurantItem 
                         restaurant={this.props.restaurants}
+                        restaurantP={this.state.selectedRest}
                         //id={restaurant.id}
-                        selectedId={this.state.selected}
-                        handleClick={this.onOpen}
                         handleClose={this.onClose}
                         reviews={this.props.reviews}
-                        filterRestaurant={this.props.filterRestaurant} />
-        }
+                        />
+          }else {
 
         if(this.props.filterRestaurant){
           return (
@@ -88,18 +69,19 @@ class RestaurantList extends Component {
           return (
             <div className="restaurantListWrap">
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
-              {this.props.cat === undefined ? 
+              {this.props.cat === undefined || this.state.selectedCat === undefined ? 
               this.props.restaurants.map((restaurant) => 
               this.eachRestaurant(restaurant)) 
 
             : this.props.restaurants.filter(restaurant =>
-              restaurant.category === this.props.cat).map((restaurant) =>
+              restaurant.category === this.props.cat /*&& restaurant.name === this.props.restaurantP*/).map((restaurant) =>
                this.eachRestaurant(restaurant)) }
               }
                
             </div>
                 )
         }}}
+      }
   
 
 

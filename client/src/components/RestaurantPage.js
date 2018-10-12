@@ -29,7 +29,7 @@ class RestaurantPage extends Component {
 
   render() {
 
-   const { error, loading } = this.props;
+   /*const { error, loading } = this.props;
     
     if (error) {
             return <div>Error! {error.message}</div>;
@@ -41,7 +41,7 @@ class RestaurantPage extends Component {
           
         </div>
        )
-      }
+      }*/
     
     return (
 
@@ -76,8 +76,8 @@ class RestaurantPage extends Component {
 const mapStateToProps = (state) => {
   return {
       restaurants: state.restaurants.restaurants,
-      loading: state.restaurants.loading,
-      error: state.restaurants.error,
+      //loading: state.restaurants.loading,
+      //error: state.restaurants.error,
       reviews: state.reviews.reviews
   }
 }

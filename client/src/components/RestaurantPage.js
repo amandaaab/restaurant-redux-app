@@ -44,28 +44,31 @@ class RestaurantPage extends Component {
       }
     
     return (
+
       <div className="restaurantPage"> 
-      
-        <div className="wrap-restaurantpage">
-        
+          <div className="wrap-restaurantpage">
+              <div className="restaurant-page-wrap-items">
 
-<div className="restaurant-page-wrap-items">
+                  <div className="restaurant-category-wrap">
+                      <CategoryNavbar/>
+                  </div>
+
+                  <div className="restaurant-wrap">
+                     {this.props.cat ? 
+                          <h3 className="breadCrumbs">{this.props.cat}</h3> 
+                        : <h3 className="breadCrumbs">Restauranger</h3>}
+                        
+                          <RestaurantList cat={this.props.cat}
+                                            restaurantP={this.props.restaurantP}
+                                            restaurants={this.props.restaurants}
+                                            reviews={this.props.reviews}
+                                            />
 
 
-<div className="restaurant-category-wrap">
-            <CategoryNavbar/>
-</div>
-      <div className="restaurant-wrap">
-       {this.props.cat ? <h3 className="breadCrumbs">{this.props.cat}</h3> : <h3 className="breadCrumbs">Restauranger</h3>}
-       <RestaurantList cat={this.props.cat}
-                        restaurantP={this.props.restaurantP}
-                        restaurants={this.props.restaurants}
-                        reviews={this.props.reviews}
-                        />
-             </div>
-          </div>
-        </div>
-      </div>
+                    </div>
+                </div>
+           </div>
+       </div>
     ); 
   }
 }

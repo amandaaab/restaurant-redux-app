@@ -29,6 +29,7 @@ class RestaurantList extends Component {
 
     onClose = () => {
       window.history.back();
+
       //console.log('URL!!', window.location.href)
       /*this.setState({
         selectedRest: undefined,

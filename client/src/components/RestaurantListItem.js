@@ -13,17 +13,10 @@ import { NavLink } from 'react-router-dom';
 
 
 
-class RestaurantListItem extends Component {
-
-  constructor(props){
-    super(props) 
+const RestaurantListItem = (props) => {
   
-    this.renderRestaurant = this.renderRestaurant.bind(this)
-  }
-  
-    renderRestaurant = (props) => {
-        const { name, img, category} = this.props.restaurant;    
-        const { id, cat, restaurantP } = this.props;
+        const { name, img, category} = props.restaurant;    
+        const { id, cat, restaurantP } = props;
         console.log(cat, restaurantP)
       
         return (
@@ -40,23 +33,15 @@ class RestaurantListItem extends Component {
 
               <div className="restaurant-card-stars-icons">
                 
-                <div className="icon"><SaveRestaurant from={'renderRestaurant'} restaurantToSave={this.props.restaurant} /></div>
-                <CalculateRate reviews={this.props.reviews}
+                <div className="icon"><SaveRestaurant from={'renderRestaurant'} restaurantToSave={props.restaurant} /></div>
+                <CalculateRate reviews={props.reviews}
                                     id={id}/>
               </div>
                                     
               </div>
             </div>
         )
-      }
 
-
-      
-
-      render() {
-        return this.renderRestaurant()
-
-      }
     }
 
     RestaurantListItem.propTypes = {

@@ -38,7 +38,6 @@ export default function App() {
 
       <Route path="/restauranger" exact strict render={
         ()=> {
-
           return (<RestaurantPage />);
         }
       }/>

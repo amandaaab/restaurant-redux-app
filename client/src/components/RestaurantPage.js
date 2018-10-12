@@ -16,13 +16,7 @@ import {fetchReviews} from '../actions/reviewAction';
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      search: null,
-      searchedRestaurant: null
-    }
     console.log('params:', this.props.cat);
-    this.updateSearch = this.updateSearch.bind(this)
-    this.finalSearch = this.finalSearch.bind(this)
   }
 
   componentDidMount() {
@@ -32,32 +26,8 @@ class RestaurantPage extends Component {
   
   }
 
-  updateSearch = (event) => {
-    this.setState({
-      search: event.target.value.substring(0,20)
-    })
-    this.finalSearch()
-  }
-
-
-
-  finalSearch = () => {
-    this.setState({ searchedRestaurant: this.props.restaurants.filter(
-      (restaurant) =>{
-         return restaurant.name.indexOf(
-           this.state.search) !== -1
-      }
-    )
-  })
-  }
 
   render() {
-
-
-    // Sök funktion
-
-  //console.log("filteredad array", filteredRestaurants)
-  console.log("state searched", this.state.searchedRestaurant)
 
    const { error, loading } = this.props;
     
@@ -91,7 +61,6 @@ class RestaurantPage extends Component {
                         restaurantP={this.props.restaurantP}
                         restaurants={this.props.restaurants}
                         reviews={this.props.reviews}
-                        searchedRestaurant={this.state.searchedRestaurant}
                         />
              </div>
           </div>

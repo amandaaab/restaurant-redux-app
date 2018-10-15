@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import ReactLoading from 'react-loading';
+import ReactLoading from 'react-loading';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
 import PropTypes from 'prop-types';
@@ -62,7 +62,12 @@ class ReviewParent extends Component {
 
         else if (loading) {
             return (
-                <div className="wrap-spinner">loading...</div>
+                
+                <div className="reviewWrap">
+                    <div className="spinner">
+                          <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
+                    </div>
+                </div>
             )
         } else {
 

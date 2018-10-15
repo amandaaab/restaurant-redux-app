@@ -488,3 +488,11 @@ flex-direction: column
     height: 50%;
     align-items: center;
 }
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    height: 30%;
+    width: 100%;
+}

@@ -52,7 +52,7 @@ app.post('/reviews', function(req, res, next){
 const SaveRestaurant = require('./models/save')
 
 app.get('/saveRestaurant', function(req, res, next){
-    SaveRestaurant.find({})
+    SaveRestaurant.find()
         .exec(function(err, saveRestaurant){
         if(err) return next(err);
         res.json(saveRestaurant)

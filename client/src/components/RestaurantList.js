@@ -14,17 +14,11 @@ class RestaurantList extends Component {
   constructor(props) {
     super(props)
 
-      this.state = {
-          selectedCat: 'alla',
-          selectedRest: this.props.restaurantP
-      }
-
-
-
       this.eachRestaurant = this.eachRestaurant.bind(this)
       this.onClose = this.onClose.bind(this)
     }
 
+    
     
 
     onClose = () => {
@@ -38,25 +32,22 @@ class RestaurantList extends Component {
     }
 
     eachRestaurant = (restaurant) => {
+      console.log(restaurant.name, 'is rendered')
       return(
       <RestaurantListItem 
                       restaurant={restaurant}
                       key={restaurant.id}
                       id={restaurant.id}
-                      selectedId={this.state.selected}
-                      handleClick={this.onOpen}
-                      handleClose={this.onCloseModal}
                       reviews={this.props.reviews}
-                      filterRestaurant={this.props.filterRestaurant}
       /> )
   
   }
 
       render() {
-        if(this.state.selectedRest !== undefined){
+        if(this.props.restaurantP !== undefined){
           return <RestaurantItem 
                         restaurant={this.props.restaurants}
-                        restaurantP={this.state.selectedRest}
+                        restaurantP={this.props.restaurantP}
                         //id={restaurant.id}
                         handleClose={this.onClose}
                         reviews={this.props.reviews}

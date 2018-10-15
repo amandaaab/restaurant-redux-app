@@ -14,10 +14,10 @@ import { NavLink } from 'react-router-dom';
 
 
 const RestaurantListItem = (props) => {
-  
+
         const { name, img, category} = props.restaurant;    
         const { id, cat, restaurantP } = props;
-        console.log(cat, restaurantP)
+        //console.log(cat, restaurantP)
       
         return (
         <div className="restaurantCard">

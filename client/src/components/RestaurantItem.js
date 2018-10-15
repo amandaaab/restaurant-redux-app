@@ -2,28 +2,30 @@ import React from 'react';
 import SaveRestaurant from './SaveRestaurant';
 import ReviewParent from './ReviewParent';
 import CalculateRate from './CalculateRate';
+import { FaArrowLeft } from 'react-icons/fa';
 
 
 const RestaurantItem = (props) => {
       
-          const { name, address, web, category } = props.restaurant;
 
         return (
             // Filter restaurant where one restaurant name matches the clicked restaurant name, restaurantP is sent from router
             props.restaurant.filter(restaurant => restaurant.name === props.restaurantP).map((restaurant) => 
-            
+
+                <div className="restaurantItem">
                 <div>
-                    <button onClick={props.handleClose}>Stäng</button>
+                    <div className="closeBtn" onClick={props.handleClose}><FaArrowLeft className="faArrowLeft"/></div>
+                    </div>
+                    <div>
                     <img alt="restaurant" className="modalImage" src={require(`../images/${restaurant.img}`)} />
-                      <div className="restauranten">
-                      <h2 className="nameR">{name}</h2>
-                      </div>
     
-                    <div className="infoWrapper">
-                        <div className="boxOne">   
-                            <div className="info">{category}</div>
-                            <div className="info">{web}</div>
-                            <div className="info">{address}</div>
+                    <div className="infoWrapper">  
+                  
+                        <div className="boxOne">
+                        <h3 className="nameR">{restaurant.name}</h3>
+                            <div className="info">{restaurant.category}</div>
+                            <div className="info">{restaurant.web}</div>
+                            <div className="info">{restaurant.address}</div>
                         </div>
 
                         <div className="boxTwo">
@@ -45,6 +47,8 @@ const RestaurantItem = (props) => {
                       <ReviewParent id={restaurant.id}/>              
                             
                   </div>
+                  </div>
+                  
                 
               )
 

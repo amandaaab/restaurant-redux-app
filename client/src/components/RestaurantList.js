@@ -33,7 +33,6 @@ class RestaurantList extends Component {
     }
 
     eachRestaurant = (restaurant) => {
-      console.log(restaurant.name, 'is rendered')
       return(
       <RestaurantListItem 
                       restaurant={restaurant}
@@ -58,16 +57,18 @@ class RestaurantList extends Component {
   
           return (
             <div className="restaurantListWrap">
+
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
               {this.props.cat === undefined ? 
-              this.props.restaurants.map((restaurant) => 
+              this.props.restaurants.map((restaurant) =>
+
               this.eachRestaurant(restaurant)) 
 
             : this.props.restaurants.filter(restaurant =>
               restaurant.category === this.props.cat).map((restaurant) =>
-               this.eachRestaurant(restaurant)) 
-              }
-               
+              
+              this.eachRestaurant(restaurant)) 
+              }    
             </div>
                 )
         }}}

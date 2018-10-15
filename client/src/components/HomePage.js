@@ -17,14 +17,11 @@ class HomePage extends Component {
   componentDidMount() {
 
     this.props.dispatch(fetchRestaurants())
-    this.props.dispatch(fetchReviews()) 
+    //this.props.dispatch(fetchReviews()) 
   }
 
     
   render() {
-    console.log('reviews',this.props.reviews);
-
-
 
     return (
       <div className="homePage">

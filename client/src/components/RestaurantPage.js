@@ -22,7 +22,7 @@ class RestaurantPage extends Component {
   componentDidMount() {
 
     this.props.dispatch(fetchRestaurants());
-    this.props.dispatch(fetchReviews());
+    //this.props.dispatch(fetchReviews());
   
   }
 
@@ -54,9 +54,6 @@ class RestaurantPage extends Component {
                   </div>
 
                   <div className="restaurant-wrap">
-                     {this.props.cat ? 
-                          <h3 className="breadCrumbs">{this.props.cat}</h3> 
-                        : <h3 className="breadCrumbs">Restauranger</h3>}
                         
                           <RestaurantList cat={this.props.cat}
                                             restaurantP={this.props.restaurantP}

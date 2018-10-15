@@ -55,7 +55,6 @@ class SaveRestaurant extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        //save: state.save.save,
         save: state.save.savedRestaurants,
     }
   }

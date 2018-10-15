@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import ReactLoading from 'react-loading';
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchReviews, fetchCreateReview } from '../actions/reviewAction';
 
@@ -42,29 +43,8 @@ class ReviewParent extends Component {
     }
 
     saveReview = (newName, newText, newId, newRating) => {
-        
-        /*let newReview = {
-            name: newName,
-            text: newText,
-            id: newId
-        }*/
 
-           // this.props.onCreate(newName, newText, newId)
            this.props.dispatch(fetchCreateReview(newName, newText, newId, newRating));
-            console.log('NYTTTT NAMN', newName, newRating)
-        
-    
-        //this.props.onCreate(newReview)
-        /*this.setState(prevState => ({
-                reviews: [
-                    ...prevState.reviews,
-                    {
-                        name: newName,
-                        text : newText,
-                        id : newId 
-                    }
-                ]
-            }))*/
     
             this.setState({
               displayForm : !this.state.displayForm,
@@ -80,40 +60,46 @@ class ReviewParent extends Component {
             return <div>Error! {error.message}</div>;
         }
 
-        if (loading) {
+        else if (loading) {
             return (
-                <div className="wrap-spinner"></div>
+                <div className="wrap-spinner">loading...</div>
             )
-        }
+        } else {
 
-        
+            const { displayList, displayForm} = this.state;
+            const { id, reviews } = this.props;
 
-        const { displayList, displayForm} = this.state;
-        const { id } = this.props;
+            return (
+            <div className="reviewWrap">
 
-        return (
-          <div className="reviewWrap">
-
-          <div className="see-review">
-                <Reviews    id={id}
-                            reviews={this.props.reviews}
-                            isDisplayed={displayList}
-                            display={this.displayReviews} 
-                            />
-</div>
-<div className="create-review">
-                <ReviewForm 
-                            id={id}
-                            isDisplayed={displayForm} 
-                            display={this.displayForm} 
-                            reviews={this.props.reviews} 
-                            saveThis={this.saveReview}
-                            />
-                            </div>
+            <div className="see-review">
+                    <Reviews    id={id}
+                                reviews={reviews}
+                                isDisplayed={displayList}
+                                display={this.displayReviews} 
+                               />
             </div>
-        )
+            <div className="create-review">
+                        <ReviewForm 
+                                id={id}
+                                isDisplayed={displayForm} 
+                                display={this.displayForm} 
+                                reviews={reviews} 
+                                saveThis={this.saveReview}
+                                />
+                                </div>
+                </div>
+            )
+
+        }
     }
 }
+
+ReviewParent.propTypes = {
+
+    id: PropTypes.number.isRequired
+  };
+
 
 const mapStateToProps = (state) => {
     return {

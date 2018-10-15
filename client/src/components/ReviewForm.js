@@ -43,7 +43,7 @@ class ReviewForm extends Component {
         <StarRating sendSum={this.showSum}/>
 
         <label>Ditt namn</label>
-        <input  className="label-for-name" name="namn" type="text" className="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
+        <input name="namn" type="text" className="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
         <label>Ditt omdöme</label>
             <textarea name="text" className="form-control" placeholder="Berätta om din upplevelse..."
                     ref={(input) => this._newText = input}/>

@@ -14,6 +14,7 @@ class RestaurantList extends Component {
   constructor(props) {
     super(props)
 
+
       this.eachRestaurant = this.eachRestaurant.bind(this)
       this.onClose = this.onClose.bind(this)
     }
@@ -64,7 +65,7 @@ class RestaurantList extends Component {
 
             : this.props.restaurants.filter(restaurant =>
               restaurant.category === this.props.cat).map((restaurant) =>
-               this.eachRestaurant(restaurant)) }
+               this.eachRestaurant(restaurant)) 
               }
                
             </div>

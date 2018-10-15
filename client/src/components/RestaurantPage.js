@@ -1,11 +1,5 @@
-/**
- *
- * RestaurantPage
- *
- */
-
 import React, {Component} from "react";
-//import ReactLoading from 'react-loading';
+import ReactLoading from 'react-loading';
 import RestaurantList from './RestaurantList';
 import CategoryNavbar from './CategoryNavbar';
 import { connect } from 'react-redux';
@@ -20,7 +14,6 @@ class RestaurantPage extends Component {
   }
 
   componentDidMount() {
-
     this.props.dispatch(fetchRestaurants());
     this.props.dispatch(fetchReviews());
   
@@ -28,22 +21,23 @@ class RestaurantPage extends Component {
 
 
   render() {
-
-   /*const { error, loading } = this.props;
+    // Render error, loading, or resturantpage
+    const { error, loading } = this.props;
     
     if (error) {
             return <div>Error! {error.message}</div>;
         }
 
-    if (loading) {
+    else if (loading) {
        return (
          <div className="wrap-spinner">
-          
+          <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
         </div>
        )
-      }*/
+      }
     
-    return (
+   else {
+     return (
 
       <div className="restaurantPage"> 
           <div className="wrap-restaurantpage">
@@ -69,12 +63,13 @@ class RestaurantPage extends Component {
     ); 
   }
 }
+}
 
 const mapStateToProps = (state) => {
   return {
       restaurants: state.restaurants.restaurants,
-      //loading: state.restaurants.loading,
-      //error: state.restaurants.error,
+      loading: state.restaurants.loading,
+      error: state.restaurants.error,
       reviews: state.reviews.reviews
   }
 }

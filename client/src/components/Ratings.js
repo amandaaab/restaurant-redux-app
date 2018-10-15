@@ -14,7 +14,6 @@ class StarRating extends Component {
     }
     
     onStarClick(nextValue) {
-        console.log(this.props.id);
     this.props.sendSum(nextValue);
 
       this.setState({
@@ -36,7 +35,6 @@ class StarRating extends Component {
     }
 
     calculate = (counted) => {
-
         var numberOfRates =  this.state.ratingSum.length;
         var total= null;
         var i= 0;   
@@ -50,7 +48,7 @@ class StarRating extends Component {
                 this.trimSum()
             })         
          }
-        console.log("totalen", this.state.totalSum)
+       // console.log("totalen", this.state.totalSum)
 
        // return this.state.totalSum;    
     //  console.log(this.state.ratingSum.indexOf(this.state.ratingSum))
@@ -71,7 +69,6 @@ class StarRating extends Component {
       
       return (                
         <div>
-          {/*<h2>Rating from state: {this.state.totalSum}</h2>*/}
           <div style={{fontSize: 30}}>
           <StarRatingComponent
             name="rate1" 

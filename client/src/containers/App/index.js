@@ -18,7 +18,6 @@ import RestaurantPage from '../../components/RestaurantPage';
 import SavePage from '../../components/SavePage';
 import NavBar from '../../components/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
-import RestaurantItem from '../../components/RestaurantItem';
 
 
 export default function App() {

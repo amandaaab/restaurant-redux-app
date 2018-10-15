@@ -14,36 +14,29 @@ class SaveRestaurant extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchSavedRestaurants());
-
     }
 
     delete = (id) => {
-        //console.log('att radera', id);
         this.props.dispatch(deleteSavedRestaurant(id));
     }
 
     save = (restaurant) => {
-        //console.log("restaurangen jag vill spara", restaurant)
-        //this.props.onSave(this.props.restaurantToSave)
         this.props.dispatch(fetchSaveRestaurant(restaurant));
     }
 
     render() {
         const { restaurantToSave, save } = this.props;
-        //console.log('sparade restauranger??', save)
-        //console.log('vill spara denna restaurang:', restaurantToSave)
-
+        
         let button; 
 
+        // Save restaurants
         if(this.props.from === 'renderRestaurant'){
             button = <FaHeart className='saveHeart' onClick={() => this.save(restaurantToSave)}></FaHeart>
                 } else {
              button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Spara</button>
-                }
-        
+            }
 
-       
-
+        // Delete restaurants
         if(save.filter(saved => saved.id === restaurantToSave.id).length !== 0){
             if(this.props.from === 'renderRestaurant'){
             button = <FaHeart className="delHeart" onClick={() => this.delete(restaurantToSave.id)}></FaHeart>

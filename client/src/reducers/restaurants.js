@@ -30,9 +30,6 @@ export default function restaurants(state = initialState, action) {
         loading: false
       };
 
-
-
-
       case FETCH_RESTAURANTS_FAILURE:
       // All done: set loading "false".
       // Also, replace the items with the ones from the server

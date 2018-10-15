@@ -13,7 +13,7 @@ class SaveRestaurant extends Component {
     }
 
     componentDidMount() {
-        //this.props.dispatch(fetchSavedRestaurants());
+        this.props.dispatch(fetchSavedRestaurants());
 
     }
 

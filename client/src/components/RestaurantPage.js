@@ -22,7 +22,7 @@ class RestaurantPage extends Component {
   componentDidMount() {
 
     this.props.dispatch(fetchRestaurants());
-    //this.props.dispatch(fetchReviews());
+    this.props.dispatch(fetchReviews());
   
   }
 

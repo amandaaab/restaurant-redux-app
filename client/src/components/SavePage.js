@@ -16,7 +16,7 @@ class SavePage extends Component {
   componentDidMount() {
 
     this.props.dispatch(fetchSavedRestaurants());
-    //this.props.dispatch(fetchReviews()); //need to fetch othervise favorites dont have any reviews/ratings
+    this.props.dispatch(fetchReviews()); //need to fetch othervise favorites dont have any reviews/ratings
   
   }
    

@@ -114,11 +114,13 @@
 
 .reviewWrap {
     display: flex;
-    margin-top:20px;
+    margin-top:30px;
 }
 
 .see-review{
-    width: 70%;
+    width: 75%;
+    margin-top: 30px;
+    
 }
 
 .create-review {
@@ -216,9 +218,10 @@
 }
 
 .modalImage {
-    width: 100%;
-    height: 100%;
-    margin:auto;
+    width: 700px;
+    max-height: 420px;
+   
+   
 }
 
 .styles_modal__gNwvD{
@@ -291,6 +294,7 @@ p{
     display: flex;
     justify-content: flex-end;
     height: 200px auto;
+    width: 100%;
    
 }
 
@@ -299,12 +303,12 @@ p{
 }
 
 .boxOne {
-    width: 70%;
-    height: auto;
+    width: 100%;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 0px 40px;
+  
+ 
 }
 
 .boxTwo {
@@ -407,22 +411,38 @@ p{
     display: flex;
     justify-content: center;
     width: 90%;
-    margin-top: 80px;
+    margin-top: 130px;
 }
 
 .restaurant-wrap {
-    width: 85%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
-.restaurant-category-wrap {
-    width: 15%;
+.restaurantItem {
     display: flex;
     justify-content: center;
-    margin-top:8%;
+
+}
+
+.faArrowLeft {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.faArrowLeft:hover {
+    color: rgb(112, 112, 112);
+}
+
+.closeBtn {
+    width: 80px;
+    position: relative;
+    top:0;
+}
+.restaurant-category-wrap {
+    margin-top:2%;
 }
 
 

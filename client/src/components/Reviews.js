@@ -17,9 +17,9 @@ const Reviews = (props) => {
                 </thead>
                {props.reviews.filter(review => review.id === props.id).slice(0,3)
 
-                                .map((review) => 
+                                .map((review, i) => 
                                         
-                                            <tbody>
+                                            <tbody key={i}>
                                                 <tr>
                                                     <td>{review.name}</td>
                                                     <td>{review.text}</td>

@@ -19,7 +19,7 @@ const RestaurantListItem = (props) => {
               </NavLink>
 
               <div className="restaurant-card-info">
-                  <div class="restaurant-card-text">
+                  <div className="restaurant-card-text">
                     <NavLink to={`/restauranger/${category}/${name}`} exact>
                       <h4 className="inCardText">{name}</h4>
                     </NavLink>

@@ -1,22 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 const Reviews = (props) => {
+    console.log('SE PROPs', props.reviews);
     return(
         <React.Fragment>
             
-<h3>Omdömen</h3>
-<table className="table">
-<thead>
-    <tr>
-    <th>Namn</th>
-    <th>Recension</th>
-    <th>Betyg</th>
-    </tr>
-</thead>
+                <h3>Omdömen</h3>
+                <table className="table">
+                <thead>
+                    <tr>
+                    <th>Namn</th>
+                    <th>Recension</th>
+                    <th>Betyg</th>
+                    </tr>
+                </thead>
                {props.reviews.filter(review => review.id === props.id).slice(0,3)
 
-                                .map((review, i) => 
+                                .map((review) => 
                                         
                                             <tbody>
                                                 <tr>
@@ -66,5 +68,15 @@ const Reviews = (props) => {
 
     
 }
+
+
+Reviews.propTypes = {
+
+    id: PropTypes.number.isRequired,
+    isDisplayed: PropTypes.bool,
+    display: PropTypes.func,
+    reviews: PropTypes.arrayOf(Object)
+  };
+
 
 export default Reviews;

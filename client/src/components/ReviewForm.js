@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import StarRating from './Ratings';
 
 
@@ -16,9 +17,7 @@ class ReviewForm extends Component {
 
     save = (e) => {
         e.preventDefault()
-            console.log('recenssion:' , this._newText.value, this._newName.value, this.state.ratingNumber);  
         this.props.saveThis(this._newName.value, this._newText.value, this.props.id, this.state.ratingNumber)
-        console.log('recensionID', this.props.id, this.state.ratingNumber)
     }
 
     showSum = (ratingNumber) => {
@@ -26,7 +25,6 @@ class ReviewForm extends Component {
         this.setState({
             ratingNumber: ratingNumber
         })
-        //console.log('totalsumman i form', ratingNumber)
     }
 
     render(){
@@ -44,9 +42,9 @@ class ReviewForm extends Component {
         <label className="label-for-rating">Ge ditt betyg</label>
         <StarRating sendSum={this.showSum}/>
 
-        <label for="namn">Ditt namn</label>
+        <label>Ditt namn</label>
         <input  className="label-for-name" name="namn" type="text" class="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
-        <label for="text">Ditt omdöme</label>
+        <label>Ditt omdöme</label>
             <textarea name="text" class="form-control" placeholder="Berätta om din upplevelse..."
                     ref={(input) => this._newText = input}/>
 
@@ -59,5 +57,14 @@ class ReviewForm extends Component {
     )
 }
 }
+
+ReviewForm.propTypes = {
+    id: PropTypes.number.isRequired,
+    isDisplayed: PropTypes.bool,
+    display: PropTypes.func,
+    reviews: PropTypes.arrayOf(Object),
+    saveThis: PropTypes.func
+
+  };
 
 export default ReviewForm;

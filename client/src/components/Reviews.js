@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 
 const Reviews = (props) => {
-    console.log('SE PROPs', props.reviews);
     return(
         <React.Fragment>
             

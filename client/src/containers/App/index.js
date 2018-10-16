@@ -16,7 +16,7 @@ import { Route } from 'react-router-dom';
 import HomePage from '../HomePage';
 import RestaurantPage from '../RestaurantPage';
 import SavePage from '../SavePage';
-import NavBar from '../../components/NavBar';
+import NavBar from '../../components/common/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
 //import { connect } from 'http2';??
 import { connect } from 'react-redux';

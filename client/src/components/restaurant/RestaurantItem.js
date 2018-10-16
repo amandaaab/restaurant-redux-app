@@ -1,7 +1,7 @@
 import React from 'react';
-import SaveRestaurant from '../containers/SaveRestaurant';
-import ReviewParent from '../containers/ReviewParent';
-import CalculateRate from './CalculateRate';
+import SaveRestaurant from '../../containers/SaveRestaurant';
+import ReviewParent from '../../containers/ReviewParent';
+import CalculateRate from '../CalculateRate';
 import { FaArrowLeft } from 'react-icons/fa';
 
 
@@ -17,7 +17,7 @@ const RestaurantItem = (props) => {
                     <div className="closeBtn" onClick={props.handleClose}><FaArrowLeft className="faArrowLeft"/></div>
                     </div>
                     <div>
-                    <img alt="restaurant" className="modalImage" src={require(`../images/${restaurant.img}`)} />
+                    <img alt="restaurant" className="modalImage" src={require(`../../images/${restaurant.img}`)} />
     
                     <div className="infoWrapper">  
                   

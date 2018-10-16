@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import SaveRestaurant from '../containers/SaveRestaurant';
-import CalculateRate from './CalculateRate'
+import SaveRestaurant from '../../containers/SaveRestaurant';
+import CalculateRate from '../CalculateRate'
 import { NavLink } from 'react-router-dom';
 
 
@@ -15,7 +15,7 @@ const RestaurantListItem = (props) => {
         <div className="restaurantCard">
 
               <NavLink to={`/restauranger/${category}/${name}`} exact>
-                 <img alt="restaurant" className="listImage" src={require(`../images/${img}`)}/>
+                 <img alt="restaurant" className="listImage" src={require(`../../images/${img}`)}/>
               </NavLink>
 
               <div className="restaurant-card-info">

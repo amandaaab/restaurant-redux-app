@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import StarRating from './Ratings';
+import StarRating from '../Ratings';
 
 
 class ReviewForm extends Component {

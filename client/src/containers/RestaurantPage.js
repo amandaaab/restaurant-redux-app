@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import ReactLoading from 'react-loading';
-import RestaurantList from '../components/RestaurantList';
-import CategoryNavbar from '../components/CategoryNavbar';
+import RestaurantList from '../components/restaurant/RestaurantList';
+import CategoryNavbar from '../components/common/CategoryNavbar';
 import { connect } from 'react-redux';
 import {fetchRestaurants} from '../actions/restaurantAction';
 import {fetchReviews} from '../actions/reviewAction';
-import Search from '../components/Search';
+import Search from '../components/common/Search';
 
 
 class RestaurantPage extends Component {
@@ -17,7 +17,7 @@ class RestaurantPage extends Component {
     }
 
     this.onSearch = this.onSearch.bind(this)
-  }
+  } 
 
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactLoading from 'react-loading';
-import Reviews from './Reviews'
-import ReviewForm from './ReviewForm'
+import Reviews from '../components/Reviews'
+import ReviewForm from '../components/ReviewForm'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchReviews, fetchCreateReview } from '../actions/reviewAction';
@@ -22,11 +22,11 @@ class ReviewParent extends Component {
         this.saveReview = this.saveReview.bind(this)
     }
 
-    componentDidMount() {
+   /*componentDidMount() {
 
         this.props.dispatch(fetchReviews());
       
-      }
+      }*/
 
     displayReviews = () => {
         

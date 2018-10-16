@@ -11,16 +11,31 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import HomePage from '../../components/HomePage';
-import RestaurantPage from '../../components/RestaurantPage';
-import SavePage from '../../components/SavePage';
+import HomePage from '../HomePage';
+import RestaurantPage from '../RestaurantPage';
+import SavePage from '../SavePage';
 import NavBar from '../../components/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
+//import { connect } from 'http2';??
+import { connect } from 'react-redux';
+import { fetchReviews, fetchCreateReview } from '../../actions/reviewAction';
+import { fetchRestaurants } from '../../actions/restaurantAction';
+import { fetchSavedRestaurants } from '../../actions/saveAction';
 
 
-export default function App() {
+class App extends Component {
+
+
+  componentDidMount(){
+    this.props.dispatch(fetchReviews());
+    this.props.dispatch(fetchRestaurants());
+    this.props.dispatch(fetchSavedRestaurants());
+
+  }
+
+  render(){
   return (
 
     //Add switch to router 
@@ -64,4 +79,16 @@ export default function App() {
   </Router>
     
   );
+      }
 }
+
+const mapStateToProps = (state) => {
+  return {
+      reviews: state.reviews.reviews,
+      loading: state.reviews.loading,
+      error: state.reviews.error
+  }
+}
+
+
+export default connect(mapStateToProps)(App);

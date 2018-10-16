@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import SaveRestaurant from './SaveRestaurant';
+import SaveRestaurant from '../containers/SaveRestaurant';
 import CalculateRate from './CalculateRate'
 import { NavLink } from 'react-router-dom';
 
@@ -37,13 +37,13 @@ const RestaurantListItem = (props) => {
         )
     }
 
-    RestaurantListItem.propTypes = {
+  /*  RestaurantListItem.propTypes = {
       restaurant: PropTypes.shape({
         name: PropTypes.string,
         img: PropTypes.string,
         id: PropTypes.number, 
         category: PropTypes.string,
       }),
-};
+};*/
 
 export default RestaurantListItem;

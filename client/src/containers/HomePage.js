@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import Carousel from 'nuka-carousel';
 import { fetchRestaurants } from '../actions/restaurantAction';
 import { fetchReviews } from '../actions/reviewAction';
-import RestaurantList from './RestaurantList'
+import RestaurantList from '../components/RestaurantList'
 
 
 class HomePage extends Component {
 
   componentDidMount() {
 
-    this.props.dispatch(fetchRestaurants())
-    this.props.dispatch(fetchReviews()) 
+    //this.props.dispatch(fetchRestaurants())
+    //this.props.dispatch(fetchReviews()) 
   }
 
     

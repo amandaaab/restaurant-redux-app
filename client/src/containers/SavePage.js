@@ -6,7 +6,7 @@
 
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import SavedRestaurants from './SavedRestaurants'
+import SavedRestaurants from '../components/SavedRestaurants'
 import { fetchSavedRestaurants } from "../actions/saveAction";
 import { fetchReviews } from "../actions/reviewAction";
 
@@ -15,8 +15,8 @@ class SavePage extends Component {
 
   componentDidMount() {
 
-    this.props.dispatch(fetchSavedRestaurants());
-    this.props.dispatch(fetchReviews()); //need to fetch othervise favorites dont have any reviews/ratings
+    //this.props.dispatch(fetchSavedRestaurants());
+    //this.props.dispatch(fetchReviews()); //need to fetch othervise favorites dont have any reviews/ratings
   
   }
    

@@ -1,6 +1,6 @@
 import React from 'react';
-import SaveRestaurant from './SaveRestaurant';
-import ReviewParent from './ReviewParent';
+import SaveRestaurant from '../containers/SaveRestaurant';
+import ReviewParent from '../containers/ReviewParent';
 import CalculateRate from './CalculateRate';
 import { FaArrowLeft } from 'react-icons/fa';
 

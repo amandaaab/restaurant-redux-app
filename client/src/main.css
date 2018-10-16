@@ -15,7 +15,6 @@
   }
 
 
-
   .saveHeart {
     opacity: 0.4;
     color: rgb(32, 92, 172);
@@ -36,22 +35,7 @@
 
 
 
-  .create-review-button {
-      border: none;
-      background: none;
-      text-decoration: underline;
-      font-size: 16px;
-      font-weight: bolder;
-      color: rgb(58, 59, 61);
-  }
-
- .create-review-button:hover {
-    color: rgb(98, 100, 100);
-  }
-
-  .create-review-button:active {
-    color: rgb(0, 0, 0);
-  }
+  
 
 
   .wrap-star {
@@ -152,13 +136,6 @@
 }
 
 
-
-.modalImage {
-    width: 700px;
-    max-height: 420px;
-   
-   
-}
 
 .restaurantName {
     font-size: 10px;

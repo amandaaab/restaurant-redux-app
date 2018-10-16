@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StarRating from '../Ratings';
+import styled from 'styled-components';
 
 
 class ReviewForm extends Component {
@@ -32,7 +33,7 @@ class ReviewForm extends Component {
         
     <div>
         {this.props.isDisplayed ? null: (
-               <button className="create-review-button" onClick={this.props.display}>Ge ditt omdöme</button>
+               <CreateReviewButton onClick={this.props.display}>Ge ditt omdöme</CreateReviewButton>
         )}
 
         {this.props.isDisplayed ? (
@@ -48,7 +49,7 @@ class ReviewForm extends Component {
                     ref={(input) => this._newText = input}/>
 
 
-            <button className="btn btn-primary" id="save">Spara</button>
+            <button className="btn btn-primary">Skicka</button>
             </div>
             </form> ) : null
         }
@@ -67,3 +68,19 @@ ReviewForm.propTypes = {
   };
 
 export default ReviewForm;
+
+
+const CreateReviewButton = styled.button`
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgb(58, 59, 61);
+    &:hover {
+        color: rgb(98, 100, 100);
+    }
+    &:active {
+        color: rgb(0, 0, 0);
+    }
+`

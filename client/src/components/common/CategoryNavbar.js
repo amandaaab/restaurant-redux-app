@@ -30,5 +30,5 @@ const ChooseCategory = styled.p`
     margin: auto;  
     margin-top:20px;
     font-weight: bold;
-    color: rgb(19, 18, 18);
+    color: black;
 `

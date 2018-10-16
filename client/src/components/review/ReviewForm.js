@@ -29,8 +29,7 @@ class ReviewForm extends Component {
 
     render(){
     return(
-
-
+        
     <div>
         {this.props.isDisplayed ? null: (
                <button className="create-review-button" onClick={this.props.display}>Ge ditt omdöme</button>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 
 class Search extends Component {
@@ -6,35 +6,19 @@ class Search extends Component {
         super(props);
 
         this.state = {
-            search: '',
-           array: []
-           
+            search: ''
         }
 
         this.onChange = this.onChange.bind(this)
-        //this.renderSearchedRestaurant = this.renderSearchedRestaurant.bind(this)
         
     }
 
     onChange = (e) => {
-        
-        e.preventDefault();
-        console.log("search input", e.target.value, "restauranger i search", this.props.restaurants)
         this.setState({
             search: e.target.value,
         }, () => this.props.onSearch(this.state.search))
     }
 
-/*
-    renderSearchedRestaurant = () => {
-        const {search} = this.state
-        const {array} = this.state
-      //  const array = []
-        this.props.restaurants.map(restaurant =>{
-            if(search !== '' && )
-        })
-    }
-*/
     render(){
 
         return (

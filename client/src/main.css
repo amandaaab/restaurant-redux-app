@@ -100,11 +100,11 @@
     content: "\f005 \f005 \f005 \f005 \f005";
     color: #f8ce0b;
   }
-/*
+
   .table {
       width: 90%;
   }
-*/
+
 
 .listImage {
     cursor: pointer;
@@ -224,41 +224,31 @@
    
 }
 
-.styles_modal__gNwvD{
-    font-family: 'Ubuntu', sans-serif;
-    width: 80%;
-    height: 100% auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .restaurantName {
     font-size: 10px;
 }
-/*
+
 .navbar {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    background-color: rgb(255, 255, 255);
-    background-color: rgb(175, 58, 54);
+    /*background-color: rgb(255, 255, 255);
+    /*background-color: rgb(175, 58, 54);*/
     top: 0;
     left: 0;
     right: 0;
     height: 80px;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.315);
-    box-shadow: 1px 1px 5px rgb(182, 102, 49);
+    /*box-shadow: 1px 1px 5px rgb(182, 102, 49);*/
    
     
-}*/
+}
 
-/* Keep navLinks here */
 .navItem {
     color: rgb(63, 63, 63);
-  /*  color: white; */
+  /*  color: white;*/
     font-size: 18px;
     font-weight: bolder;
     margin: 2%;
@@ -269,6 +259,7 @@
 .selected {
     text-decoration: underline;
     color: rgb(46, 46, 46);
+    color: white;
 }
 
 #app {
@@ -291,45 +282,10 @@ p{
     font-size: 15px;
 }
 
-.infoWrapper{
-    display: flex;
-    justify-content: flex-end;
-    height: 200px auto;
-    width: 100%;
-   
-}
-
-.nameR {
-    margin-left:35px;
-}
-
-.boxOne {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-  
- 
-}
-
-.boxTwo {
-    width: 30%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0px 34px;
-
-}
-
-.rateDiv, .saveDiv {
-    margin:4px;
-}
 
 
-.rateDiv {
-    width: 150px;
-}
+
+
 
 .delButton {
     width: 150px;
@@ -375,6 +331,7 @@ p{
 }
 
 
+
 .restaurant-page-wrap-items {
     display: flex;
     justify-content: center;
@@ -389,11 +346,6 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.restaurantItem {
-    display: flex;
-    justify-content: center;
-
-}
 
 .faArrowLeft {
     font-size: 22px;
@@ -404,11 +356,7 @@ p{
     color: rgb(112, 112, 112);
 }
 
-.closeBtn {
-    width: 80px;
-    position: relative;
-    top:0;
-}
+
 .restaurant-category-wrap {
     margin-top:2%;
 }

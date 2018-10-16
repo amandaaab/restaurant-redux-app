@@ -5,18 +5,32 @@ import CategoryNavbar from './CategoryNavbar';
 import { connect } from 'react-redux';
 import {fetchRestaurants} from '../actions/restaurantAction';
 import {fetchReviews} from '../actions/reviewAction';
+import Search from './Search';
 
 
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
     console.log('params:', this.props.cat);
+    this.state = {
+      filteredArray: null
+    }
+
+    this.onSearch = this.onSearch.bind(this)
   }
 
   componentDidMount() {
     this.props.dispatch(fetchRestaurants());
     this.props.dispatch(fetchReviews());
   
+  }
+
+  onSearch = (search) => {
+    this.setState({
+      filteredArray: this.props.restaurants.filter(restaurant => {
+        return restaurant.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+      })
+    })
   }
 
 
@@ -48,12 +62,24 @@ class RestaurantPage extends Component {
                   </div>
 
                   <div className="restaurant-wrap">
+                  <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/>
                         
+                        {this.state.filteredArray ? 
                           <RestaurantList cat={this.props.cat}
+                                            restaurantP={this.props.restaurantP}
+                                            restaurants={this.state.filteredArray}
+                                            reviews={this.props.reviews}
+                                            />
+
+                                            :
+
+                                             <RestaurantList cat={this.props.cat}
                                             restaurantP={this.props.restaurantP}
                                             restaurants={this.props.restaurants}
                                             reviews={this.props.reviews}
                                             />
+
+                        }
 
 
                     </div>

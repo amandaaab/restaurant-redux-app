@@ -249,16 +249,17 @@
     right: 0;
     height: 80px;
     z-index: 1;
-    background-color: rgb(255, 142, 67);
-    box-shadow: 1px 1px 5px rgb(182, 102, 49);
+    background-color: rgba(255, 255, 255, 0.315);
+    /*box-shadow: 1px 1px 5px rgb(182, 102, 49);*/
    
     
 }
 
 .navItem {
     color: rgb(63, 63, 63);
-    color: white;
+  /*  color: white;*/
     font-size: 18px;
+    font-weight: bolder;
     margin: 2%;
     cursor: pointer;
     text-decoration: none;
@@ -465,17 +466,21 @@ p{
 }
 
 .homePage {
-    margin-top: 90px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('./images/wall.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 700px;
 }
 
-
+/*
 .carouselImg {
    height: 440px;
 
-}
+}*/
 
 .textBox {
 margin-right: 5%;
@@ -499,6 +504,7 @@ flex-direction: column
     width: 100%;
     height: 50%;
     margin-bottom: 5%;
+    margin-top: 100px;
 }
 
 .wrapBottom {

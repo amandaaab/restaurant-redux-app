@@ -19,13 +19,12 @@ class HomePage extends Component {
 
     return (
       <div className="homePage">
-      <h3>Sök bland Sveriges bästa restauranger</h3>
         <div className="wrapTop">
-          <div className="carousel">
+         {/* <div className="carousel">
             <Carousel width='600px' autoplay={true} withoutControls={true} autoplayInterval={3000}>
             {this.props.restaurants.map((restaurant, i) => <img className='carouselImg' key={i} alt="restaurang" src={require(`../images/${restaurant.img}`)}/>)}
             </Carousel>
-          </div>
+    </div>*/}
           <div className="textBox">
                 <p>Sök bland flera tusen restauranger ...</p>
                 <button>Kom igång</button>

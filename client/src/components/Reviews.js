@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 
+// Component
 const Reviews = (props) => {
     return(
         <React.Fragment>
             
                 <h3>Omdömen</h3>
-                <table className="table">
+                <Table className='table'>
                 <thead>
                     <tr>
                     <th>Namn</th>
@@ -48,7 +50,7 @@ const Reviews = (props) => {
 
 
             ) : null}
-                                       </table>
+                                       </Table>
 
 
                     {props.isDisplayed ? (
@@ -79,3 +81,8 @@ Reviews.propTypes = {
 
 
 export default Reviews;
+
+// Style
+const Table = styled.table`
+    width: 90%;
+`

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Carousel from 'nuka-carousel';
 import { fetchRestaurants } from '../actions/restaurantAction';
 import { fetchReviews } from '../actions/reviewAction';
-import RestaurantList from '../components/RestaurantList'
+import RestaurantList from '../components/restaurant/RestaurantList';
 
 
 class HomePage extends Component {

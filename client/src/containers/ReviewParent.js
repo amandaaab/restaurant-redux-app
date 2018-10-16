@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactLoading from 'react-loading';
-import Reviews from '../components/Reviews'
-import ReviewForm from '../components/ReviewForm'
+import Reviews from '../components/review/Reviews'
+import ReviewForm from '../components/review/ReviewForm'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchReviews, fetchCreateReview } from '../actions/reviewAction';

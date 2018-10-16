@@ -374,39 +374,6 @@ p{
     text-decoration: underline;
 }
 
-.categoryList{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /*background-color: rgb(247, 124, 76);*/
-    margin:20px;
-
-   /* position: absolute;
-    left: 10px;
-    top:200px;
-    z-index: 0;*/
-
-
-}
-
-.choose-category{
- 
-    margin: auto;  
-    margin-top:20px;
-    font-weight: bold;
-    color: rgb(19, 18, 18);
-}
-.categoryDiv{
-    /*display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 300px;
-
-    position: absolute;
-    left: 10px;
-    top:200px;
-    z-index: 0;*/
-}
 
 .restaurant-page-wrap-items {
     display: flex;

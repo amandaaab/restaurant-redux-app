@@ -52,13 +52,12 @@ class RestaurantPage extends Component {
       <div className="restaurantPage"> 
           <div className="wrap-restaurantpage">
               <div className="restaurant-page-wrap-items">
-
                   <div className="restaurant-category-wrap">
                       <CategoryNavbar/>
                   </div>
 
                   <div className="restaurant-wrap">
-                  <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/>
+                    <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/>
                         
                         {this.state.filteredArray ? 
                           <RestaurantList cat={this.props.cat}
@@ -79,6 +78,7 @@ class RestaurantPage extends Component {
 
 
                     </div>
+                    
                 </div>
            </div>
        </div>

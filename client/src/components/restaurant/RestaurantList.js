@@ -2,6 +2,19 @@ import React, { Component } from "react";
 import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
 import RestaurantItem from './RestaurantItem';
+import styled from 'styled-components';
+
+
+const Container = styled.div `
+    display: flex;
+    justify-content: center;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    flex-flow: row wrap;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(255, 255, 255);
+`
 
 class RestaurantList extends Component {  
   constructor(props) {
@@ -38,8 +51,7 @@ class RestaurantList extends Component {
 
   
           return (
-                <div className="restaurantListWrap">
-
+                <Container>
                   {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant() depending on we want all the restaurants or the ones matching a category.*/}
                   {this.props.cat === undefined ? 
                   this.props.restaurants.map((restaurant) =>
@@ -51,7 +63,7 @@ class RestaurantList extends Component {
                   
                   this.eachRestaurant(restaurant)) 
                   }    
-                </div>
+                </Container>
                 )
         }}}
       

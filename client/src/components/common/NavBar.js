@@ -21,10 +21,10 @@ background-color: rgba(255, 255, 255, 0.315);
 const Navbar = () => {
     return (
     <NavBar>
-    <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
-    <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>Restauranger</NavLink> 
-    <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>Favoriter</NavLink>     
-</NavBar>
+        <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
+        <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>Restauranger</NavLink> 
+        <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>Favoriter</NavLink>     
+    </NavBar>
     )
 }
 

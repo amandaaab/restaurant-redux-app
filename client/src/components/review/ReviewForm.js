@@ -29,33 +29,33 @@ class ReviewForm extends Component {
     }
 
     render(){
-    return(
-        
-    <div>
-        {this.props.isDisplayed ? null: (
-               <CreateReviewButton onClick={this.props.display}>Ge ditt omdöme</CreateReviewButton>
-        )}
 
-        {this.props.isDisplayed ? (
-        <form onSubmit={this.save}>
-        <div className="form-group">
-        <label className="label-for-rating">Ge ditt betyg</label>
-        <StarRating sendSum={this.showSum}/>
+        return(
+            
+        <div>
+            {this.props.isDisplayed ? null: (
+                <CreateReviewButton onClick={this.props.display}>Ge ditt omdöme</CreateReviewButton>
+            )}
 
-        <label>Ditt namn</label>
-        <input name="namn" type="text" className="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
-        <label>Ditt omdöme</label>
-            <textarea name="text" className="form-control" placeholder="Berätta om din upplevelse..."
-                    ref={(input) => this._newText = input}/>
+            {this.props.isDisplayed ? (
+            <Form onSubmit={this.save}>
+            <div className="form-group">
+            <label className="label-for-rating">Ge ditt betyg</label>
+            <StarRating sendSum={this.showSum}/>
+            <label>Ditt namn</label>
+            <input name="namn" type="text" className="form-control" placeholder="Namn" ref={(input)=> this._newName = input}/>
+            <label>Ditt omdöme</label>
+                <textarea name="text" className="form-control" placeholder="Berätta om din upplevelse..."
+                        ref={(input) => this._newText = input}/>
 
 
-            <button className="btn btn-primary">Skicka</button>
-            </div>
-            </form> ) : null
-        }
-    </div>
-    )
-}
+                <SubmitButton className="btn btn-primary">Skicka</SubmitButton>
+                </div>
+                </Form> ) : null
+            }
+        </div>
+        )
+    }
 }
 
 ReviewForm.propTypes = {
@@ -83,4 +83,17 @@ const CreateReviewButton = styled.button`
     &:active {
         color: rgb(0, 0, 0);
     }
+`
+
+const Form = styled.form `
+
+.label-for-rating {
+ margin-bottom: -20px;
+}
+.label-for-name {
+    margin-top:-50px;
+}
+`
+const SubmitButton = styled.button `
+
 `

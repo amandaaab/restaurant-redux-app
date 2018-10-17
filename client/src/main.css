@@ -7,16 +7,8 @@
   }
   
 
-.label-for-rating {
-    margin-bottom: -20px;
-}
-.label-for-name {
-    margin-top:-50px;
-}
-
 .inCardText:hover {
     color: rgb(98, 100, 100);
-
 }
 
 .breadCrumbs{
@@ -36,7 +28,6 @@
 .modalImage {
     width: 700px;
     max-height: 420px;
-   
    
 }
 

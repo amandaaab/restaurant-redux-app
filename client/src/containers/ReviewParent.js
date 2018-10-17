@@ -58,7 +58,6 @@ class ReviewParent extends Component {
 
         else if (loading) {
             return (
-                
                     <Spinner>
                           <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
                     </Spinner>
@@ -69,25 +68,25 @@ class ReviewParent extends Component {
             const { id, reviews } = this.props;
 
             return (
-            <Container>
+                <Container>
 
-                <div className="see-review">
-                    <Reviews    id={id}
-                                reviews={reviews}
-                                isDisplayed={displayList}
-                                display={this.displayReviews} 
-                               />
-                </div>
-                <div className="create-review">
-                        <ReviewForm 
-                                id={id}
-                                isDisplayed={displayForm} 
-                                display={this.displayForm} 
-                                reviews={reviews} 
-                                saveThis={this.saveReview}
+                    <div className="reviews">
+                        <Reviews    id={id}
+                                    reviews={reviews}
+                                    isDisplayed={displayList}
+                                    display={this.displayReviews} 
                                 />
-                </div>
-            </Container>
+                    </div>
+                    <div className="review-form">
+                            <ReviewForm 
+                                    id={id}
+                                    isDisplayed={displayForm} 
+                                    display={this.displayForm} 
+                                    reviews={reviews} 
+                                    saveThis={this.saveReview}
+                                    />
+                    </div>
+                </Container>
             )
 
         }
@@ -126,6 +125,17 @@ const Container = styled.div`
     margin-top:30px;
     background: red;
     flex-direction: row;
+
+    .review-form {
+        width: 30%;
+        padding: 0px 34px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .reviews {
+    width: 75%;
+}
 `
 
 

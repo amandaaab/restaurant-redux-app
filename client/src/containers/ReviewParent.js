@@ -123,7 +123,6 @@ const mapStateToProps = (state) => {
 const Container = styled.div`
     display: flex;
     margin-top:30px;
-    background: red;
     flex-direction: row;
 
     .review-form {

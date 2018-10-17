@@ -19,7 +19,7 @@ const RestaurantItem = (props) => {
                     <CloseBtn onClick={props.handleClose}><FaArrowLeft className="faArrowLeft"/></CloseBtn>
                         
                     <div>
-                            <img alt="restaurant" className="modalImage" src={require(`../../images/${restaurant.img}`)} />
+                            <img alt="restaurant" className="image" src={require(`../../images/${restaurant.img}`)} />
             
                             <InfoWrapper>  
                         
@@ -63,8 +63,11 @@ export default RestaurantItem;
 
 
 const Container = styled.div`
-    /*display: flex;
-    justify-content: center;*/
+
+.image {
+    width: 700px;
+    max-height: 420px;   
+}
 `
 
 

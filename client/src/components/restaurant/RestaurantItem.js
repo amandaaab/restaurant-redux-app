@@ -44,7 +44,7 @@ const RestaurantItem = (props) => {
             
                             </InfoWrapper>
             
-                            <ReviewParent id={restaurant.id}/>              
+                            <ReviewParent name={restaurant.name} id={restaurant.id}/>              
                             
                     </div>
                 </Container>

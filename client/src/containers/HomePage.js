@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import RestaurantList from '../components/restaurant/RestaurantList';
 import styled from 'styled-components';
-import img from '../images/wall.jpg';
+import img from '../images/pizza.jpg';
 
 
 class HomePage extends Component {
@@ -13,7 +13,7 @@ class HomePage extends Component {
     return (
       <Container>
         <TopContent>
-              <h2>Kom igång</h2>
+              <h2>Välkommen!</h2>
         </TopContent>
 
         <BottomContent>
@@ -57,4 +57,12 @@ const TopContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    h2 {
+      background-color: white;
+      width: 50vh;
+      height: 15vh;
+      text-align: center;
+    }
+
 `

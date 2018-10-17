@@ -69,11 +69,12 @@ class StarRating extends Component {
       
       return (                
         <div>
-          <div style={{fontSize: 30}}>
+          <div style={{fontSize: 38, height: '50px', textAlign: 'center' }}>
           <StarRatingComponent
             name="rate1" 
             starCount={5}
             value={rating}
+            backgroundColor={'blue'}
             onStarClick={this.onStarClick.bind(this)}
           />
 

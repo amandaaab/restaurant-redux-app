@@ -20,21 +20,23 @@ export default Navbar;
 
 const Container = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 80px;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.315);
+    background-color: white;
+    
 
 .navItem {
     color: rgb(63, 63, 63);
     font-size: 18px;
     font-weight: bolder;
     margin: 2%;
+   margin-top:40px;
     cursor: pointer;
     text-decoration: none;
 }

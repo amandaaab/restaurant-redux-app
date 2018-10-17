@@ -65,7 +65,7 @@ class ReviewParent extends Component {
         } else {
 
             const { displayList, displayForm} = this.state;
-            const { id, reviews } = this.props;
+            const { id, reviews, name } = this.props;
 
             return (
                 <Container>
@@ -80,6 +80,7 @@ class ReviewParent extends Component {
                     <div className="review-form">
                             <ReviewForm 
                                     id={id}
+                                    name={name}
                                     isDisplayed={displayForm} 
                                     display={this.displayForm} 
                                     reviews={reviews} 

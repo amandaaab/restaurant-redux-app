@@ -66,6 +66,15 @@ const Container = styled.div`
     width: 700px;
     max-height: 420px;   
 }
+
+.faArrowLeft {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.faArrowLeft:hover {
+    color: rgb(112, 112, 112);
+}
 `
 
 

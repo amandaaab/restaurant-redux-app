@@ -25,6 +25,17 @@ const CategoryList= styled.div`
     justify-content: center;
     flex-direction: column;
     margin:20px;
+
+    .categoryNavItem {
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+    margin: 10%;
+}
+
+.selectedCategory {
+    color: rgb(231, 227, 227);
+    text-decoration: underline;
+}
 `
 const ChooseCategory = styled.p`
     margin: auto;  

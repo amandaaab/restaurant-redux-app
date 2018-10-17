@@ -1,10 +1,9 @@
 
-
-  .show-hide {
+.show-hide {
       border: none;
       background: none;
       font-weight: bold;
-  }
+}
   
 
 .label-for-rating {
@@ -33,33 +32,7 @@
     height: 50px;
 }
 
-.modalImage {
-    width: 700px;
-    max-height: 420px;
-   
-   
-}
 
-.restaurantName {
-    font-size: 10px;
-}
-
-
-.navItem {
-    color: rgb(63, 63, 63);
-  /*  color: white;*/
-    font-size: 18px;
-    font-weight: bolder;
-    margin: 2%;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.selected {
-    text-decoration: underline;
-    color: rgb(46, 46, 46);
-    color: white;
-}
 
 #app {
     background-color: #ffffff;
@@ -76,42 +49,6 @@
     height: 20px;
 }
 
-p{
-    margin-top: -5px;
-    font-size: 15px;
-}
 
-.categoryButton {
-    cursor: pointer;
-    margin: 2%;
-}
-
-.categories {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.categoryNavItem {
-    color: rgb(15, 15, 15);
-    text-decoration: none;
-    margin: 10%;
-}
-
-.selectedCategory {
-    color: rgb(231, 227, 227);
-    text-decoration: underline;
-}
-
-
-.faArrowLeft {
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.faArrowLeft:hover {
-    color: rgb(112, 112, 112);
-}
 
 

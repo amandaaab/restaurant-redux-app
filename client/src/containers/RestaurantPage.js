@@ -3,8 +3,6 @@ import ReactLoading from 'react-loading';
 import RestaurantList from '../components/restaurant/RestaurantList';
 import CategoryNavbar from '../components/common/CategoryNavbar';
 import { connect } from 'react-redux';
-import {fetchRestaurants} from '../actions/restaurantAction';
-import {fetchReviews} from '../actions/reviewAction';
 import Search from '../components/common/Search';
 import styled from 'styled-components';
 
@@ -20,8 +18,6 @@ class RestaurantPage extends Component {
     this.onSearch = this.onSearch.bind(this)
   } 
 
-
-
   onSearch = (search) => {
     this.setState({
       filteredArray: this.props.restaurants.filter(restaurant => {
@@ -29,7 +25,6 @@ class RestaurantPage extends Component {
       })
     })
   }
-
 
   render() {
     // Render error, loading, or resturantpage
@@ -40,6 +35,7 @@ class RestaurantPage extends Component {
         }
 
     else if (loading) {
+      
        return (
         <LoadingSpinner>
            <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />

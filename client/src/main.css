@@ -1,66 +1,10 @@
-.stars-outer {
-    display: inline-block;
-    position: relative;
-    font-family: FontAwesome;
-    
-    
-  }
+
 
   .show-hide {
       border: none;
       background: none;
       font-weight: bold;
   }
-
-
-  .saveHeart {
-    opacity: 0.4;
-    color: rgb(32, 92, 172);
-  }
-  .saveHeart:hover{
-    color:#e03f3f;
-    opacity: 1;
-  }
-
-  .delHeart {
-    color:#e03f3f;
-    opacity: 1;
-  }
-  .delHeart:hover{
-    opacity: 0.4;
-    color: rgb(32, 92, 172);
-  }
-
-
-
-  
-
-
-  .wrap-star {
-    display: flex;
-    justify-content: center;
-    width: 100px auto;
-    /*margin-top: 20px;*/
-  }
-   
-  .stars-outer::before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    color: rgb(196, 196, 196);
-  }
-   
-  .stars-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-   
-  .stars-inner::before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    color: #f8ce0b;
-  }
-
 
 
 .see-review{
@@ -149,27 +93,6 @@ p{
     font-size: 15px;
 }
 
-
-.delButton {
-    width: 150px;
-    height: 25px;
-    border-style: none;
-    background: #e03f3f;
-    border-radius: 3px;
-    color: white;
-    box-shadow: 3px 2px 4px#a52626;
-    cursor: pointer;
-}
-.saveButton{
-    width: 150px;
-    height: 25px;
-    border-style: none;
-   background: rgb(32, 92, 172);
-    border-radius: 3px;
-    box-shadow: 2px 2px 4px rgb(24, 71, 131);
-    cursor: pointer;
-    color: white;
-}
 .categoryButton {
     cursor: pointer;
     margin: 2%;
@@ -203,14 +126,6 @@ p{
     color: rgb(112, 112, 112);
 }
 
-
-
-.savePage {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .homePage {
     margin-top: 0px;

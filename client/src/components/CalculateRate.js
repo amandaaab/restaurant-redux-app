@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const CalculateRate = (props) => {
 
@@ -28,16 +29,48 @@ const starTotal = 5;
   }
  
 return (
-    
-        <div className="wrap-star">
-            <div className="stars-outer">
-                <div className="stars-inner" style={starStyle}></div>
-            </div>
-            <div className="result">({result})</div>
-    </div>
-)
 
+    <StarContainer>
+        <div className="stars-outer">
+            <div className="stars-inner" style={starStyle}></div>
+        </div>
+        <div className="StarResult">({result})</div>
+    </StarContainer>
+
+    )
 }
 
+const StarContainer = styled.div `
+    display: flex;
+    justify-content: center;
+    width: 100px auto;
+
+    
+  .stars-outer::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: rgb(196, 196, 196);
+  }
+   
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+   
+  .stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+  }
+
+  .stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+  }
+
+  .StarResult {}
+`
     
 export default CalculateRate;

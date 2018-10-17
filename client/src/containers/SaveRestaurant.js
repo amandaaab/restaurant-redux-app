@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSaveRestaurant, fetchSavedRestaurants, deleteSavedRestaurant } from '../actions/saveAction';
+import { fetchSaveRestaurant, deleteSavedRestaurant } from '../actions/saveAction';
 import { FaHeart } from 'react-icons/fa';
+import styled from 'styled-components';
+
+
+
 
 class SaveRestaurant extends Component {
     
@@ -46,9 +50,9 @@ class SaveRestaurant extends Component {
         }
 
         return (
-            <div>
+            <Button>
                 {button}
-            </div>  
+            </Button>  
         )
     }
 }
@@ -60,3 +64,44 @@ const mapStateToProps = (state) => {
   }
 
 export default connect(mapStateToProps)(SaveRestaurant);
+
+const Button = styled.div `
+  .saveHeart {
+    opacity: 0.4;
+    color: rgb(32, 92, 172);
+  }
+  .saveHeart:hover{
+    color:#e03f3f;
+    opacity: 1;
+  }
+
+  .delHeart {
+    color:#e03f3f;
+    opacity: 1;
+  }
+  .delHeart:hover{
+    opacity: 0.4;
+    color: rgb(32, 92, 172);
+  }
+
+  .delButton {
+    width: 150px;
+    height: 25px;
+    border-style: none;
+    background: #e03f3f;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 3px 2px 4px#a52626;
+    cursor: pointer;
+}
+.saveButton{
+    width: 150px;
+    height: 25px;
+    border-style: none;
+   background: rgb(32, 92, 172);
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgb(24, 71, 131);
+    cursor: pointer;
+    color: white;
+}
+`

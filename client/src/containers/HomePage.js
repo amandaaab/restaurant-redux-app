@@ -1,43 +1,28 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import Carousel from 'nuka-carousel';
-import { fetchRestaurants } from '../actions/restaurantAction';
-import { fetchReviews } from '../actions/reviewAction';
 import RestaurantList from '../components/restaurant/RestaurantList';
+import styled from 'styled-components';
+import img from '../images/wall.jpg';
 
 
 class HomePage extends Component {
-
-  componentDidMount() {
-
-    //this.props.dispatch(fetchRestaurants())
-    //this.props.dispatch(fetchReviews()) 
-  }
 
     
   render() {
 
     return (
-      <div className="homePage">
-        <div className="wrapTop">
-         {/* <div className="carousel">
-            <Carousel width='600px' autoplay={true} withoutControls={true} autoplayInterval={3000}>
-            {this.props.restaurants.map((restaurant, i) => <img className='carouselImg' key={i} alt="restaurang" src={require(`../images/${restaurant.img}`)}/>)}
-            </Carousel>
-    </div>*/}
-          <div className="textBox">
-                <p>Sök bland flera tusen restauranger ...</p>
-                <button>Kom igång</button>
-          </div>
-        </div>
+      <Container>
+        <TopContent>
+              <h2>Kom igång</h2>
+        </TopContent>
 
-        <div className="wrapBottom">
-        <h4>Bäst omdömen</h4>
-        <RestaurantList restaurants={this.props.restaurants}
-                        reviews={this.props.reviews}
-                        />
-        </div>
-      </div>
+        <BottomContent>
+              <h4>Bäst omdömen</h4>
+              <RestaurantList restaurants={this.props.restaurants}
+                              reviews={this.props.reviews}
+                              />
+        </BottomContent>
+      </Container>
     );
     
   }
@@ -49,3 +34,27 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(HomePage);
+
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+`
+
+const BottomContent = styled.div`
+     display: flex;
+      flex-direction: column;
+      align-items: center;
+`
+
+const TopContent = styled.div`
+    background-image: url(${img});
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`

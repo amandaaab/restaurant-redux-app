@@ -8,18 +8,17 @@ import styled from 'styled-components';
 // Component
 const Navbar = () => {
     return (
-    <NavBar>
+    <Container>
         <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
         <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>Restauranger</NavLink> 
         <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>Favoriter</NavLink>     
-    </NavBar>
+    </Container>
     )
 }
 
 export default Navbar; 
 
-// Style
-const NavBar = styled.div`
+const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,10 +29,6 @@ const NavBar = styled.div`
     height: 80px;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.315);
-.selected {
-    text-decoration: underline;
-    color: rgb(46, 46, 46);
-}
 
 .navItem {
     color: rgb(63, 63, 63);
@@ -42,6 +37,11 @@ const NavBar = styled.div`
     margin: 2%;
     cursor: pointer;
     text-decoration: none;
+}
+
+.selected {
+    text-decoration: underline;
+    color: rgb(46, 46, 46);
 }
 
 `

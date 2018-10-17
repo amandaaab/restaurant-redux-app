@@ -54,9 +54,9 @@ const Reviews = (props) => {
 
 
                     {props.isDisplayed ? (
-                                     <button className="show-hide" onClick={props.display}>Visa mindre...</button>
+                                     <ShowHide onClick={props.display}>Visa mindre...</ShowHide>
 
-                    ) :              <button className="show-hide" onClick={props.display}>Visa mer...</button>}
+                    ) :              <ShowHide onClick={props.display}>Visa mer...</ShowHide>}
 
 
 
@@ -85,4 +85,11 @@ export default Reviews;
 // Style
 const Table = styled.table`
     width: 90%;
+`
+
+const ShowHide = styled.div`
+    border: none;
+    background: none;
+    font-weight: bold;
+    cursor: pointer;
 `

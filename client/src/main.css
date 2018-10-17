@@ -1,11 +1,5 @@
 
 
-  .show-hide {
-      border: none;
-      background: none;
-      font-weight: bold;
-  }
-  
 
 .inCardText:hover {
     color: rgb(98, 100, 100);
@@ -25,124 +19,12 @@
     height: 50px;
 }
 
-.modalImage {
-    width: 700px;
-    max-height: 420px;
-   
-}
 
-.restaurantName {
-    font-size: 10px;
-}
-
-
-.navItem {
-    color: rgb(63, 63, 63);
-  /*  color: white;*/
-    font-size: 18px;
-    font-weight: bolder;
-    margin: 2%;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.selected {
-    text-decoration: underline;
-    color: rgb(46, 46, 46);
-    color: white;
-}
 
 #app {
     background-color: #ffffff;
 }
 
-.heart{
-    color: red;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 50px;
-    height: 20px;
-}
-
-p{
-    margin-top: -5px;
-    font-size: 15px;
-}
-
-.categoryButton {
-    cursor: pointer;
-    margin: 2%;
-}
-
-.categories {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.categoryNavItem {
-    color: rgb(15, 15, 15);
-    text-decoration: none;
-    margin: 10%;
-}
-
-.selectedCategory {
-    color: rgb(231, 227, 227);
-    text-decoration: underline;
-}
 
 
-.faArrowLeft {
-    font-size: 22px;
-    cursor: pointer;
-}
 
-.faArrowLeft:hover {
-    color: rgb(112, 112, 112);
-}
-
-
-.homePage {
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('./images/wall.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 700px;
-}
-
-
-.textBox {
-margin-right: 5%;
-width: 600px;
-height: 440px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column
-
-}
-
-.wrapTop {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 50%;
-    margin-bottom: 5%;
-    margin-top: 100px;
-}
-
-.wrapBottom {
-    display: flex;
-    flex-direction: column;;
-    width: 100%;
-    height: 50%;
-    align-items: center;
-}

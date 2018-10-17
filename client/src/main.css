@@ -87,22 +87,6 @@
 
 }
 
-
-
-.wrap-restaurantpage{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    min-width: 100%;
-  background-color: rgb(255, 255, 255);
-   /* background-color: rgb(252, 252, 252);*/    
-    height: auto;
-    font-family: 'Ubuntu', sans-serif;
-    color: rgb(49, 44, 44);
-  
-}
-
 .breadCrumbs{
     padding: 20px;
 }
@@ -117,40 +101,17 @@
     height: 50px;
 }
 
-.restaurantPage{
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    height: 100vh auto;
-    font-family: 'Ubuntu', sans-serif;
-    color: rgb(49, 44, 44);
+.modalImage {
+    width: 700px;
+    max-height: 420px;
    
    
 }
-
-
 
 .restaurantName {
     font-size: 10px;
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    /*background-color: rgb(255, 255, 255);
-    /*background-color: rgb(175, 58, 54);*/
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.315);
-    /*box-shadow: 1px 1px 5px rgb(182, 102, 49);*/
-   
-    
-}
 
 .navItem {
     color: rgb(63, 63, 63);
@@ -187,10 +148,6 @@ p{
     margin-top: -5px;
     font-size: 15px;
 }
-
-
-
-
 
 
 .delButton {
@@ -237,22 +194,6 @@ p{
 }
 
 
-
-.restaurant-page-wrap-items {
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    margin-top: 130px;
-}
-
-.restaurant-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
 .faArrowLeft {
     font-size: 22px;
     cursor: pointer;
@@ -263,21 +204,6 @@ p{
 }
 
 
-.restaurant-category-wrap {
-    margin-top:2%;
-}
-
-
-
-.wrap-spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: 100vh;
-   /* background-color: rgb(252, 252, 252);*/    
-
-}
 
 .savePage {
     margin-top: 80px;
@@ -297,11 +223,6 @@ p{
     height: 700px;
 }
 
-/*
-.carouselImg {
-   height: 440px;
-
-}*/
 
 .textBox {
 margin-right: 5%;
@@ -312,10 +233,6 @@ justify-content: center;
 align-items: center;
 flex-direction: column
 
-}
-
-.carousel {
-    margin-left: 5%;
 }
 
 .wrapTop {

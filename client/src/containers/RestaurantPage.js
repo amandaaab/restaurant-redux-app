@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import {fetchRestaurants} from '../actions/restaurantAction';
 import {fetchReviews} from '../actions/reviewAction';
 import Search from '../components/common/Search';
+import styled from 'styled-components';
 
 
 class RestaurantPage extends Component {
@@ -40,25 +41,22 @@ class RestaurantPage extends Component {
 
     else if (loading) {
        return (
-         <div className="wrap-spinner">
-          <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
-        </div>
+        <LoadingSpinner>
+           <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
+        </LoadingSpinner>
        )
       }
     
    else {
      return (
-
-      <div className="restaurantPage"> 
-          <div className="wrap-restaurantpage">
-              <div className="restaurant-page-wrap-items">
-                  <div className="restaurant-category-wrap">
+          <Container>
+              <Content>
+                  <div className="categoryWrap">
                       <CategoryNavbar/>
                   </div>
 
-                  <div className="restaurant-wrap">
+                  <List>
                     <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/>
-                        
                         {this.state.filteredArray ? 
                           <RestaurantList cat={this.props.cat}
                                             restaurantP={this.props.restaurantP}
@@ -68,7 +66,7 @@ class RestaurantPage extends Component {
 
                                             :
 
-                                             <RestaurantList cat={this.props.cat}
+                          <RestaurantList cat={this.props.cat}
                                             restaurantP={this.props.restaurantP}
                                             restaurants={this.props.restaurants}
                                             reviews={this.props.reviews}
@@ -76,12 +74,10 @@ class RestaurantPage extends Component {
 
                         }
 
+                    </List>
 
-                    </div>
-                    
-                </div>
-           </div>
-       </div>
+                </Content>
+           </Container>
     ); 
   }
 }
@@ -96,5 +92,43 @@ const mapStateToProps = (state) => {
   }
 }
 
+// Style
+const Container = styled.div `
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    min-width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(49, 44, 44);
+
+`
+const Content = styled.div `
+
+.categoryWrap {
+  margin-top: 2%;
+}
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-top: 130px;
+
+`
+const List = styled.div `
+   width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+`
+const LoadingSpinner = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 100vh;
+`
 
 export default connect(mapStateToProps)(RestaurantPage);

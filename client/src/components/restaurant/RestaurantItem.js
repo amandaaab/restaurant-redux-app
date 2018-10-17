@@ -6,12 +6,10 @@ import { FaArrowLeft } from 'react-icons/fa';
 import styled from 'styled-components';
 
 
-
 const RestaurantItem = (props) => {
       
-
     return (
-            // Filter restaurant where one restaurant name matches the clicked restaurant name, restaurantP is sent from router
+            //Filter restaurant where one restaurant name matches the clicked restaurant name, restaurantP is sent from router
             props.restaurant.filter(restaurant => restaurant.name === props.restaurantP).map((restaurant) => 
 
                 <Container>

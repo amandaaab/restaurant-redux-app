@@ -3,8 +3,9 @@ import ReactLoading from 'react-loading';
 import Reviews from '../components/review/Reviews'
 import ReviewForm from '../components/review/ReviewForm'
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { fetchReviews, fetchCreateReview } from '../actions/reviewAction';
+import { fetchCreateReview } from '../actions/reviewAction';
 
 
 class ReviewParent extends Component {
@@ -22,11 +23,6 @@ class ReviewParent extends Component {
         this.saveReview = this.saveReview.bind(this)
     }
 
-   /*componentDidMount() {
-
-        this.props.dispatch(fetchReviews());
-      
-      }*/
 
     displayReviews = () => {
         
@@ -63,11 +59,9 @@ class ReviewParent extends Component {
         else if (loading) {
             return (
                 
-                <div className="reviewWrap">
-                    <div className="spinner">
+                    <Spinner>
                           <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
-                    </div>
-                </div>
+                    </Spinner>
             )
         } else {
 
@@ -75,16 +69,16 @@ class ReviewParent extends Component {
             const { id, reviews } = this.props;
 
             return (
-            <div className="reviewWrap">
+            <Container>
 
-            <div className="see-review">
+                <div className="see-review">
                     <Reviews    id={id}
                                 reviews={reviews}
                                 isDisplayed={displayList}
                                 display={this.displayReviews} 
                                />
-            </div>
-            <div className="create-review">
+                </div>
+                <div className="create-review">
                         <ReviewForm 
                                 id={id}
                                 isDisplayed={displayForm} 
@@ -92,8 +86,8 @@ class ReviewParent extends Component {
                                 reviews={reviews} 
                                 saveThis={this.saveReview}
                                 />
-                                </div>
                 </div>
+            </Container>
             )
 
         }
@@ -114,11 +108,25 @@ const mapStateToProps = (state) => {
     }
   }
  
-
  
   export default connect(mapStateToProps)(ReviewParent);
 
 
+
+  const Spinner = styled.div`
+     display: flex;
+    justify-content: center;
+    align-items:  center;
+    height: 30%;
+    width: 100%;
+`
+
+const Container = styled.div`
+    display: flex;
+    margin-top:30px;
+    background: red;
+    flex-direction: row;
+`
 
 
 

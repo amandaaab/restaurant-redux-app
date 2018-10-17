@@ -5,19 +5,7 @@
       background: none;
       font-weight: bold;
   }
-
-
-.see-review{
-    width: 75%;
-    background: green;    
-}
-
-.create-review {
-    width: 30%;
-    padding: 0px 34px;
-    display: flex;
-    justify-content: center;
-}
+  
 
 .label-for-rating {
     margin-bottom: -20px;

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import { FaSearch } from 'react-icons/fa';
+
 
 
 class Search extends Component {
@@ -22,14 +25,22 @@ class Search extends Component {
     render(){
 
         return (
-            <div>
-                <input type="text" onChange={this.onChange}></input>
-                <br></br>
-                <span>{this.state.search}</span>
-                
-            </div>
+            <Container>
+                   <input type="text" onChange={this.onChange}/>
+            </Container>
         )
     }
 }
 
 export default Search;
+
+const Container = styled.div`
+
+input {
+    height: 30px;
+    width: 150%;
+    border: 1px solid lightgrey;
+    border-radius: 2%;
+}
+
+`

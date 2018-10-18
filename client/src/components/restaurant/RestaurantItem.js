@@ -62,6 +62,11 @@ export default RestaurantItem;
 
 const Container = styled.div`
 
+width: 80%;
+background-color: white;
+padding: 40px 160px;
+font-family: 'Source Sans Pro', sans-serif;
+
 .image {
     width: 700px;
     max-height: 420px;   

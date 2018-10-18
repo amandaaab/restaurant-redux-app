@@ -124,6 +124,7 @@ const Container = styled.div`
 
     
 
+    background-color:  rgb(242, 233, 225);
 `
 
 const BottomContent = styled.div`

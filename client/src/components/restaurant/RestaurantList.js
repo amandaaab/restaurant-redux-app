@@ -13,7 +13,9 @@ const Container = styled.div `
     align-items: center;
     flex-flow: row wrap;
     font-family: 'Ubuntu', sans-serif;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(242, 233, 225);
+    margin-top: 6vh;
+    width: 100%;
 `
 
 class RestaurantList extends Component {  

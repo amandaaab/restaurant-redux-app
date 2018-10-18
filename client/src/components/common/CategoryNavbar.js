@@ -7,7 +7,7 @@ const CategoryNavbar = () => {
     return (
   
     <CategoryList>
-        <ChooseCategory>Välj kategori</ChooseCategory>
+        <ChooseCategory>Kök och maträtter</ChooseCategory>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/italienskt" exact>Italienskt</NavLink>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/libanesiskt" exact>Libanesiskt</NavLink>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/spanskt" exact>Spanskt</NavLink>
@@ -18,18 +18,23 @@ const CategoryNavbar = () => {
 export default CategoryNavbar; 
 
 
-
-
 const CategoryList= styled.div`
-     display: flex;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start;
     flex-direction: column;
-    margin:20px;
+    margin-top: 5vh;
+
+    background-color: white;
+    width: 180px;
+    padding-top: 40px;
+    min-height: 280px;
+    left: 0;
 
     .categoryNavItem {
     color: rgb(15, 15, 15);
     text-decoration: none;
-    margin: 10%;
+    margin: 5%;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .selectedCategory {
@@ -38,8 +43,9 @@ const CategoryList= styled.div`
 }
 `
 const ChooseCategory = styled.p`
-    margin: auto;  
-    margin-top:20px;
-    font-weight: bold;
+
+    margin: 5%;
+    font-weight: bolder;
     color: black;
+    font-family: 'Source Sans Pro', sans-serif;
 `

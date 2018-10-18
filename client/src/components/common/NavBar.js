@@ -10,8 +10,8 @@ const Navbar = () => {
     return (
     <Container>
         <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
-        <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>Restauranger</NavLink> 
-        <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>Favoriter</NavLink>     
+        <NavLink className="navItem" activeClassName="selected" to="/restauranger" exact>RESTAURANGER</NavLink> 
+        <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink>     
     </Container>
     )
 }
@@ -26,17 +26,19 @@ const Container = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 94px;
     z-index: 1;
     background-color: white;
+  /* box-shadow: 2px 2px 2px #0A5172*/
+ /* border-bottom: 2px solid rgb(194, 155, 158);*/
+
     
 
 .navItem {
-    color: rgb(63, 63, 63);
-    font-size: 18px;
-    font-weight: bolder;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: BLACK;
+    font-size: 22px;
     margin: 2%;
-   margin-top:40px;
     cursor: pointer;
     text-decoration: none;
 }

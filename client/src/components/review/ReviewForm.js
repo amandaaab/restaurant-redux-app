@@ -187,6 +187,7 @@ const CreateReviewButton = styled.button`
     font-size: 16px;
     font-weight: bolder;
     color: rgb(58, 59, 61);
+    font-family: 'Source Sans Pro', sans-serif;
     &:hover {
         color: rgb(98, 100, 100);
     }
@@ -204,6 +205,7 @@ flex-direction: column;
 height:90%;
 width: 90%;
 margin: auto;
+font-family: 'Source Sans Pro', sans-serif;
 
 .label-for-rating {
  margin-bottom: -20px;

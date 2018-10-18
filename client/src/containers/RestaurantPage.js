@@ -95,7 +95,7 @@ const Container = styled.div `
     align-items: center;
     flex-direction: column;
     min-width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(242, 233, 225);
     height: auto;
     font-family: 'Ubuntu', sans-serif;
     color: rgb(49, 44, 44);
@@ -108,7 +108,7 @@ const Content = styled.div `
 }
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     margin-top: 130px;
 
 `

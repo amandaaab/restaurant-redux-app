@@ -85,6 +85,7 @@ export default Reviews;
 // Style
 const Table = styled.table`
     width: 90%;
+    font-family: 'Source Sans Pro', sans-serif;
 `
 
 const ShowHide = styled.div`

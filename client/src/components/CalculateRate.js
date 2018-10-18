@@ -49,7 +49,7 @@ const StarContainer = styled.div `
   .stars-outer::before {
     content: "\f005 \f005 \f005 \f005 \f005";
     color: rgb(196, 196, 196);
-    font-size: 20px;
+   
   }
    
   .stars-inner {
@@ -58,20 +58,22 @@ const StarContainer = styled.div `
     left: 0;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 20px;
+    color: #F1BF98;
+    
+   
   }
    
   .stars-inner::before {
     content: "\f005 \f005 \f005 \f005 \f005";
-    color: #f8ce0b;
-    font-size: 20px;
+    color: #0A5172;
+  
   }
 
   .stars-outer {
     display: inline-block;
     position: relative;
     font-family: FontAwesome;
-    font-size: 20px;
+  
   }
 
   .StarResult {}

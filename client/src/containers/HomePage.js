@@ -41,6 +41,7 @@ const Container = styled.div`
     flex-direction: column;
     height: 100%;
     width: 100%;
+    background-color:  rgb(242, 233, 225);
 `
 
 const BottomContent = styled.div`

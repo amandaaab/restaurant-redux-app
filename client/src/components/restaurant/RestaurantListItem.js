@@ -59,6 +59,7 @@ const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: white;
 `
 
 const Image = styled.img`

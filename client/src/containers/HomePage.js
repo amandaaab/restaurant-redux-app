@@ -77,7 +77,7 @@ renderSuggestion = suggestion => (
  
     // Autosuggest will pass through all these props to the input.
     const inputProps = {
-      placeholder: '&#xf02b; Sök restaurang här',
+      placeholder: 'Sök restaurang här..',
       value,
       onChange: this.onChange
     };

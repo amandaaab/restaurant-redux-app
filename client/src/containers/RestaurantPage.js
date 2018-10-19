@@ -45,10 +45,7 @@ class RestaurantPage extends Component {
        )
       }
     
-   else {
-    console.log('CATS', this.props.categories);
-
-    
+   else {    
 
      return (
           <Container>  

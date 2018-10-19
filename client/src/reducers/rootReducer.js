@@ -8,6 +8,7 @@ import categories from './categories'
 
 
 
+
 const rootReducer = combineReducers({
     reviews, 
     restaurants,

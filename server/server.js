@@ -100,6 +100,28 @@ app.post('/mainCategories', function(req, res, next){
 })
 
 
+//SUBCATGORIES 
+const FoodCategory = require('./models/foodCategory')
+
+
+app.get('/foodCategories', function(req, res, next){
+    FoodCategory.find()
+        .exec(function(err, foodcategories){
+        if(err) return next(err);
+        res.json(foodcategories)
+    })
+})
+
+app.post('/foodCategories', function(req, res, next){
+    var foodCategory = new FoodCategory(req.body);
+    foodCategory.save(function(err, foodCategory){
+        if(err) return next(err);
+        res.status(201)
+        res.json(foodCategory)
+    })
+})
+
+
 const port = 5000;
 
 app.listen(port, () => console.log(`server started on port ${port}!`));

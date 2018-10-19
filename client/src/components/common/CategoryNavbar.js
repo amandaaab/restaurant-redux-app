@@ -5,16 +5,30 @@ import Select from 'react-select'
 
 const CategoryNavbar = (props) => {
 
+const options = [];
+
+props.foodCategories.map((fCategory) => 
+options.push(
+    { value: fCategory.name, label: fCategory.name } //ska value vara name eller id???
+)
+)
 
     return (
 
     <CategoryList>
+        
 
-         {props.categories.map((cat, i) =>
+         {props.categories.map((category, i) =>
+            <div>
+                 <span>{category.name}</span>
                 <Select 
                 className="select"
-                placeholder={cat.name}/> )
-                    }
+                placeholder={`Välj ${category.name}`}
+                options={options}
+                /> 
+            </div>
+            )
+            }
     
         {/*<ChooseCategory>Kök och maträtter</ChooseCategory>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/italienskt" exact>Italienskt</NavLink>

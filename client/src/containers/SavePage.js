@@ -29,7 +29,6 @@ const mapStateToProps = (state) => {
 
 
 const SaveContainer = styled.div `
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;

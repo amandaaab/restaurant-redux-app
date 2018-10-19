@@ -47,12 +47,9 @@ class RestaurantPage extends Component {
      return (
           <Container>
               <Content>
-                  <div className="categoryWrap">
-                      <CategoryNavbar/>
-                  </div>
 
                   <List>
-                    <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/>
+                   {/* <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/> */}
                         {this.state.filteredArray ? 
                           <RestaurantList cat={this.props.cat}
                                             restaurantP={this.props.restaurantP}
@@ -101,15 +98,7 @@ const Container = styled.div `
     color: rgb(49, 44, 44);
 
 `
-const Content = styled.div `
-
-.categoryWrap {
-  margin-top: 2%;
-}
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 130px;
+const Content = styled.div `  
 
 `
 const List = styled.div `

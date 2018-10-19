@@ -120,10 +120,6 @@ const Container = styled.div`
     flex-direction: column;
     height: 100%;
     width: 100%;
-    margin-top: 80px;
-
-    
-
     background-color:  rgb(242, 233, 225);
 `
 
@@ -141,6 +137,7 @@ const TopContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    top:0;
 
 
     .containerSuggestion {

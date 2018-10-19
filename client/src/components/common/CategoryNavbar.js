@@ -9,12 +9,17 @@ const CategoryNavbar = (props) => {
     return (
 
     <CategoryList>
+
+         {props.categories.map((cat, i) =>
+                <Select 
+                className="select"
+                placeholder={cat.name}/> )
+                    }
     
-        <ChooseCategory>Kök och maträtter</ChooseCategory>
+        {/*<ChooseCategory>Kök och maträtter</ChooseCategory>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/italienskt" exact>Italienskt</NavLink>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/libanesiskt" exact>Libanesiskt</NavLink>
-        <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/spanskt" exact>Spanskt</NavLink>
-  
+        <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/spanskt" exact>Spanskt</NavLink>*/}
    </CategoryList>      
    
     )
@@ -31,7 +36,13 @@ const CategoryList= styled.div`
     justify-content: center;
     background-color: rgb(255, 240, 212);
     width: 100%;  
+    align-items: center;
     /*width: 100%;*/
+
+    .select {
+      width: 240px;
+      margin: 1%;
+    }
 
 
     .categoryNavItem {

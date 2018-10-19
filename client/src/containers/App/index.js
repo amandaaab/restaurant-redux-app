@@ -23,6 +23,8 @@ import { connect } from 'react-redux';
 import { fetchReviews, fetchCreateReview } from '../../actions/reviewAction';
 import { fetchRestaurants } from '../../actions/restaurantAction';
 import { fetchSavedRestaurants } from '../../actions/saveAction';
+import { fetchCategories } from '../../actions/categoryAction';
+
 
 
 
@@ -33,6 +35,7 @@ class App extends Component {
     this.props.dispatch(fetchReviews());
     this.props.dispatch(fetchRestaurants());
     this.props.dispatch(fetchSavedRestaurants());
+    this.props.dispatch(fetchCategories());
 
   }
 
@@ -43,7 +46,7 @@ class App extends Component {
 
     <Router>    
     <React.Fragment>
-     <NavBar/>
+     <NavBar categories={this.props.categories}/>
    
       <Route path="/" exact strict render={
         ()=> {
@@ -86,6 +89,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
       reviews: state.reviews.reviews,
+      categories: state.categories.categories,
       loading: state.reviews.loading,
       error: state.reviews.error
   }

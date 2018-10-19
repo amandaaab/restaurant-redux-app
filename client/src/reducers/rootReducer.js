@@ -4,13 +4,15 @@ import restaurants from './restaurants';
 //import restaurantList from './restaurantReducer';
 import reviews from './reviewReducer';
 import save from './save';
+import categories from './categories'
 
 
 
 const rootReducer = combineReducers({
     reviews, 
     restaurants,
-    save, 
+    save,
+    categories
     //restaurantList,//alltså för homepagen
     //reviewList
 });

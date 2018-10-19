@@ -26,7 +26,6 @@ class Navbar extends Component {
             show: !prevState.show,
             opacity: 1
 
-
         }))
     }
 
@@ -48,7 +47,7 @@ class Navbar extends Component {
         <NavLink className="navItem" onClick={() => this.hideCategory()} activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
     </Container>
      <Collapse isOpened={this.state.show}>  
-     <CategoryNavbar/>
+     <CategoryNavbar categories={this.props.categories}/>
         </Collapse>    
           </div>       
     )

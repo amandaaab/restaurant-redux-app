@@ -7,6 +7,8 @@ import Search from '../components/common/Search';
 import styled from 'styled-components';
 
 
+
+
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
@@ -44,9 +46,14 @@ class RestaurantPage extends Component {
       }
     
    else {
+    console.log('CATS', this.props.categories);
+
+    
+
      return (
-          <Container>
+          <Container>  
               <Content>
+
 
                   <List>
                    {/* <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/> */}
@@ -81,7 +88,8 @@ const mapStateToProps = (state) => {
       restaurants: state.restaurants.restaurants,
       loading: state.restaurants.loading,
       error: state.restaurants.error,
-      reviews: state.reviews.reviews
+      reviews: state.reviews.reviews,
+      categories: state.categories.categories
   }
 }
 
@@ -96,6 +104,8 @@ const Container = styled.div `
     height: auto;
     font-family: 'Ubuntu', sans-serif;
     color: rgb(49, 44, 44);
+
+    
 
 `
 const Content = styled.div `  

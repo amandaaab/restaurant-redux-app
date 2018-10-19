@@ -78,6 +78,27 @@ app.delete('/saveRestaurant/:id', function (req, res, next){
     })
   });
 
+//MAIN CATEGORIES
+const MainCategory = require('./models/mainCategory')
+
+
+app.get('/mainCategories', function(req, res, next){
+    MainCategory.find()
+        .exec(function(err, maincategories){
+        if(err) return next(err);
+        res.json(maincategories)
+    })
+})
+
+app.post('/mainCategories', function(req, res, next){
+    var mainCategory = new MainCategory(req.body);
+    mainCategory.save(function(err, mainCategory){
+        if(err) return next(err);
+        res.status(201)
+        res.json(mainCategory)
+    })
+})
+
 
 const port = 5000;
 

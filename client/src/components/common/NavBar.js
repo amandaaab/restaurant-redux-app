@@ -47,7 +47,9 @@ class Navbar extends Component {
         <NavLink className="navItem" onClick={() => this.hideCategory()} activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
     </Container>
      <Collapse isOpened={this.state.show}>  
-     <CategoryNavbar categories={this.props.categories} foodCategories={this.props.foodCategories}/>
+     {this.props.categories.map(category =>
+     <CategoryNavbar category={category} foodCategories={this.props.foodCategories}/>
+     )}
         </Collapse>    
           </div>       
     )

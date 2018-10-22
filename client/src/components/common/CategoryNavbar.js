@@ -7,29 +7,29 @@ const CategoryNavbar = (props) => {
 
 const options = [];
 
-props.foodCategories.map((fCategory) => 
-options.push(
-    { value: fCategory.name, label: fCategory.name } //ska value vara name eller id???
-)
-)
+props.foodCategories.map((foodCategory) => {
+    if(foodCategory.main_category === props.category.name ){
+        options.push(
+             {value: foodCategory.name, label: foodCategory.name} //ska value vara name eller id???
+        )
+    } 
+})
+
 
     return (
 
     <CategoryList>
         
-
-         {props.categories.map((category, i) =>
             <div>
-                 <span>{category.name}</span>
+                 <span>{props.category.name}</span>
                 <Select 
                 className="select"
-                placeholder={`Välj ${category.name}`}
+                placeholder={`Välj ${props.category.name}`}
                 options={options}
                 /> 
             </div>
-            )
-            }
-    
+
+            
         {/*<ChooseCategory>Kök och maträtter</ChooseCategory>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/italienskt" exact>Italienskt</NavLink>
         <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/libanesiskt" exact>Libanesiskt</NavLink>

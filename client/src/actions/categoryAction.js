@@ -27,6 +27,22 @@ export function fetchCategories() {
     };
   }
 
+
+  export function fetchCityCategories() {
+    return dispatch => {
+      dispatch(fetchCityCategoriesBegin())
+      return fetch("/cityCategories")
+      .then(handleErrors)
+        .then(res => res.json())
+        .then(json => {
+          dispatch(fetchCityCategoriesSuccess(json));
+          return json;
+        })
+        .catch(error => dispatch(fetchCityCategoriesError(error)));
+    };
+  }
+
+
    //Handle HTTP errors since fetch won't.
   function handleErrors(response) {
     if (!response.ok) {
@@ -70,6 +86,26 @@ export const fetchFoodCategoriesSuccess = categories => ({
 
 export const fetchFoodCategoriesError = error => ({
     type: FETCH_FOOD_CATEGORIES_FAILURE,
+    payload: { error }
+  });
+
+
+
+export const FETCH_CITY_CATEGORIES_BEGIN = 'FETCH_CITY_CATEGORIES_BEGIN';
+export const FETCH_CITY_CATEGORIES_SUCCESS = 'FETCH_CITY_CATEGORIES_SUCCESS';
+export const FETCH_CITY_CATEGORIES_FAILURE = 'FETCH_CITY_CATEGORIES_FAILURE';
+
+export const fetchCityCategoriesBegin = () => ({
+  type: FETCH_CITY_CATEGORIES_BEGIN,
+});
+
+export const fetchCityCategoriesSuccess = categories => ({
+  type: FETCH_CITY_CATEGORIES_SUCCESS,
+  payload: { categories }
+});
+
+export const fetchCityCategoriesError = error => ({
+    type: FETCH_CITY_CATEGORIES_FAILURE,
     payload: { error }
   });
 

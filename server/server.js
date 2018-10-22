@@ -121,6 +121,27 @@ app.post('/foodCategories', function(req, res, next){
     })
 })
 
+const CityCategory = require('./models/cityCategory')
+
+
+app.get('/cityCategories', function(req, res, next){
+    CityCategory.find()
+        .exec(function(err, citycategories){
+        if(err) return next(err);
+        res.json(citycategories)
+    })
+})
+
+app.post('/cityCategories', function(req, res, next){
+    var cityCategory = new CityCategory(req.body);
+    cityCategory.save(function(err, cityCategory){
+        if(err) return next(err);
+        res.status(201)
+        res.json(cityCategory)
+    })
+})
+
+
 
 const port = 5000;
 

@@ -48,7 +48,7 @@ class Navbar extends Component {
     </Container>
      <Collapse isOpened={this.state.show}>  
      {this.props.categories.map(category =>
-     <CategoryNavbar category={category} foodCategories={this.props.foodCategories}/>
+     <CategoryNavbar category={category} cityCategories={this.props.cityCategories} foodCategories={this.props.foodCategories}/>
      )}
         </Collapse>    
           </div>       

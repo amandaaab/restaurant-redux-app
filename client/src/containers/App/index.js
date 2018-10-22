@@ -23,7 +23,7 @@ import { connect } from 'react-redux';
 import { fetchReviews, fetchCreateReview } from '../../actions/reviewAction';
 import { fetchRestaurants } from '../../actions/restaurantAction';
 import { fetchSavedRestaurants } from '../../actions/saveAction';
-import { fetchCategories, fetchFoodCategories } from '../../actions/categoryAction';
+import { fetchCategories, fetchFoodCategories, fetchCityCategories } from '../../actions/categoryAction';
 
 
 
@@ -37,6 +37,7 @@ class App extends Component {
     this.props.dispatch(fetchSavedRestaurants());
     this.props.dispatch(fetchCategories());
     this.props.dispatch(fetchFoodCategories());
+    this.props.dispatch(fetchCityCategories());
 
   }
 
@@ -48,7 +49,7 @@ class App extends Component {
     <React.Fragment>
     {console.log('FOOD', this.props.foodCategories)}
 
-     <NavBar categories={this.props.categories} foodCategories={this.props.foodCategories}/>
+     <NavBar categories={this.props.categories} cityCategories={this.props.cityCategories} foodCategories={this.props.foodCategories}/>
    
       <Route path="/" exact strict render={
         ()=> {
@@ -94,7 +95,10 @@ const mapStateToProps = (state) => {
       categories: state.categories.categories,
       loading: state.reviews.loading,
       error: state.reviews.error,
-      foodCategories: state.categories.foodCategories
+      foodCategories: state.categories.foodCategories,
+      cityCategories: state.categories.cityCategories
+
+
   }
 }
 

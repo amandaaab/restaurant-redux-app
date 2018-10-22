@@ -15,6 +15,15 @@ props.foodCategories.map((foodCategory) => {
     } 
 })
 
+props.cityCategories.map((cityCategory) => {
+    if(cityCategory.main_category === props.category.name ){
+        options.push(
+             {value: cityCategory.name, label: cityCategory.name} //ska value vara name eller id???
+        )
+    } 
+})
+
+
 
     return (
 
@@ -29,11 +38,6 @@ props.foodCategories.map((foodCategory) => {
                 /> 
             </div>
 
-            
-        {/*<ChooseCategory>Kök och maträtter</ChooseCategory>
-        <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/italienskt" exact>Italienskt</NavLink>
-        <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/libanesiskt" exact>Libanesiskt</NavLink>
-        <NavLink className="categoryNavItem" activeClassName="selectedCategory" to="/restauranger/spanskt" exact>Spanskt</NavLink>*/}
    </CategoryList>      
    
     )

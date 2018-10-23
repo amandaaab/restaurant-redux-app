@@ -5,7 +5,9 @@ module.exports = mongoose.model('Restaurant', new mongoose.Schema({
     id: Number,
     category: String,
     web: String,
-    description: String
+    description: String, 
+    foodId: Number,
+    cityId: Number,
   }));
 
   

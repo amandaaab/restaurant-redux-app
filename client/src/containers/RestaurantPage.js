@@ -16,7 +16,7 @@ class RestaurantPage extends Component {
     console.log('params:', this.props.cat);
     this.state = {
       show: false,
-      filteredArray: null,
+      //filteredArray: null,
       allSelected: []
     }
 
@@ -53,13 +53,13 @@ pushNew = (selectedOpt) => {
 
 
 
-  onSearch = (search) => {
+  /*onSearch = (search) => {
     this.setState({
       filteredArray: this.props.restaurants.filter(restaurant => {
         return restaurant.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
       })
     })
-  }
+  }*/
 
   render() {
     // Render error, loading, or resturantpage

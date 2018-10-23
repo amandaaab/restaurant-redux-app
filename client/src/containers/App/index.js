@@ -57,6 +57,8 @@ class App extends Component {
         }
       }/>
 
+      
+      {/*
       <Route path="/restauranger" exact strict render={
         ()=> {
           return (<RestaurantPage />);
@@ -66,6 +68,8 @@ class App extends Component {
       <Route path="/restauranger/:cat" exact strict render={({match})=>(
            <RestaurantPage cat={match.params.cat}/>
         )}/>
+
+      */}
 
         <Route path="/favoriter" exact strict render={
         ()=> {

@@ -2,81 +2,22 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import styled from 'styled-components';
-import CategoryNavbar from './CategoryNavbar';
-import {Collapse} from 'react-collapse';
 
 
 // Component
 class Navbar extends Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
-            show: false,
-            opacity: 0,
-            allSelected: []
-        }
-console.log('TYPEOF', typeof this.state.allSelected);
-        this.showCategory = this.showCategory.bind(this);
-        this.hideCategory = this.hideCategory.bind(this)
-        this.onFilter = this.onFilter.bind(this)
-        this.pushNew = this.pushNew.bind(this)
-    }
-
-    onFilter = (selectedOpt) => {
-        console.log('vald kategori', selectedOpt.category)
-
-        let newArray = this.state.allSelected.filter(obj => (obj.category !== selectedOpt.category));
-        this.setState({
-            allSelected: newArray
-        }, () => this.pushNew(selectedOpt))
    
-    }
 
-    pushNew = (selectedOpt) => {
-        this.setState({
-            allSelected: [...this.state.allSelected, selectedOpt]
-          }, () => console.log('i navbar array', this.state.allSelected))
-
-    }
-
-
-    showCategory = () => {
-        this.setState(prevState => ({
-            show: !prevState.show,
-            opacity: 1
-
-        }))
-    }
-
-    hideCategory = () => {
-        this.setState({
-            show: false,
-            opacity: 0
-        })
-    
-    }
-
+   
     render(){
     
         return (
             <div>
     <Container>
-        <NavLink className="navItem"  onClick={() => this.hideCategory()}activeClassName="selected" to="/" exact><FaHome/></NavLink>
-        <NavLink  onClick={() => this.showCategory()} className="navItem" activeClassName="selected" to="/restauranger" exact>RESTAURANGER</NavLink>
-        <NavLink className="navItem" onClick={() => this.hideCategory()} activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
+        <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
+        <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
     </Container>
-     <Collapse isOpened={this.state.show}>
-     <button>sök</button> 
-     {this.props.categories.map(category =>
-     <CategoryNavbar 
-                    category={category.name}
-                    cityCategories={this.props.cityCategories} 
-                    foodCategories={this.props.foodCategories}
-                    onFilter={this.onFilter}
-                    />
-     )}
-        </Collapse>    
+    
           </div>       
     )
 }

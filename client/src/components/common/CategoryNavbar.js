@@ -31,6 +31,7 @@ render(){
                  {value: foodCategory.name, label: foodCategory.name, category: this.props.category} //ska value vara name eller id???
             )
         } 
+        return options;
     })
     
     this.props.cityCategories.map((cityCategory) => {
@@ -39,11 +40,12 @@ render(){
                  {value: cityCategory.name, label: cityCategory.name, category: this.props.category} //ska value vara name eller id???
             )
         } 
+        return options;
     })
 
 
     return (
-
+     
     <CategoryList>
         
             <div>
@@ -56,8 +58,10 @@ render(){
                 onChange={this.handleChange}
                 /> 
             </div>
+         
 
-   </CategoryList>      
+   </CategoryList>     
+  
     )
 }
 

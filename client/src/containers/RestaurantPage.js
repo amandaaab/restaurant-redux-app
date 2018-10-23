@@ -3,6 +3,9 @@ import ReactLoading from 'react-loading';
 import RestaurantList from '../components/restaurant/RestaurantList';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import CategoryNavbar from '../components/common/CategoryNavbar';
+import {Collapse} from 'react-collapse';
+
 
 
 
@@ -12,11 +15,43 @@ class RestaurantPage extends Component {
     super(props)
     console.log('params:', this.props.cat);
     this.state = {
-      filteredArray: null
+      show: false,
+      filteredArray: null,
+      allSelected: []
     }
 
     this.onSearch = this.onSearch.bind(this)
+    this.showCategory = this.showCategory.bind(this);
+    this.onFilter = this.onFilter.bind(this)
+    this.pushNew = this.pushNew.bind(this)
   } 
+
+
+  onFilter = (selectedOpt) => {
+    console.log('vald kategori', selectedOpt.category)
+
+    let newArray = this.state.allSelected.filter(obj => (obj.category !== selectedOpt.category));
+    this.setState({
+        allSelected: newArray
+    }, () => this.pushNew(selectedOpt))
+
+}
+
+pushNew = (selectedOpt) => {
+    this.setState({
+        allSelected: [...this.state.allSelected, selectedOpt]
+      }, () => console.log('i navbar array', this.state.allSelected))
+
+}
+
+
+  showCategory = () => {
+    this.setState(prevState => ({
+        show: !prevState.show,
+      }))
+  }
+
+
 
   onSearch = (search) => {
     this.setState({
@@ -46,7 +81,20 @@ class RestaurantPage extends Component {
    else {    
 
      return (
-          <Container>  
+          <Container>
+            <button onClick={this.showCategory}>Filtrera</button>
+               <Collapse isOpened={this.state.show}>
+
+            {this.props.categories.map((category, i) =>
+              <CategoryNavbar 
+                    category={category.name}
+                    cityCategories={this.props.cityCategories} 
+                    foodCategories={this.props.foodCategories}
+                    onFilter={this.onFilter}
+                    key={i}
+                    />
+                     )}
+            </Collapse>
               <Content>
 
 
@@ -84,7 +132,10 @@ const mapStateToProps = (state) => {
       loading: state.restaurants.loading,
       error: state.restaurants.error,
       reviews: state.reviews.reviews,
-      categories: state.categories.categories
+      categories: state.categories.categories,
+      foodCategories: state.categories.foodCategories,
+      cityCategories: state.categories.cityCategories
+
   }
 }
 

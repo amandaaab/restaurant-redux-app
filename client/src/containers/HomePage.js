@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import img from '../images/pizza.jpg';
 import Autosuggest from 'react-autosuggest';
 import { NavLink } from 'react-router-dom';
+import RestaurantPage from './RestaurantPage';
 
 
 
@@ -96,8 +97,8 @@ renderSuggestion = suggestion => (
         </TopContent>
 
         <BottomContent>
-              <h4>Bäst omdömen</h4>
-              <RestaurantList restaurants={this.props.restaurants}
+              <h4>Restauranger</h4>
+              <RestaurantPage restaurants={this.props.restaurants}
                               reviews={this.props.reviews}
                               />
         </BottomContent>

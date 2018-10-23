@@ -16,9 +16,10 @@ constructor(props){
 
 
 handleChange = (selectedOption) => {
+    console.log(`Option selected:`, selectedOption.value);
+    this.setState({ selectedOption });
+
     this.props.onFilter(selectedOption);
-this.setState({ selectedOption });
-  console.log(`Option selected:`, selectedOption.value);
 }
 
 

@@ -1,28 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Select from 'react-select'
 
-const CategoryNavbar = (props) => {
+class CategoryNavbar extends Component {
+constructor(props){
+    super(props)
 
-const options = [];
+    this.state = {
+        selectedOption: null,
+      }
+      this.handleChange = this.handleChange.bind(this)
+     
+}
 
-props.foodCategories.map((foodCategory) => {
-    if(foodCategory.main_category === props.category.name ){
-        options.push(
-             {value: foodCategory.name, label: foodCategory.name} //ska value vara name eller id???
-        )
-    } 
-})
 
-props.cityCategories.map((cityCategory) => {
-    if(cityCategory.main_category === props.category.name ){
-        options.push(
-             {value: cityCategory.name, label: cityCategory.name} //ska value vara name eller id???
-        )
-    } 
-})
+handleChange = (selectedOption) => {
+    this.props.onFilter(selectedOption);
+this.setState({ selectedOption });
+  console.log(`Option selected:`, selectedOption.value);
+}
 
+
+render(){
+
+    const options = [];
+    this.props.foodCategories.map((foodCategory,) => {
+        if(foodCategory.main_category === this.props.category ){
+            options.push(
+                 {value: foodCategory.name, label: foodCategory.name, category: this.props.category} //ska value vara name eller id???
+            )
+        } 
+    })
+    
+    this.props.cityCategories.map((cityCategory) => {
+        if(cityCategory.main_category === this.props.category ){
+            options.push(
+                 {value: cityCategory.name, label: cityCategory.name, category: this.props.category} //ska value vara name eller id???
+            )
+        } 
+    })
 
 
     return (
@@ -30,18 +47,22 @@ props.cityCategories.map((cityCategory) => {
     <CategoryList>
         
             <div>
-                 <span>{props.category.name}</span>
+                 <span>{this.props.category}</span>
                 <Select 
                 className="select"
-                placeholder={`Välj ${props.category.name}`}
+                placeholder={`Välj ${this.props.category}`}
                 options={options}
+                value={this.state.selectedOption}
+                onChange={this.handleChange}
                 /> 
             </div>
 
    </CategoryList>      
-   
     )
 }
+
+}
+
 
 export default CategoryNavbar; 
 

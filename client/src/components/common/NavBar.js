@@ -4,6 +4,7 @@ import { FaHome } from 'react-icons/fa';
 import styled from 'styled-components';
 import CategoryNavbar from './CategoryNavbar';
 import {Collapse} from 'react-collapse';
+import { readlink } from 'fs';
 
 
 
@@ -14,12 +15,48 @@ class Navbar extends Component {
 
         this.state = {
             show: false,
-            opacity: 0
+            opacity: 0,
+            allSelected: []
         }
-
+console.log('TYPEOF', typeof this.state.allSelected);
         this.showCategory = this.showCategory.bind(this);
         this.hideCategory = this.hideCategory.bind(this)
+        this.onFilter = this.onFilter.bind(this)
     }
+
+    onFilter = (selectedOpt) => {
+
+        if(this.state.allSelected.length <= 0){
+            this.pushNew(selectedOpt)
+        }
+            
+            
+        this.state.allSelected.map(obj =>{
+            
+            if(obj.category === selectedOpt.category){
+            let array = [...this.state.allSelected]
+            let index = array.indexOf(obj);
+             let newArray = array.splice(index, 1, selectedOpt)
+            console.log('ska va borta', array)
+
+            this.setState({
+               allSelected: newArray
+               }, console.log('ALLA EFTER SPLICE', this.state.allSelected))
+            } else {
+                this.pushNew(selectedOpt)
+            }
+            })
+            
+   
+    }
+
+    pushNew = (selectedOpt) => {
+        this.setState(prevState => {
+            return {allSelected: [...prevState.allSelected, selectedOpt]}
+          }, () => console.log('i navbar array', this.state.allSelected))
+
+    }
+
 
     showCategory = () => {
         this.setState(prevState => ({
@@ -46,9 +83,15 @@ class Navbar extends Component {
         <NavLink  onClick={() => this.showCategory()} className="navItem" activeClassName="selected" to="/restauranger" exact>RESTAURANGER</NavLink>
         <NavLink className="navItem" onClick={() => this.hideCategory()} activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
     </Container>
-     <Collapse isOpened={this.state.show}>  
+     <Collapse isOpened={this.state.show}>
+     <button>sök</button> 
      {this.props.categories.map(category =>
-     <CategoryNavbar category={category} cityCategories={this.props.cityCategories} foodCategories={this.props.foodCategories}/>
+     <CategoryNavbar 
+                    category={category.name}
+                    cityCategories={this.props.cityCategories} 
+                    foodCategories={this.props.foodCategories}
+                    onFilter={this.onFilter}
+                    />
      )}
         </Collapse>    
           </div>       

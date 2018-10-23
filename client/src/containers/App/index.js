@@ -20,7 +20,7 @@ import NavBar from '../../components/common/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
 //import { connect } from 'http2';??
 import { connect } from 'react-redux';
-import { fetchReviews, fetchCreateReview } from '../../actions/reviewAction';
+import { fetchReviews} from '../../actions/reviewAction';
 import { fetchRestaurants } from '../../actions/restaurantAction';
 import { fetchSavedRestaurants } from '../../actions/saveAction';
 import { fetchCategories, fetchFoodCategories, fetchCityCategories } from '../../actions/categoryAction';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import ReactLoading from 'react-loading';
 import StarRatingComponent from 'react-star-rating-component';
 
 class StarRating extends Component {

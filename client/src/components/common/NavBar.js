@@ -4,8 +4,6 @@ import { FaHome } from 'react-icons/fa';
 import styled from 'styled-components';
 import CategoryNavbar from './CategoryNavbar';
 import {Collapse} from 'react-collapse';
-import { readlink } from 'fs';
-
 
 
 // Component

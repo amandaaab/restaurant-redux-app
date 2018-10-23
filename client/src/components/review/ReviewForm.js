@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import StarRating from '../Ratings';
 import styled from 'styled-components';
 import Modal from 'react-responsive-modal';
-//import { ValidationError } from 'mongoose';
-
 
 class ReviewForm extends Component {
     constructor(props){

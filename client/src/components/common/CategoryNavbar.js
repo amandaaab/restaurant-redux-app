@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Select from 'react-select'
 
@@ -26,7 +25,7 @@ handleChange = (selectedOption) => {
 render(){
 
     const options = [];
-    this.props.foodCategories.map((foodCategory,) => {
+    this.props.foodCategories.map((foodCategory) => {
         if(foodCategory.main_category === this.props.category ){
             options.push(
                  {value: foodCategory.name, label: foodCategory.name, category: this.props.category} //ska value vara name eller id???
@@ -99,7 +98,7 @@ const CategoryList= styled.div`
     text-decoration: underline;
 }
 `
-
+/*
 const ChooseCategory = styled.p`
 
     margin: 5%;
@@ -107,3 +106,4 @@ const ChooseCategory = styled.p`
     color: black;
     font-family: 'Source Sans Pro', sans-serif;
 `
+*/

@@ -1,9 +1,7 @@
 import React, {Component} from "react";
 import ReactLoading from 'react-loading';
 import RestaurantList from '../components/restaurant/RestaurantList';
-import CategoryNavbar from '../components/common/CategoryNavbar';
 import { connect } from 'react-redux';
-import Search from '../components/common/Search';
 import styled from 'styled-components';
 
 

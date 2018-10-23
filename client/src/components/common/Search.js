@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { FaSearch } from 'react-icons/fa';
-
 
 
 class Search extends Component {

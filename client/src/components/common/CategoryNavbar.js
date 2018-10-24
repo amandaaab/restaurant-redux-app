@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Select from 'react-select'
+import Select from 'react-select';
+
 
 class CategoryNavbar extends Component {
 constructor(props){
@@ -28,7 +29,7 @@ render(){
     this.props.foodCategories.map((foodCategory) => {
         if(foodCategory.main_category === this.props.category ){
             options.push(
-                 {value: foodCategory.name, label: foodCategory.name, category: this.props.category} //ska value vara name eller id???
+                 {value: foodCategory.name, foodId: foodCategory.id, label: foodCategory.name, category: this.props.category} //ska value vara name eller id???
             )
         } 
         return options;
@@ -37,7 +38,7 @@ render(){
     this.props.cityCategories.map((cityCategory) => {
         if(cityCategory.main_category === this.props.category ){
             options.push(
-                 {value: cityCategory.name, label: cityCategory.name, category: this.props.category} //ska value vara name eller id???
+                 {value: cityCategory.name, cityId: cityCategory.id, label: cityCategory.name, category: this.props.category} //ska value vara name eller id???
             )
         } 
         return options;
@@ -48,16 +49,14 @@ render(){
      
     <CategoryList>
         
-            <div>
                  <span>{this.props.category}</span>
                 <Select 
-                className="select"
-                placeholder={`Välj ${this.props.category}`}
-                options={options}
-                value={this.state.selectedOption}
-                onChange={this.handleChange}
+                    className="select"
+                    placeholder={`Välj ${this.props.category}`}
+                    options={options}
+                    value={this.state.selectedOption}
+                    onChange={this.handleChange}
                 /> 
-            </div>
          
 
    </CategoryList>     
@@ -70,17 +69,16 @@ render(){
 
 export default CategoryNavbar; 
 
-
-
 const CategoryList= styled.div`
-    height: 90px;
-    background-color: gray;
+    height: 80px;
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 240, 212);
+    background-color: rgb(244, 177, 164);
     width: 100%;  
     align-items: center;
     /*width: 100%;*/
+
+    
 
     .select {
       width: 240px;

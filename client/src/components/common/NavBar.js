@@ -13,10 +13,11 @@ class Navbar extends Component {
     
         return (
             <div>
-    <Container>
-        <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
-        <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
-    </Container>
+                <Container>
+                    <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
+                    <h3>RESTAURANGKARTAN</h3>
+                    <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
+                </Container>
     
           </div>       
     )
@@ -31,9 +32,18 @@ const Container = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    height: 94px;
+    height: 54px;
     z-index: 1;
     background-color: white;
+    align-items: center;
+
+
+    h3{
+        font-weight: bolder;
+        cursor: pointer;
+        font-family: 'Source Sans Pro', sans-serif;
+        
+    }
   /* box-shadow: 2px 2px 2px #0A5172*/
  /* border-bottom: 2px solid rgb(194, 155, 158);*/
 

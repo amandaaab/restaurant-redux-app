@@ -5,6 +5,10 @@
     
 }
 
+.collapse  {
+    width: 100%;
+}
+
 
 #navbar{
     display: flex;

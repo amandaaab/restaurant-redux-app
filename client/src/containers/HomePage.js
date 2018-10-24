@@ -97,7 +97,7 @@ renderSuggestion = suggestion => (
         </TopContent>
 
         <BottomContent>
-              <h4>Restauranger</h4>
+            
               <RestaurantPage restaurants={this.props.restaurants}
                               reviews={this.props.reviews}
                               />
@@ -121,7 +121,7 @@ const Container = styled.div`
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color:  rgb(242, 233, 225);
+    background-color:  white;
 `
 
 const BottomContent = styled.div`
@@ -134,7 +134,7 @@ const TopContent = styled.div`
     background-image: url(${img});
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;

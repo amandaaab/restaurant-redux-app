@@ -6,14 +6,17 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Component
-const RestaurantListItem = (props) => {
-
-        const { name, img, category} = props.restaurant;    
-        const { id } = props;
+class RestaurantListItem extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  render(){
+        const { name, img, category} = this.props.restaurant;    
+        const { id } = this.props;
     
         return (
           
-        <Container>
+        <Container onClick={this.openItem}>
               <NavLink to={`/restauranger/${category}/${name}`} exact>
                  <Image alt="restaurant" src={require(`../../images/${img}`)}/>
               </NavLink>
@@ -28,14 +31,15 @@ const RestaurantListItem = (props) => {
 
               <IconSection>
                 <div className="icon">
-                  <SaveRestaurant from={'renderRestaurant'} restaurantToSave={props.restaurant} />
+                  <SaveRestaurant from={'renderRestaurant'} restaurantToSave={this.props.restaurant} />
                 </div>
-                  <CalculateRate reviews={props.reviews} id={id}/>
+                  <CalculateRate reviews={this.props.reviews} id={id}/>
               </IconSection>                         
             </Content>
           </Container>
         )
     }
+  }
 
    RestaurantListItem.propTypes = {
       restaurant: PropTypes.shape({

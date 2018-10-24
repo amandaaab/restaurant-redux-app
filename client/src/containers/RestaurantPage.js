@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import CategoryNavbar from '../components/common/CategoryNavbar';
 import {Collapse} from 'react-collapse';
-
-
-
+import image from '../images/chark.jpg';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 
 class RestaurantPage extends Component {
@@ -20,7 +19,7 @@ class RestaurantPage extends Component {
       allSelected: []
     }
 
-    this.onSearch = this.onSearch.bind(this)
+    // this.onSearch = this.onSearch.bind(this)
     this.showCategory = this.showCategory.bind(this);
     this.onFilter = this.onFilter.bind(this)
     this.pushNew = this.pushNew.bind(this)
@@ -51,17 +50,8 @@ pushNew = (selectedOpt) => {
       }))
   }
 
-
-
-  /*onSearch = (search) => {
-    this.setState({
-      filteredArray: this.props.restaurants.filter(restaurant => {
-        return restaurant.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
-      })
-    })
-  }*/
-
   render() {
+
     // Render error, loading, or resturantpage
     const { error, loading } = this.props;
     
@@ -79,11 +69,18 @@ pushNew = (selectedOpt) => {
       }
     
    else {    
-
+   console.log("All selected här",this.state.allSelected)
+   
      return (
           <Container>
-            <button onClick={this.showCategory}>Filtrera</button>
+            <div className="filterDiv">
+              <a className="filter" onClick={this.showCategory}><span>Filtrera restauranger</span>
+             <span> { this.state.show ?  <FaAngleUp/> :  <FaAngleDown />}</span></a>
+            
+            </div>
+            <Content>
                <Collapse isOpened={this.state.show}>
+               <div className="categoryWrap">
 
             {this.props.categories.map((category, i) =>
               <CategoryNavbar 
@@ -94,31 +91,34 @@ pushNew = (selectedOpt) => {
                     key={i}
                     />
                      )}
+                     </div>
             </Collapse>
+            </Content>
               <Content>
+              <h4 className="filter">Alla restauranger</h4>
 
 
                   <List>
-                   {/* <Search onSearch={this.onSearch} restaurants={this.props.restaurants}/> */}
-                        {this.state.filteredArray ? 
-                          <RestaurantList cat={this.props.cat}
-                                            restaurantP={this.props.restaurantP}
-                                            restaurants={this.state.filteredArray}
-                                            reviews={this.props.reviews}
-                                            />
-
-                                            :
-
+                       {this.state.allSelected ?                  
                           <RestaurantList cat={this.props.cat}
                                             restaurantP={this.props.restaurantP}
                                             restaurants={this.props.restaurants}
                                             reviews={this.props.reviews}
+                                            categories={this.props.categories}
+                                            cityCategories={this.props.cityCategories} 
+                                            foodCategories={this.props.foodCategories}
+                                            selectedCategory={this.state.allSelected}
                                             />
 
-                        }
+                         : 
+                        <RestaurantList cat={this.props.cat}
+                        restaurantP={this.props.restaurantP}
+                        restaurants={this.state.filteredArray}
+                        reviews={this.props.reviews}
+                        />
+                       }
 
                     </List>
-
                 </Content>
            </Container>
     ); 
@@ -146,16 +146,49 @@ const Container = styled.div `
     align-items: center;
     flex-direction: column;
     min-width: 100%;
-    background-color: rgb(242, 233, 225);
+    background-color:white;
     height: auto;
     font-family: 'Ubuntu', sans-serif;
     color: rgb(49, 44, 44);
 
-    
+    .filterDiv{
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      height: 70px;
+      width:100%;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+.filter{
+  margin: 0px 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bolder;
+}
+
+a.filter{
+  border: none;
+  cursor: pointer;
+  color: black;
+ 
+  font-size: 16px;
+}
+
+a.filter:active{
+  text-decoration: underline;
+}
 
 `
 const Content = styled.div `  
+  width: 100%;
+ 
 
+  .categoryWrap {
+    display: flex;
+    justify-content: center;
+  
+  
+  }
 `
 const List = styled.div `
    width: 100%;

@@ -117,6 +117,7 @@ pushNew = (selectedOpt) => {
                                             cityCat={hihi}
                                             foodCat={hihi2}
                                             restaurants={this.props.restaurants}
+                                            restaurantP={this.props.restaurantP}
                                             reviews={this.props.reviews}
                                             />
 

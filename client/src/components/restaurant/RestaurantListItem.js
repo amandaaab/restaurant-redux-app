@@ -16,16 +16,13 @@ class RestaurantListItem extends React.Component {
     
         return (
           
-        <Container onClick={this.openItem}>
-              <NavLink to={`/restauranger/${category}/${name}`} exact>
+        <Container onClick={() => this.props.handleClick(id, this.props.restaurant)}>
+            
                  <Image alt="restaurant" src={require(`../../images/${img}`)}/>
-              </NavLink>
 
               <Content>
                   <TextSection>
-                    <NavLink to={`/restauranger/${category}/${name}`} exact>
                       <div className="card-title">{name}</div>
-                    </NavLink>
                     <h5 className="body-text">{category}</h5>
                  </TextSection>
 

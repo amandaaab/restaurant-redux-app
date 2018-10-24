@@ -21,12 +21,28 @@ class RestaurantList extends Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      selected: -1,
+      selectedRest: -1
+    }
+
       this.eachRestaurant = this.eachRestaurant.bind(this)
       this.onClose = this.onClose.bind(this)
     }
 
+    openItem = (id, restaurant) => {
+      console.log('vill öpnna dettta', id)
+      this.setState({
+        selected: id,
+        selectedRest: restaurant
+      })
+    }
+
     onClose = () => {
-      window.history.back();
+      this.setState({
+        selectedRest: -1,
+        selected: -1,
+      })
     }
 
     eachRestaurant = (restaurant) => {
@@ -36,15 +52,16 @@ class RestaurantList extends Component {
                       key={restaurant.id}
                       id={restaurant.id}
                       reviews={this.props.reviews}
+                      handleClick={this.openItem}
       /> )
   
   }
 
       render() {
         
-        if(this.props.restaurantP !== undefined){
+        if(this.state.selected !== -1){
           return <RestaurantItem 
-                        restaurant={this.props.restaurants}
+                        restaurant={this.state.selectedRest}
                         restaurantP={this.props.restaurantP}
                         handleClose={this.onClose}
                         reviews={this.props.reviews}

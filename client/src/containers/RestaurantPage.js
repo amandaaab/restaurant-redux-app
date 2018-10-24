@@ -70,6 +70,19 @@ pushNew = (selectedOpt) => {
     
    else {    
    console.log("All selected här",this.state.allSelected)
+
+   let hihi = this.state.allSelected.map((sel) => {
+    return sel.cityId
+   }
+   ).join("");
+   console.log('HÄR ÄR DEN', hihi);
+
+   let hihi2 = this.state.allSelected.map((sel) => {
+    return sel.foodId
+   }
+   ).join("");
+
+   console.log(hihi2);
    
      return (
           <Container>
@@ -100,14 +113,11 @@ pushNew = (selectedOpt) => {
 
                   <List>
                        {this.state.allSelected ?                  
-                          <RestaurantList cat={this.props.cat}
-                                            restaurantP={this.props.restaurantP}
+                          <RestaurantList   
+                                            cityCat={hihi}
+                                            foodCat={hihi2}
                                             restaurants={this.props.restaurants}
                                             reviews={this.props.reviews}
-                                            categories={this.props.categories}
-                                            cityCategories={this.props.cityCategories} 
-                                            foodCategories={this.props.foodCategories}
-                                            selectedCategory={this.state.allSelected}
                                             />
 
                          : 

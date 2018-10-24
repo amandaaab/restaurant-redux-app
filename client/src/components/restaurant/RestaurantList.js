@@ -51,9 +51,11 @@ class RestaurantList extends Component {
                         />
           } else {
 
-  
+            console.log('dessa har vi fått', this.props.cityCat, this.props.foodCat)
+           this.props.cityCat.length === 1 ? console.log('true') : console.log('false')
           return (
                 <Container>
+
 
                  {/*{this.props.selectedCategory ?
                        this.props.selectedCategory.map(selected => 
@@ -61,10 +63,44 @@ class RestaurantList extends Component {
                          restaurant.foodId === selected.foodId).map((restaurant) =>
                          this.eachRestaurant(restaurant)) 
                        ):*/}
+
+                        {
+                      this.props.foodCat.length < 1 & this.props.cityCat.length < 1 ?
+
+                       this.props.restaurants.map(restaurant => this.eachRestaurant(restaurant) )
+
+                     : null
+                    }
+
+
                      {
-                        this.props.restaurants.map(restaurant =>
-                         this.eachRestaurant(restaurant)
-                       )
+                      this.props.foodCat.length === 1 & this.props.cityCat.length < 1 ?
+
+                       this.props.restaurants.filter(restaurant =>
+                        restaurant.foodId == this.props.foodCat
+                     ).map(restaurant => this.eachRestaurant(restaurant) )
+
+                     : null
+                    }
+
+                     {
+                       this.props.cityCat.length === 1 & this.props.foodCat.length === 1 ?
+                       this.props.restaurants.filter(restaurant =>
+                        restaurant.cityId == this.props.cityCat & restaurant.foodId == this.props.foodCat
+                     ).map(restaurant => this.eachRestaurant(restaurant) ) : null
+
+                     }
+
+                    
+
+
+                      {  
+                         this.props.cityCat.length === 1 & this.props.foodCat < 1 ? 
+                        
+                        this.props.restaurants.filter(restaurant =>
+                          restaurant.cityId == this.props.cityCat
+                       ).map(restaurant => this.eachRestaurant(restaurant) ) : null
+                      
 
                   /*   this.props.restaurants.map((restaurant) =>
                    this.eachRestaurant(restaurant))*/

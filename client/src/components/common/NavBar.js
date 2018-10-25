@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import styled from 'styled-components';
 
 
@@ -14,9 +14,9 @@ class Navbar extends Component {
         return (
             <div>
                 <Container>
-                    <NavLink className="navItem" activeClassName="selected" to="/" exact><FaHome/></NavLink>
-                    <h3>RESTAURANGKARTAN</h3>
-                    <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact>FAVORITER</NavLink> 
+                    <NavLink className="navItem" activeClassName="selected" to="/" exact> RESTAURANGKARTAN</NavLink>
+                   
+                    <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
                 </Container>
     
           </div>       
@@ -57,6 +57,11 @@ const Container = styled.div`
     cursor: pointer;
     text-decoration: none;
 }
+
+ .favo {
+        color: rgb(232, 62, 73);
+        font-size:16px;
+    }
 
 .selected {
     text-decoration: underline;

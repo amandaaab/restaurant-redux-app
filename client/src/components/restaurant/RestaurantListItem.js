@@ -16,13 +16,13 @@ class RestaurantListItem extends React.Component {
     
         return (
           
-        <Container onClick={() => this.props.handleClick(id, this.props.restaurant)}>
+        <Container>
             
-                 <Image alt="restaurant" src={require(`../../images/${img}`)}/>
+                 <Image onClick={() => this.props.handleClick(id, this.props.restaurant)} alt="restaurant" src={require(`../../images/${img}`)}/>
 
               <Content>
                   <TextSection>
-                      <div className="card-title">{name}</div>
+                      <div onClick={() => this.props.handleClick(id, this.props.restaurant)} className="card-title">{name}</div>
                     <h5 className="body-text">{category}</h5>
                  </TextSection>
 

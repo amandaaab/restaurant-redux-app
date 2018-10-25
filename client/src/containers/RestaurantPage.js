@@ -12,14 +12,12 @@ import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
-    console.log('params:', this.props.cat);
+   
     this.state = {
       show: false,
-      //filteredArray: null,
       allSelected: []
     }
 
-    // this.onSearch = this.onSearch.bind(this)
     this.showCategory = this.showCategory.bind(this);
     this.onFilter = this.onFilter.bind(this)
     this.pushNew = this.pushNew.bind(this)
@@ -27,8 +25,7 @@ class RestaurantPage extends Component {
 
 
   onFilter = (selectedOpt) => {
-    console.log('vald kategori', selectedOpt.category)
-
+   // console.log('vald kategori', selectedOpt.category)
     let newArray = this.state.allSelected.filter(obj => (obj.category !== selectedOpt.category));
     this.setState({
         allSelected: newArray
@@ -43,7 +40,6 @@ pushNew = (selectedOpt) => {
 
 }
 
-
   showCategory = () => {
     this.setState(prevState => ({
         show: !prevState.show,
@@ -51,38 +47,32 @@ pushNew = (selectedOpt) => {
   }
 
   render() {
-
     // Render error, loading, or resturantpage
     const { error, loading } = this.props;
     
-    if (error) {
-            return <div>Error! {error.message}</div>;
-        }
+    if (error) { return <div>Error! {error.message}</div>}
 
     else if (loading) {
-      
        return (
-        <LoadingSpinner>
-           <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
-        </LoadingSpinner>
+          <LoadingSpinner>
+              <ReactLoading type={'spin'} color={'orange'} height={60} width={30} />
+          </LoadingSpinner>
        )
       }
     
-   else {    
-   console.log("All selected här",this.state.allSelected)
+      else {    
+     // console.log("All selected här",this.state.allSelected)
+      let hihi = this.state.allSelected.map((sel) => {
+        return sel.cityId
+      }
+      ).join("");
+      //console.log('HÄR ÄR DEN', hihi);
+      let hihi2 = this.state.allSelected.map((sel) => {
+        return sel.foodId
+      }
+      ).join("");
 
-   let hihi = this.state.allSelected.map((sel) => {
-    return sel.cityId
-   }
-   ).join("");
-   console.log('HÄR ÄR DEN', hihi);
-
-   let hihi2 = this.state.allSelected.map((sel) => {
-    return sel.foodId
-   }
-   ).join("");
-
-   console.log(hihi2);
+   //console.log(hihi2);
    
      return (
           <Container>

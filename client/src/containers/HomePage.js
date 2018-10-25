@@ -41,9 +41,9 @@ getSuggestionValue = suggestion => suggestion.name;
   
 renderSuggestion = suggestion => (
     <div>
-       <NavLink className="containerSuggestion" to={`/restauranger/${suggestion.category}/${suggestion.name}`} exact>
+       <NavLink className="containerSuggestion" to={`/${suggestion.name}`} exact>
 
-       <p>{suggestion.name} - </p><p className="searchImg">{ suggestion.category}</p>
+       <p>{suggestion.name} - </p><p className="searchImg"></p>
        </NavLink>
     </div>
   );

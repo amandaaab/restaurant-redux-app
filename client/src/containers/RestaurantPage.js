@@ -62,39 +62,33 @@ pushNew = (selectedOpt) => {
     
       else {    
      // console.log("All selected här",this.state.allSelected)
-      let hihi = this.state.allSelected.map((sel) => {
-        return sel.cityId
-      }
-      ).join("");
+      let hihi = this.state.allSelected.map((sel) => { return sel.cityId }).join("");
       //console.log('HÄR ÄR DEN', hihi);
-      let hihi2 = this.state.allSelected.map((sel) => {
-        return sel.foodId
-      }
-      ).join("");
+      let hihi2 = this.state.allSelected.map((sel) => { return sel.foodId }).join("");
 
    //console.log(hihi2);
    
      return (
           <Container>
             <div className="filterDiv">
-              <a className="filter" onClick={this.showCategory}><span>Filtrera restauranger</span>
-             <span> { this.state.show ?  <FaAngleUp/> :  <FaAngleDown />}</span></a>
-            
+                <a className="filter" onClick={this.showCategory}><span>Filtrera restauranger</span>
+                <span> { this.state.show ?  <FaAngleUp/> :  <FaAngleDown />}</span></a>
             </div>
+
             <Content>
                <Collapse isOpened={this.state.show}>
                <div className="categoryWrap">
 
-            {this.props.categories.map((category, i) =>
-              <CategoryNavbar 
-                    category={category.name}
-                    cityCategories={this.props.cityCategories} 
-                    foodCategories={this.props.foodCategories}
-                    onFilter={this.onFilter}
-                    key={i}
-                    />
-                     )}
-                     </div>
+                {this.props.categories.map((category, i) =>
+                  <CategoryNavbar 
+                        category={category.name}
+                        cityCategories={this.props.cityCategories} 
+                        foodCategories={this.props.foodCategories}
+                        onFilter={this.onFilter}
+                        key={i}
+                        />
+                        )}
+              </div>
             </Collapse>
             </Content>
               <Content>

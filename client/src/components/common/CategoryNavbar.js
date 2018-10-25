@@ -26,6 +26,9 @@ handleChange = (selectedOption) => {
 render(){
 
     const options = [];
+
+    options.push({label: 'alla', value: 'all', category: this.props.category})
+
     this.props.foodCategories.map((foodCategory) => {
         if(foodCategory.main_category === this.props.category ){
             options.push(

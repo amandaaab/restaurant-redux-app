@@ -23,6 +23,7 @@ class RestaurantList extends Component {
         selected: id,
         selectedRest: restaurant
       })
+      this.props.showCategory()
     }
 
     onClose = () => {

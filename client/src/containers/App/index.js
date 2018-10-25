@@ -15,6 +15,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import HomePage from '../HomePage';
 import RestaurantPage from '../RestaurantPage';
+import ProductPage from '../ProductPage'
 import SavePage from '../SavePage';
 import NavBar from '../../components/common/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -78,9 +79,10 @@ class App extends Component {
         }
       }/>
 
-      <Route path="/restauranger/:cat/:restaurantP" exact strict render={({match})=>(
-                   <RestaurantPage restaurantP={match.params.restaurantP}
-                                    cat={match.params.cat}
+      <Route path="/:restaurantName" exact strict render={({match})=>(
+                   <ProductPage restaurantName={match.params.restaurantName}
+                   restaurants={this.props.restaurants}
+                   reviews={this.props.reviews}
                    />
 )}/>
 
@@ -100,7 +102,8 @@ const mapStateToProps = (state) => {
       loading: state.reviews.loading,
       error: state.reviews.error,
       foodCategories: state.categories.foodCategories,
-      cityCategories: state.categories.cityCategories
+      cityCategories: state.categories.cityCategories,
+      restaurants: state.restaurants.restaurants
 
 
   }

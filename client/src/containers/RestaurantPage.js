@@ -46,6 +46,12 @@ pushNew = (selectedOpt) => {
       }))
   }
 
+  closeSelect = () => {
+    this.setState({
+      show: false,
+    })
+  }
+
   render() {
     // Render error, loading, or resturantpage
     const { error, loading } = this.props;
@@ -70,6 +76,7 @@ pushNew = (selectedOpt) => {
    
      return (
           <Container>
+
             <div className="filterDiv">
                 <a className="filter" onClick={this.showCategory}><span>Filtrera restauranger</span>
                 <span> { this.state.show ?  <FaAngleUp/> :  <FaAngleDown />}</span></a>
@@ -103,6 +110,7 @@ pushNew = (selectedOpt) => {
                                             restaurants={this.props.restaurants}
                                             restaurantP={this.props.restaurantP}
                                             reviews={this.props.reviews}
+                                            showCategory={this.closeSelect}
                                             />
 
                          : 
@@ -110,6 +118,8 @@ pushNew = (selectedOpt) => {
                         restaurantP={this.props.restaurantP}
                         restaurants={this.state.filteredArray}
                         reviews={this.props.reviews}
+                        showCategory={this.closeSelect}
+
                         />
                        }
 

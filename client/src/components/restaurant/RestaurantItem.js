@@ -9,6 +9,9 @@ import styled from 'styled-components';
 const RestaurantItem = (props) => {
 
     const { restaurant } = props;
+    console.log('restaurangen', restaurant)
+    console.log('restaurangens namn', restaurant.name)
+
       
     return (
             

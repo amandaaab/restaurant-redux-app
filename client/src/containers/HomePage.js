@@ -6,6 +6,7 @@ import img from '../images/pizza.jpg';
 import Autosuggest from 'react-autosuggest';
 import { NavLink } from 'react-router-dom';
 import RestaurantPage from './RestaurantPage';
+import ProductPage from './ProductPage';
 
 
 

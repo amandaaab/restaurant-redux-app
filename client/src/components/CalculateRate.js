@@ -58,14 +58,14 @@ const StarContainer = styled.div `
     left: 0;
     white-space: nowrap;
     overflow: hidden;
-    color: #F1BF98;
+    color: gold;
     
    
   }
    
   .stars-inner::before {
     content: "\f005 \f005 \f005 \f005 \f005";
-    color: #0A5172;
+    color:gold;
   
   }
 

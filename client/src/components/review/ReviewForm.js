@@ -77,11 +77,9 @@ class ReviewForm extends Component {
             ...errors
           });
       
-          return isError;
-      
+          return isError; 
     }
-
-
+    
     change = e => {
         this.setState({
           [e.target.name]: e.target.value

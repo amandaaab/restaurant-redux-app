@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSaveRestaurant, deleteSavedRestaurant } from '../actions/saveAction';
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import styled from 'styled-components';
 
 
@@ -35,9 +35,9 @@ class SaveRestaurant extends Component {
 
         // Save restaurants
         if(this.props.from === 'renderRestaurant'){
-            button = <FaHeart className='saveHeart' onClick={() => this.save(restaurantToSave)}></FaHeart>
+            button = <FaRegHeart className='saveHeart' onClick={() => this.save(restaurantToSave)}></FaRegHeart>
                 } else {
-             button = <button className="saveButton" onClick={() => this.save(restaurantToSave)}>Spara</button>
+             button = <FaRegHeart className="saveButton" onClick={() => this.save(restaurantToSave)}>Spara</FaRegHeart>
             }
 
         // Delete restaurants
@@ -45,7 +45,7 @@ class SaveRestaurant extends Component {
             if(this.props.from === 'renderRestaurant'){
             button = <FaHeart className="delHeart" onClick={() => this.delete(restaurantToSave.id)}></FaHeart>
                 } else {
-            button = <button className="delButton" onClick={() => this.delete(restaurantToSave.id)}>Ta bort</button>
+            button = <FaHeart className="delButton" onClick={() => this.delete(restaurantToSave.id)}>Ta bort</FaHeart>
                 }
         }
 
@@ -68,40 +68,31 @@ export default connect(mapStateToProps)(SaveRestaurant);
 const Button = styled.div `
   .saveHeart {
     opacity: 0.4;
-    color: rgb(32, 92, 172);
+    color: red;
   }
   .saveHeart:hover{
-    color:#e03f3f;
+    color:darkred;
     opacity: 1;
   }
 
   .delHeart {
     color:#e03f3f;
     opacity: 1;
+    color: red;
   }
   .delHeart:hover{
     opacity: 0.4;
-    color: rgb(32, 92, 172);
+    color:darkred;
   }
 
   .delButton {
-    width: 150px;
-    height: 25px;
-    border-style: none;
-    background: #e03f3f;
-    border-radius: 3px;
-    color: white;
-    box-shadow: 3px 2px 4px#a52626;
+    font-size: 22px;
+    color:red;
     cursor: pointer;
 }
 .saveButton{
-    width: 150px;
-    height: 25px;
-    border-style: none;
-   background: rgb(32, 92, 172);
-    border-radius: 3px;
-    box-shadow: 2px 2px 4px rgb(24, 71, 131);
+    font-size: 22px;
     cursor: pointer;
-    color: white;
+    color: red;
 }
 `

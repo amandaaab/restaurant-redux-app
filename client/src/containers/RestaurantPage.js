@@ -150,7 +150,7 @@ const Container = styled.div `
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    min-width: 100%;
+    max-width: 100%;
     background-color:white;
     height: auto;
     font-family: 'Ubuntu', sans-serif;

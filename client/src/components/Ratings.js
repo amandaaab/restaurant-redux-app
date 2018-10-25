@@ -73,7 +73,6 @@ class StarRating extends Component {
             name="rate1" 
             starCount={5}
             value={rating}
-            backgroundColor={'blue'}
             onStarClick={this.onStarClick.bind(this)}
           />
 

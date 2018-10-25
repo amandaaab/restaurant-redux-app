@@ -6,8 +6,7 @@ import styled from 'styled-components';
 // Component
 const Reviews = (props) => {
     return(
-        <React.Fragment>
-            
+        <Container>
                 <h3>Omdömen</h3>
                 <Table className='table'>
                 <thead>
@@ -17,10 +16,9 @@ const Reviews = (props) => {
                     <th>Betyg</th>
                     </tr>
                 </thead>
-               {props.reviews.filter(review => review.id === props.id).slice(0,3)
 
+               {props.reviews.filter(review => review.id === props.id).slice(0,3)
                                 .map((review, i) => 
-                                        
                                             <tbody key={i}>
                                                 <tr>
                                                     <td>{review.name}</td>
@@ -28,7 +26,6 @@ const Reviews = (props) => {
                                                     <td>{review.rating}</td>
                                                 </tr>
                                             </tbody>
-                                          
                                        )}
             {props.isDisplayed ? (
 
@@ -45,17 +42,12 @@ const Reviews = (props) => {
                                 </tr>
                             </tbody>
                           
-                       )
-
-
-
-            ) : null}
-                                       </Table>
+                       )) : null}
+            </Table>
 
 
                     {props.isDisplayed ? (
                                      <ShowHide onClick={props.display}>Visa mindre...</ShowHide>
-
                     ) :              <ShowHide onClick={props.display}>Visa mer...</ShowHide>}
 
 
@@ -64,7 +56,7 @@ const Reviews = (props) => {
 
 
 
-        </React.Fragment>
+        </Container>
     )
 
     
@@ -83,8 +75,18 @@ Reviews.propTypes = {
 export default Reviews;
 
 // Style
+
+const Container = styled.div `
+  padding: 0px 40px;
+  padding-bottom: 20px;
+
+  h3 {
+      margin-bottom: 40px; 
+  }
+
+`
 const Table = styled.table`
-    width: 90%;
+    width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
 `
 

@@ -20,19 +20,24 @@ const RestaurantItem = (props) => {
 
                     <InfoWrapper>  
                         <LeftBox>
-                            <h3 className=".name">{restaurant.name}</h3>
-                            <div>{restaurant.category}</div>
-                            <div >{restaurant.web}</div>
-                            <div >{restaurant.address}</div>
-                        </LeftBox>
 
-                        <RightBox>
-                            <div className="rateDiv">
+                            <h3 className="name">{restaurant.name}</h3>
+                                <div className="category">{restaurant.category}</div>
+                                <div className="rateDiv">
                                 <CalculateRate 
                                     reviews={props.reviews}
                                     id={restaurant.id} 
                                 />
                             </div>
+                    
+                            <div class="information">
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida justo. Donec vel lectus et nunc tincidunt pellentesque eget quis justo. Vestibulum ut lorem dignissim, posuere tellus non, accumsan dolor. Vestibulum rhoncus fermentum odio ac eleifend. </div>
+                            </div>
+                            <a>{restaurant.web}</a>
+                            <div>{restaurant.address}</div>
+                        </LeftBox>
+
+                        <RightBox>
                                 <div className="saveDiv">
                                         <SaveRestaurant restaurantToSave={restaurant} />
                                 </div>
@@ -57,7 +62,7 @@ width: 100%;
 background-color: white;
 padding: 30px 110px;
 font-family: 'Source Sans Pro', sans-serif;
-background-color: lightcoral;
+background-color: rgb(224, 226, 229);
 
 
 .faArrowLeft {
@@ -74,8 +79,7 @@ const Content = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:center;
-    background-color: lightblue;
-
+    background-color: white;
     .image {
     width: 600px;
     max-height: 360px;
@@ -86,13 +90,32 @@ const Content = styled.div`
 const RestaurantContent = styled.div `
     display: flex;
     justify-content: space-around;
-    background-color: lightgray;
+    align-items: center;
+    /*flex-flow: row wrap;*/
 
+    .category {
+        margin-top: -8px;
+        font-style: italic;
+    }
+    .information {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .rateDiv {
+        margin-top: 14px;
+    }
+
+    a {
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: underline; 
+    }
 `
 
 const ReviewContent = styled.div `
     width: 100%;
-    background-color: red;
+    background-color: rgb(252, 252, 252);
 `
 
 const CloseBtn = styled.div`
@@ -100,9 +123,6 @@ const CloseBtn = styled.div`
     position: relative;
     top:0;
 `
-
-
-
 const LeftBox = styled.div`
     width: 100%;
     display: flex;
@@ -122,10 +142,13 @@ const RightBox = styled.div`
         margin: 4px;
         width: 150px;
     }
-    .saveDiv {
-        margin: 4px;
 
+    .saveDiv {
+        display: flex;
+        justify-content: flex-end;
+        padding: 16px 60px;
     }
+    
     
 `
 

@@ -111,10 +111,8 @@ const mapStateToProps = (state) => {
  
   export default connect(mapStateToProps)(ReviewParent);
 
-
-
   const Spinner = styled.div`
-     display: flex;
+    display: flex;
     justify-content: center;
     align-items:  center;
     height: 30%;
@@ -123,18 +121,17 @@ const mapStateToProps = (state) => {
 
 const Container = styled.div`
     display: flex;
-    margin-top:30px;
+    margin-top:20px;
     flex-direction: row;
 
     .review-form {
-        width: 30%;
-        padding: 0px 34px;
+        width: 40%;
         display: flex;
         justify-content: center;
     }
 
     .reviews {
-    width: 75%;
+    width: 100%;
 }
 `
 

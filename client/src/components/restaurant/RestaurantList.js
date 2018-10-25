@@ -42,7 +42,6 @@ class RestaurantList extends Component {
                       handleClick={this.openItem}
       /> )
     }
-    
         render() {
           if(this.state.selected !== -1){
             return <RestaurantItem 

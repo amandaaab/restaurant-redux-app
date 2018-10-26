@@ -18,6 +18,7 @@ import RestaurantPage from '../RestaurantPage';
 import ProductPage from '../ProductPage'
 import SavePage from '../SavePage';
 import NavBar from '../../components/common/NavBar';
+import Footer from '../../components/common/Footer';
 import { BrowserRouter as Router } from 'react-router-dom';
 //import { connect } from 'http2';??
 import { connect } from 'react-redux';
@@ -58,20 +59,6 @@ class App extends Component {
         }
       }/>
 
-      
-      {/*
-      <Route path="/restauranger" exact strict render={
-        ()=> {
-          return (<RestaurantPage />);
-        }
-      }/>
-
-      <Route path="/restauranger/:cat" exact strict render={({match})=>(
-           <RestaurantPage cat={match.params.cat}/>
-        )}/>
-
-      */}
-
         <Route path="/favoriter" exact strict render={
         ()=> {
 
@@ -84,9 +71,9 @@ class App extends Component {
                    restaurants={this.props.restaurants}
                    reviews={this.props.reviews}
                    />
-)}/>
+      )}/>
 
-
+     <Footer />
 
       </React.Fragment>
   </Router>

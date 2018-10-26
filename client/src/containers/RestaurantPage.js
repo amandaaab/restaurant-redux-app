@@ -7,22 +7,24 @@ import CategoryNavbar from '../components/common/CategoryNavbar';
 import {Collapse} from 'react-collapse';
 import image from '../images/chark.jpg';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import { withRouter } from 'react-router';
 
 
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
+
+    console.log('HISTORY I RESTAURANTP CONSTR', this.props.history.location.state)
    
     this.state = {
       show: false,
-      allSelected: []
+      allSelected: this.props.history.location.state ? this.props.location.state : []
     }
 
     this.showCategory = this.showCategory.bind(this);
     this.onFilter = this.onFilter.bind(this)
     this.pushNew = this.pushNew.bind(this)
   } 
-
 
   onFilter = (selectedOpt) => {
    // console.log('vald kategori', selectedOpt.category)
@@ -37,7 +39,6 @@ pushNew = (selectedOpt) => {
     this.setState({
         allSelected: [...this.state.allSelected, selectedOpt]
       }, () => console.log('i navbar array', this.state.allSelected))
-
 }
 
   showCategory = () => {
@@ -51,8 +52,14 @@ pushNew = (selectedOpt) => {
       show: false,
     })
   }
+  
+
 
   render() {
+
+    if(this.props.history.location.state){
+      console.log('nu är den längre än två')
+    }
     // Render error, loading, or resturantpage
     const { error, loading } = this.props;
     
@@ -111,6 +118,7 @@ pushNew = (selectedOpt) => {
                                             restaurantP={this.props.restaurantP}
                                             reviews={this.props.reviews}
                                             showCategory={this.closeSelect}
+                                            saveState={this.state.allSelected}
                                             />
 
                          : 
@@ -119,6 +127,7 @@ pushNew = (selectedOpt) => {
                         restaurants={this.state.filteredArray}
                         reviews={this.props.reviews}
                         showCategory={this.closeSelect}
+                        saveState={this.state.allSelected}
 
                         />
                        }
@@ -210,4 +219,4 @@ const LoadingSpinner = styled.div `
     height: 100vh;
 `
 
-export default connect(mapStateToProps)(RestaurantPage);
+export default withRouter(connect(mapStateToProps)(RestaurantPage));

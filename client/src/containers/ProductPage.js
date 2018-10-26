@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import RestaurantItem from '../components/restaurant/RestaurantItem';
+import { withRouter } from 'react-router';
 
 class ProductPage extends Component {
+constructor(props){
+    super(props)
+
+this.closeItem = this.closeItem.bind(this)
+}
 
 closeItem = () => {
-    window.history.back();
+    //window.history.back();
+    //this.props.history.goBack();
+    console.log(this.props.history)
+    this.props.history.push({pathname:`/`, state: this.props.history.location.state})
 }
   
 
@@ -39,4 +48,4 @@ render(){
 
 }
 
-export default ProductPage;
+export default withRouter(ProductPage);

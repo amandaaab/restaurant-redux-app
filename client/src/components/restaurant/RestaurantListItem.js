@@ -18,7 +18,7 @@ class RestaurantListItem extends React.Component {
           
         <Container>
             
-                <NavLink to={`/${name}`}> <Image onClick={() => this.props.handleClick(id, this.props.restaurant)} alt="restaurant" src={require(`../../images/${img}`)}/></NavLink>
+               <Image onClick={() => this.props.handleClick(id, this.props.restaurant)} alt="restaurant" src={require(`../../images/${img}`)}/>
 
               <Content>
                   <TextSection>

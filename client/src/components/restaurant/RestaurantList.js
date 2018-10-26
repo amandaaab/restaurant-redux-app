@@ -3,6 +3,8 @@ import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
 import RestaurantItem from './RestaurantItem';
 import styled from 'styled-components';
+import { withRouter } from 'react-router';
+
 
 
 class RestaurantList extends Component {  
@@ -16,21 +18,26 @@ class RestaurantList extends Component {
 
       this.eachRestaurant = this.eachRestaurant.bind(this)
       this.onClose = this.onClose.bind(this)
+      this.openItem = this.openItem.bind()
     }
 
     openItem = (id, restaurant) => {
-      this.setState({
+      /*this.setState({
         selected: id,
         selectedRest: restaurant
-      })
-      this.props.showCategory()
+      })*/
+      console.log('NAMNET', restaurant.name)
+
+      this.props.history.push({pathname:`/${restaurant.name}`, state: this.props.saveState})
+
+      //this.props.showCategory()
     }
 
     onClose = () => {
-      this.setState({
+      /*this.setState({
         selectedRest: -1,
         selected: -1,
-      })
+      })*/
     }
 
     eachRestaurant = (restaurant) => {
@@ -100,7 +107,7 @@ class RestaurantList extends Component {
     restaurants: PropTypes.array.isRequired
   };
 
-export default RestaurantList;
+export default withRouter(RestaurantList);
 
 const Container = styled.div `
     display: flex;

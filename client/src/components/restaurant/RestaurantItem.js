@@ -33,7 +33,7 @@ const RestaurantItem = (props) => {
                                 />
                             </div>
                     
-                            <div class="information">
+                            <div className="information">
                                 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida justo. Donec vel lectus et nunc tincidunt pellentesque eget quis justo. Vestibulum ut lorem dignissim, posuere tellus non, accumsan dolor. Vestibulum rhoncus fermentum odio ac eleifend. </div>
                             </div>
                             <a>{restaurant.web}</a>

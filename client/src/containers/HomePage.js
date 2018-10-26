@@ -120,6 +120,8 @@ export default connect(mapStateToProps)(HomePage);
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content:center;
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color:  white;
@@ -139,6 +141,7 @@ const TopContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 94%;
     top:0;
 
 

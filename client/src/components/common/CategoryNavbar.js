@@ -78,14 +78,14 @@ const CategoryList= styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: flex-start; 
-    background-color: rgb(204, 79, 79);
+    background-color: white;
     width: 20%;
     /*width: 100%;*/
 
 span {
-    color: white;
-    font-size:16px;
-    font-weight: bold;
+    color: black;
+    font-size:12px;
+    font-weight: normal;
     margin-left: 5px;
 }
     
@@ -93,7 +93,7 @@ span {
     .select {
       min-width: 100%;
       
-    }
+     }
 
 
     .categoryNavItem {

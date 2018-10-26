@@ -35,17 +35,17 @@ export default Footer;
 const Container = styled.div `
 
     height: 200px;
-    background-color: rgb(204,79,79);
+    background-color: rgb(163, 48, 48);
     color: white;
     text-transform: uppercase;
     max-width: 100%;
-    font-weight: normal;
     font-size: 14px;
     display:flex;
     align-items: center;
     justify-content: space-around;
     margin-top:60px;
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: 'Yantramanav';
   
 
 .sträck {

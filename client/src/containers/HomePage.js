@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import RestaurantList from '../components/restaurant/RestaurantList';
 import styled from 'styled-components';
-import img from '../images/pizza.jpg';
+import img from '../images/test.jpg';
 import Autosuggest from 'react-autosuggest';
 import { NavLink } from 'react-router-dom';
 import RestaurantPage from './RestaurantPage';

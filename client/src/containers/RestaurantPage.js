@@ -200,7 +200,7 @@ const Content = styled.div `
   display: flex;
  justify-content: center;
   flex-flow: row wrap;
-   background-color: rgb(204, 79, 79);
+   background-color: white;
    min-width: 100%;
   }
 `

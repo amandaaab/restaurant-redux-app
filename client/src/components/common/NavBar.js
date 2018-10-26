@@ -15,7 +15,6 @@ class Navbar extends Component {
             <div>
                 <Container>
                     <NavLink className="navItem" activeClassName="selected" to="/" exact> RESTAURANGKARTAN</NavLink>
-                   
                     <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
                 </Container>
     

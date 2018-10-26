@@ -52,7 +52,7 @@ render(){
      
     <CategoryList>
         
-                 <span>{this.props.category}</span>
+                 <span>{this.props.category.charAt(0).toUpperCase()+ this.props.category.slice(1)}</span>
                 <Select 
                     className="select"
                     placeholder={`Välj ${this.props.category}`}
@@ -76,16 +76,23 @@ const CategoryList= styled.div`
     height: 80px;
     display: flex;
     justify-content: center;
-    background-color: rgb(244, 177, 164);
-    width: 100%;  
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start; 
+    background-color: rgb(204, 79, 79);
+    width: 20%;
     /*width: 100%;*/
 
+span {
+    color: white;
+    font-size:16px;
+    font-weight: bold;
+    margin-left: 5px;
+}
     
 
     .select {
-      width: 240px;
-      margin: 1%;
+      min-width: 100%;
+      
     }
 
 
@@ -95,7 +102,6 @@ const CategoryList= styled.div`
     margin: 1%;
     font-family: 'Source Sans Pro', sans-serif;
 
-    
 }
 
 .selectedCategory {

@@ -10,8 +10,10 @@ class SavePage extends Component {
   render() {
     return (
       <SaveContainer>
-        <h3>Sparade restauranger</h3>
-        {(this.props.save).length === 0 ? <p>Du har inga sparade restauranger</p> : null} 
+        <div className="headText">
+          <h3></h3>
+          {(this.props.save).length === 0 ? <h3>Du har inga sparade restauranger</h3> : <h3>Dina sparade restauranger</h3>} 
+        </div>
         <SavedRestaurants reviews={this.props.reviews} restaurants={this.props.save} />
       </SaveContainer>
     );
@@ -32,7 +34,7 @@ const SaveContainer = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    font-family: 'Source Sans Pro', sans-serif;
     h3{
 
     }

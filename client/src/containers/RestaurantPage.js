@@ -92,7 +92,6 @@ pushNew = (selectedOpt) => {
             <Content>
                <Collapse isOpened={this.state.show}>
                <div className="categoryWrap">
-
                 {this.props.categories.map((category, i) =>
                   <CategoryNavbar 
                         category={category.name}
@@ -106,7 +105,7 @@ pushNew = (selectedOpt) => {
             </Collapse>
             </Content>
               <Content>
-              <h4 className="filter">Alla restauranger</h4>
+             
 
 
                   <List>
@@ -159,7 +158,7 @@ const Container = styled.div `
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    max-width: 100%;
+    min-width: 100%;
     background-color:white;
     height: auto;
     font-family: 'Ubuntu', sans-serif;
@@ -194,14 +193,15 @@ a.filter:active{
 
 `
 const Content = styled.div `  
-  width: 100%;
+  min-width: 100%;
  
 
   .categoryWrap {
-    display: flex;
-    justify-content: center;
-  
-  
+  display: flex;
+ justify-content: center;
+  flex-flow: row wrap;
+   background-color: rgb(204, 79, 79);
+   min-width: 100%;
   }
 `
 const List = styled.div `

@@ -80,10 +80,6 @@ const Button = styled.div `
     opacity: 1;
     color: red;
   }
-  .delHeart:hover{
-    opacity: 0.4;
-    color:darkred;
-  }
 
   .delButton {
     font-size: 22px;

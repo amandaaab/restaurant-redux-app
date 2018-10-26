@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SavedRestaurants from '../components/SavedRestaurants';
 import styled from 'styled-components';
-
+import img from '../images/dessert.jpg';
 
 class SavePage extends Component { 
 
@@ -11,9 +11,9 @@ class SavePage extends Component {
     return (
       <SaveContainer>
         <div className="headText">
-          <h3></h3>
           {(this.props.save).length === 0 ? <h3>Du har inga sparade restauranger</h3> : <h3>Dina sparade restauranger</h3>} 
         </div>
+        <div className ="saveWrap"></div>
         <SavedRestaurants reviews={this.props.reviews} restaurants={this.props.save} />
       </SaveContainer>
     );
@@ -34,10 +34,34 @@ const SaveContainer = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    h3{
+    font-family: 'Source Sans Pro', sans-serif;  
+
+    .headText {
+      background-image: url(${img});
+      width: 94%;
+      height: 300px;
+      background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     }
+    h3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      color: black;
+      padding: 24px;
+      font-weight: bolder;
+    }
+
+    .saveWrap {
+      margin-top: 50px;
+    }
+
+  
 `
 
 export default connect(mapStateToProps)(SavePage);

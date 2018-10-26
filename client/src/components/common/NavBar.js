@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
 
 // Component
 class Navbar extends Component {
    
+    refresh = () => {
+        window.location.reload()
+    }
 
    
     render(){
@@ -14,7 +18,7 @@ class Navbar extends Component {
         return (
             <div>
                 <Container>
-                    <NavLink className="navItem" activeClassName="selected" to="/" exact> RESTAURANGKARTAN</NavLink>
+                    <NavLink onClick={this.refresh} className="navItem" activeClassName="selected" to="/" exact> RESTAURANGKARTAN</NavLink>
                     <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
                 </Container>
     
@@ -23,7 +27,7 @@ class Navbar extends Component {
 }
 }
 
-export default Navbar; 
+export default withRouter(Navbar); 
 
 const Container = styled.div`
     display: flex;

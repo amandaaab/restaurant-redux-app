@@ -34,7 +34,7 @@ return (
         <div className="stars-outer">
             <div className="stars-inner" style={starStyle}></div>
         </div>
-        <div className="StarResult">({result})</div>
+        <div className="StarResult">{result}</div>
     </StarContainer>
 
     )
@@ -48,7 +48,7 @@ const StarContainer = styled.div `
     
   .stars-outer::before {
     content: "\f005 \f005 \f005 \f005 \f005";
-    color: rgb(196, 196, 196);
+    color: rgb(224, 224, 224);
    
   }
    
@@ -58,14 +58,14 @@ const StarContainer = styled.div `
     left: 0;
     white-space: nowrap;
     overflow: hidden;
-    color: gold;
+    color:rgb(255, 205, 68);
     
    
   }
    
   .stars-inner::before {
     content: "\f005 \f005 \f005 \f005 \f005";
-    color:gold;
+    color:rgb(255, 205, 68);
   
   }
 
@@ -76,7 +76,10 @@ const StarContainer = styled.div `
   
   }
 
-  .StarResult {}
+  .StarResult {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 5px;
+  }
 `
     
 export default CalculateRate;

@@ -58,7 +58,7 @@ const Container = styled.div`
 }
 
  .favo {
-        color: rgb(232, 62, 73);
+        color: rgb(221, 79, 86);
         font-size:16px;
     }
 

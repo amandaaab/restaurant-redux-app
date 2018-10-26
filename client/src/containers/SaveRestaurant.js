@@ -68,7 +68,7 @@ export default connect(mapStateToProps)(SaveRestaurant);
 const Button = styled.div `
   .saveHeart {
     opacity: 0.4;
-    color: red;
+    color: rgb(221, 79, 86);
   }
   .saveHeart:hover{
     color:darkred;
@@ -78,17 +78,17 @@ const Button = styled.div `
   .delHeart {
     color:#e03f3f;
     opacity: 1;
-    color: red;
+    color: rgb(221, 79, 86);
   }
 
   .delButton {
     font-size: 22px;
-    color:red;
+    color:rgb(221, 79, 86);
     cursor: pointer;
 }
 .saveButton{
     font-size: 22px;
     cursor: pointer;
-    color: red;
+    color: rgb(221, 79, 86);
 }
 `

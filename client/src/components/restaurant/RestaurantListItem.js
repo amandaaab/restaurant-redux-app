@@ -53,7 +53,7 @@ export default RestaurantListItem;
 const Container = styled.div`
    margin: 1% 1%;
     font-family: 'Ubuntu', sans-serif;   
-    box-shadow: 1px 2px 6px #d6d5d3;
+    /*box-shadow: 1px 2px 6px #d6d5d3;*/
     color: rgb(0, 0, 0);
     /*margin:20px;*/
     display: flex;
@@ -61,6 +61,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: white;
+    border: 1px solid rgb(239, 240, 242);
 `
 
 const Image = styled.img`
@@ -74,9 +75,11 @@ const Content = styled.div `
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
+    padding:5px;
 `
 
 const TextSection = styled.div `
+
    .card-title {
     width: 100%;
     bottom: 0;

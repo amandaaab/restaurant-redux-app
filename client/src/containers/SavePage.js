@@ -38,7 +38,7 @@ const SaveContainer = styled.div `
 
     .headText {
       background-image: url(${img});
-      width: 94%;
+      width: 100%;
       height: 300px;
       background-size: cover;
     background-position: center;

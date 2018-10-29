@@ -1,6 +1,7 @@
 
 body {
-    padding: 0px 40px 20px 40px;
+    padding: 0px 70px 20px 70px;
+    
 }
 .styles_modal__gNwvD {
     width: 110vh;
@@ -49,3 +50,10 @@ body {
   transform: translateY(100%);
 }
 */
+
+
+@media all and (max-width: 800px) {
+   body {
+       padding: 0px;
+    }
+}

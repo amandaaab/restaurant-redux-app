@@ -141,7 +141,7 @@ const TopContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 94%;
+    width: 100%;
     top:0;
 
 

@@ -57,3 +57,15 @@ body {
        padding: 0px;
     }
 }
+
+@media all and (max-width: 1260px) {
+    body {
+        padding: 0px 30px 10px 30px;
+    }
+ }
+
+ @media all and (max-width: 1000px) {
+    body {
+        padding: 0px 10px 5px 10px;
+    }
+ }

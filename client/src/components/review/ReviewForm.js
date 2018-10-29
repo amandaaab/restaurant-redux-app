@@ -4,6 +4,7 @@ import StarRating from '../Ratings';
 import styled from 'styled-components';
 import Modal from 'react-responsive-modal';
 
+
 class ReviewForm extends Component {
     constructor(props){
         super(props)
@@ -107,7 +108,7 @@ class ReviewForm extends Component {
 
         return(
         
-        <div>
+        <React.Fragment>
             <CreateReviewButton onClick={this.onOpenModal}>Ge ditt omdöme</CreateReviewButton>
         
             <Modal open={this.state.open} onClose={this.onCloseModal}>
@@ -154,7 +155,7 @@ class ReviewForm extends Component {
             </Modal>
             
             
-        </div>
+        </React.Fragment>
       
         )
     }
@@ -183,6 +184,7 @@ const CreateReviewButton = styled.button`
     font-size: 16px;
     font-weight: bolder;
     color: rgb(58, 59, 61);
+    width: 300px; 
     font-family: 'Source Sans Pro', sans-serif;x
     &:hover {
         color: rgb(98, 100, 100);

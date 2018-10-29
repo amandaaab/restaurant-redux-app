@@ -80,8 +80,18 @@ const Container = styled.div `
   padding: 0px 40px;
   padding-bottom: 20px;
 
+  @media all and (max-width: 700px) {
+       padding: 0px 5px;
+       padding-bottom: 10px;
+    }
+
   h3 {
       margin-bottom: 40px; 
+
+    
+  @media all and (max-width: 500px) {
+      margin-bottom: 15px;
+    }
   }
 
 `

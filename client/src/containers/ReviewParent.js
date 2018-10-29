@@ -123,15 +123,24 @@ const Container = styled.div`
     display: flex;
     margin-top:20px;
     flex-direction: row;
+    @media all and (max-width: 700px) {
+       flex-direction: column-reverse;
+    }
 
     .review-form {
         width: 40%;
-        display: flex;
-        justify-content: center;
+
+        @media all and (max-width: 700px) {
+            display: flex;
+            justify-content:center;
+       width: 100%;
     }
+    }
+
 
     .reviews {
     width: 100%;
+ 
 }
 `
 

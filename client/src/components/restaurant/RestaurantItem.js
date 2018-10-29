@@ -19,8 +19,9 @@ const RestaurantItem = (props) => {
             <CloseBtn onClick={props.handleClose}><FaArrowLeft className="faArrowLeft"/></CloseBtn>
             <Content>
                 <RestaurantContent>
+                    <div className="imageDiv">
                 <img alt="restaurant" className="image" src={require(`../../images/${restaurant.img}`)} />
-
+                    </div>
                     <InfoWrapper>  
                         <LeftBox>
 
@@ -40,12 +41,10 @@ const RestaurantItem = (props) => {
                             <div>{restaurant.address}</div>
                         </LeftBox>
 
-                        <RightBox>
                                 <div className="saveDiv">
                                         <SaveRestaurant restaurantToSave={restaurant} />
                                 </div>
                         
-                        </RightBox>
                     </InfoWrapper>
                     </RestaurantContent>
                     <ReviewContent>
@@ -63,9 +62,24 @@ export default RestaurantItem;
 const Container = styled.div`
 width: 100%;
 background-color: white;
-padding: 30px 110px;
+padding: 30px 100px;
 font-family: 'Source Sans Pro', sans-serif;
 background-color: rgb(224, 226, 229);
+
+@media all and (max-width: 1400px) {
+       padding: 10px 50px;
+    }
+
+@media all and (max-width: 1200px) {
+       padding: 5px 10px;
+    }
+
+
+
+@media all and (max-width: 1000px) {
+       padding: 0px;
+       background-color: white;
+    }
 
 
 .faArrowLeft {
@@ -86,15 +100,46 @@ const Content = styled.div`
     .image {
     width: 600px;
     max-height: 360px;
+    
+    @media all and (max-width: 900px) {
+        width: 600px;
+        height: 360px;
+}
+
+
+@media all and (max-width: 750px) {
+        width: 400px;
+        height: 230px;
+}
+
+@media all and (max-width: 450px) {
+        width: 350px;
+        height: 210px;
+}
+
+    @media all and (max-width: 370px) {
+        width: 300px;
+        height: 180px;
+}
 
 }
 
 `
 const RestaurantContent = styled.div `
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
-    /*flex-flow: row wrap;*/
+    justify-content:center;
+    @media all and (max-width: 900px) {
+        margin-top: 5%;
+        display: flex;
+       flex-direction: column;
+        align-items: center;
+}
+
+    .imageDiv {
+    
+    }
 
     .category {
         margin-top: -8px;
@@ -103,10 +148,39 @@ const RestaurantContent = styled.div `
     .information {
         width: 90%;
         padding: 30px;
+
+         @media all and (max-width: 1200px){
+
+            width: 95%;
+            padding:15px;
+            /*background: blue;*/
+        }
+
+        @media all and (max-width: 1000px){
+
+            width: 100%;
+            padding:15px;
+            /*background: blue;*/
+            }
+
+            @media all and (max-width: 900px){
+
+                width: 90%;
+                padding:30px;
+                text-align: center;
+                /*background: blue;*/
+            }
     }
 
     .rateDiv {
         margin-top: 14px;
+        @media all and (max-width: 1000px){
+             margin-top: 10px;
+         }
+
+         @media all and (max-width: 900px){
+             margin-top: 14px;
+         }
     }
 
     a {
@@ -127,35 +201,40 @@ const CloseBtn = styled.div`
     top:0;
 `
 const LeftBox = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+     .name {
+         
+         @media all and (max-width: 1000px){
+             font-size: 18px;
+         }
+         @media all and (max-width: 900px){
+             font-size: 24px;
+         }
+}
 `
 
-const RightBox = styled.div`
-   /* width: 30%;*/
-   /* height: auto;*/
-    display: flex;
-    flex-direction: column;
-
-
-    .rateDiv {
-        margin: 4px;
-        width: 150px;
-    }
-
-    .saveDiv {
-        display: flex;
-        justify-content: flex-end;
-        padding: 16px 60px;
-    }
     
-    
-`
+
 
 
 const InfoWrapper = styled.div`
+
+.saveDiv {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 60px;
+
+      @media all and (max-width: 1200px){
+        padding: 10px 30px;
+}
+
+
+    }
+  
+
    
 `

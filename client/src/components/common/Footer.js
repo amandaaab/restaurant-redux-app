@@ -35,7 +35,7 @@ export default Footer;
 const Container = styled.div `
 
     height: 200px;
-    background-color: rgb(163, 48, 48);
+    background-color: rgb(51, 51, 51);
     color: white;
     text-transform: uppercase;
     max-width: 100%;

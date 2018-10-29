@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const jsonParser= require('body-parser').json;
+const path = require('path')
 
 app.use(jsonParser());
 
@@ -8,6 +9,11 @@ global.mongoose = require("mongoose");
 
 mongoose.connect('mongodb://localhost/restaurant');
 
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../client/restaurangapp/build/'));
+})
+
+app.use( express.static( `${__dirname}/../client/restaurangapp/build` ) );
 // Restaurant CRUD
 const Restaurant = require('./models/restaurant')
 

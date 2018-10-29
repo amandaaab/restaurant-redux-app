@@ -51,8 +51,9 @@ render(){
     return (
      
     <CategoryList>
-        
-                 <span>{this.props.category.charAt(0).toUpperCase()+ this.props.category.slice(1)}</span>
+            
+                 <span>{this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)}</span>
+            
                 <Select 
                     className="select"
                     placeholder={`Välj ${this.props.category}`}
@@ -60,7 +61,8 @@ render(){
                     value={this.state.selectedOption}
                     onChange={this.handleChange}
                 /> 
-         
+
+                
 
    </CategoryList>     
   
@@ -73,48 +75,44 @@ render(){
 export default CategoryNavbar; 
 
 const CategoryList= styled.div`
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: flex-start; 
+    align-items: center; 
     background-color: white;
-    width: 20%;
-    /*width: 100%;*/
+    width: 300px;
 
-span {
-    color: black;
-    font-size:12px;
-    font-weight: normal;
-    margin-left: 5px;
-}
+    @media all and (max-width: 700px) {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-flow: row;
+    }
+ 
+    span {
+        color: black;
+        font-size:16px;
+        font-weight: normal;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
     
-
     .select {
-      max-width: 100%;
-      
-     }
+        width: 80%;
 
+        @media all and (max-width: 700px) {
+        width: 50%;
+        }
+     }
 
     .categoryNavItem {
     color: rgb(15, 15, 15);
     text-decoration: none;
     margin: 1%;
     font-family: 'Source Sans Pro', sans-serif;
+    }
 
-}
-
-.selectedCategory {
-    color: rgb(231, 227, 227);
-    text-decoration: underline;
-}
+    .selectedCategory {
+        color: rgb(231, 227, 227);
+        text-decoration: underline;
+    }
 `
-/*
-const ChooseCategory = styled.p`
-
-    margin: 5%;
-    font-weight: bolder;
-    color: black;
-    font-family: 'Source Sans Pro', sans-serif;
-`
-*/

@@ -11,9 +11,11 @@ class SavePage extends Component {
     return (
       <SaveContainer>
         <div className="headText">
-          {(this.props.save).length === 0 ? <h3>Du har inga sparade restauranger</h3> : <h3>Dina sparade restauranger</h3>} 
+          <h3 className="fav">Favoriter</h3>
         </div>
-        <div className ="saveWrap"></div>
+        {(this.props.save).length === 0 ? <h3 className="savedR">Du har inga sparade restauranger</h3> : <h3>Dina sparade restauranger</h3>} 
+        <div className ="saveWrap">
+        </div>
         <SavedRestaurants reviews={this.props.reviews} restaurants={this.props.save} />
       </SaveContainer>
     );
@@ -46,19 +48,35 @@ const SaveContainer = styled.div `
     justify-content: center;
     align-items: center;
 
+    @media all and (max-width: 700px) {
+     height: 220px;
+    
     }
-    h3{
+ 
+    }
+    .fav{
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: white;
       color: black;
-      padding: 24px;
+      padding: 18px;
       font-weight: bolder;
     }
 
+    .savedR{
+      padding: 0px;
+      margin: 0px;
+    }
+
     .saveWrap {
-      margin-top: 50px;
+      margin-top: 20px;
+
+    @media all and (max-width: 900px) {
+
+    
+    }
+ 
     }
 
   

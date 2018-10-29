@@ -34,9 +34,11 @@ export default Search;
 
 const Container = styled.div`
 
+width: 100%;
+
 input {
     height: 30px;
-    width: 150%;
+    min-width: 100%;
     border: 1px solid lightgrey;
     border-radius: 2%;
 }

@@ -9,19 +9,20 @@ import { FaRegCopyright } from 'react-icons/fa';
       
         return (
             <Container>
-            <div class="kontaktUppgifter">
-                <p class="kontakt">Restaurangguiden</p>
+            <div className="kontaktUppgifter">
+                <p>Restaurangguiden</p>
                 <p>info@rkartan.se</p>
                 <p>031 21 32 43</p>
             </div>
-            <div class="minalänkar">
-            <div class="sträck"></div>
-            <div class="länkar">
+            <div className="minalänkar">
+            <div className="sträck"></div>
+            <div className="länkar">
                   <p>Policy</p>
+                  <p>Om oss</p>
             </div>
-            <div class="sträck"></div>
-            <div class="länkar">
-                  <p class="copyright"><FaRegCopyright/>restaurangkartan 2018</p>
+            <div className="sträck"></div>
+            <div className="länkar">
+                  <p className="copyright"><FaRegCopyright/>restaurangkartan 2018</p>
                 </div>
             </div>
         </Container>     
@@ -54,7 +55,7 @@ const Container = styled.div `
         padding: 0px 10px;
     }
 
-    @media all and (max-width: 320px) {
+    @media all and (max-width: 375px) {
         flex-direction: column;
         justify-content: center;
         height: 200px;
@@ -72,21 +73,19 @@ const Container = styled.div `
     width: 25%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 5%;
     @media all and (max-width: 800px) {
         /*background: yellow;*/
         width: 50%;
     }
-    @media all and (max-width: 320px) {
+    @media all and (max-width: 375px) {
         width: 100%;
         align-items: center;
     }
 
 }
-/*kontakt {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}*/
+
 
 .sträck {
     height: 100px;
@@ -117,7 +116,7 @@ const Container = styled.div `
         width: 50%;
     }
 
-     @media all and (max-width: 320px) {
+     @media all and (max-width: 375px) {
         width: 100%;
         align-items: center;
         flex-direction: column;

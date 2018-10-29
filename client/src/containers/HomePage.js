@@ -123,12 +123,13 @@ const Container = styled.div`
     justify-content:center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     background-color:  white;
+
 `
 
 const BottomContent = styled.div`
-     display: flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
 `
@@ -144,11 +145,17 @@ const TopContent = styled.div`
     width: 100%;
     top:0;
 
+    @media all and (max-width: 700px) {
+      height: 260px;
+    }
+
+
 
     .containerSuggestion {
       display:flex;
       flex-direction: row;
       align-items: center;
+      width: 100%;
     }
 
     .react-autosuggest__input {

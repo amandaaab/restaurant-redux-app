@@ -53,21 +53,35 @@ export default RestaurantListItem;
 const Container = styled.div`
    margin: 1% 1%;
     font-family: 'Ubuntu', sans-serif;   
-    /*box-shadow: 1px 2px 6px #d6d5d3;*/
     color: rgb(0, 0, 0);
-    /*margin:20px;*/
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: white;
     border: 1px solid rgb(239, 240, 242);
+
+    @media all and (max-width: 500px) {
+     width: 100%;
+     margin: 0px;
+     border: none;
+    }
+ 
 `
 
 const Image = styled.img`
     cursor: pointer;
     width: 340px;
     height: 220px;
+
+     @media all and (max-width: 500px) {
+     width: 100%;
+     height: 270px;
+    
+    }
+ 
+
+
 `
 
 const Content = styled.div `

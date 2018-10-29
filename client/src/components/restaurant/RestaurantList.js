@@ -120,5 +120,13 @@ const Container = styled.div `
     font-family: 'Ubuntu', sans-serif;
     background-color:rgb(224, 226, 229);
     width: 100%;
-    min-width: 100%;
+    
+
+     @media all and (max-width: 760px) {
+      background-color: white;
+      padding: 0px;
+
+
+    }
+
 `

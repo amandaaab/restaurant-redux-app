@@ -62,7 +62,7 @@ const Container = styled.div`
     border: 1px solid rgb(239, 240, 242);
 
     @media all and (max-width: 500px) {
-     width: 100%;
+     max-width: 100%;
      margin: 0px;
      border: none;
     }
@@ -75,20 +75,17 @@ const Image = styled.img`
     height: 220px;
 
      @media all and (max-width: 500px) {
-     width: 100%;
-    
-    
+     max-width: 100%;
+     
     }
  
-
-
 `
 
 const Content = styled.div `
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     padding:5px;
 `
 

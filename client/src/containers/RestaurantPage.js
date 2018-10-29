@@ -158,7 +158,7 @@ const Container = styled.div `
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    min-width: 100%;
+    max-width: 100%;
     background-color:white;
     height: auto;
     font-family: 'Ubuntu', sans-serif;
@@ -169,12 +169,11 @@ const Container = styled.div `
       justify-content: center;
       align-items:center;
       height: 70px;
-      width:100%;
+     width: 100%;
       font-family: 'Source Sans Pro', sans-serif;
     }
 
 .filter{
-  margin: 0px 30px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
 }
@@ -193,7 +192,7 @@ a.filter:active{
 
 `
 const Content = styled.div `  
-  min-width: 100%;
+ max-width: 100%; 
  
 
   .categoryWrap {
@@ -201,11 +200,11 @@ const Content = styled.div `
  justify-content: center;
   flex-flow: row wrap;
    background-color: white;
-   min-width: 100%;
+  
   }
 `
 const List = styled.div `
-   min-width: 100%;
+   
     display: flex;
     justify-content: center;
     flex-direction: column;

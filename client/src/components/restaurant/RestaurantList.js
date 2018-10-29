@@ -110,6 +110,7 @@ class RestaurantList extends Component {
 export default withRouter(RestaurantList);
 
 const Container = styled.div `
+    padding: 40px 0px;
     display: flex;
     justify-content: center;
     height: auto;
@@ -117,6 +118,7 @@ const Container = styled.div `
     align-items: center;
     flex-flow: row wrap;
     font-family: 'Ubuntu', sans-serif;
-    background-color:white;
+    background-color:rgb(224, 226, 229);
     width: 100%;
+    min-width: 100%;
 `

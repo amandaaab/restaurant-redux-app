@@ -205,7 +205,7 @@ const Content = styled.div `
   }
 `
 const List = styled.div `
-   width: 100%;
+   min-width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;

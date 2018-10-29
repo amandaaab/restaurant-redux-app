@@ -19,7 +19,7 @@ class Navbar extends Component {
             <div>
                 <Container>
                     <NavLink onClick={this.refresh} className="navItem" activeClassName="selected" to="/" exact> RESTAURANGKARTAN</NavLink>
-                    <NavLink className="navItem" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
+                    <NavLink className="navItem" id="favo" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
                 </Container>
     
           </div>       
@@ -39,36 +39,56 @@ const Container = styled.div`
     z-index: 1;
     background-color: white;
     align-items: center;
+    max-width: 100%;
 
-
-    h3{
-        font-weight: bolder;
-        cursor: pointer;
-        font-family: 'Source Sans Pro', sans-serif;
-        
+    @media all and (max-width: 700px) {
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px 0px;    
+    height: 78px;
     }
-  /* box-shadow: 2px 2px 2px #0A5172*/
- /* border-bottom: 2px solid rgb(194, 155, 158);*/
 
-    
-
-.navItem {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: BLACK;
-    font-size: 22px;
-    margin: 2%;
+h3{
+    font-weight: bolder;
     cursor: pointer;
-    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    
 }
+    .navItem {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: BLACK;
+        font-size: 22px;
+        margin: 2%;
+        cursor: pointer;
+        text-decoration: none;
+
+        @media all and (max-width: 700px) {
+        justify-content: center;
+        flex-direction: column;
+        margin: 1%;
+        
+        }
+    }
+
 
  .favo {
         color: rgb(221, 79, 86);
         font-size:16px;
+
+        @media all and (max-width: 700px) {
+        font-size: 12px;
+        }
     }
 
-.selected {
-    text-decoration: underline;
-    color: rgb(46, 46, 46);
-}
+    #favo {
+        @media all and (max-width: 700px) {
+        font-size: 16px;
+        }
+    }
+
+    .selected {
+        text-decoration: underline;
+        color: rgb(46, 46, 46);
+    }
 
 `

@@ -169,7 +169,7 @@ const Container = styled.div `
       justify-content: center;
       align-items:center;
       height: 70px;
-     width: 100%;
+     max-width: 100%;
       font-family: 'Source Sans Pro', sans-serif;
     }
 
@@ -204,7 +204,7 @@ const Content = styled.div `
   }
 `
 const List = styled.div `
-   
+   max-width:100%;
     display: flex;
     justify-content: center;
     flex-direction: column;

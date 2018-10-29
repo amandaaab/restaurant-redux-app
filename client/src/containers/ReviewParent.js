@@ -133,7 +133,7 @@ const Container = styled.div`
         @media all and (max-width: 700px) {
             display: flex;
             justify-content:center;
-       width: 100%;
+            width: 100%;
     }
     }
 

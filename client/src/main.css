@@ -6,7 +6,8 @@ body {
 .styles_modal__gNwvD {
     width: 110vh;
     min-height: 80vh;
-    background-color: rgb(255, 240, 212);
+    background-color: rgb(242, 242, 239);
+
     
 }
 
@@ -52,11 +53,7 @@ body {
 */
 
 
-@media all and (max-width: 900px) {
-   body {
-       padding: 0px;
-    }
-}
+
 
 @media all and (max-width: 1260px) {
     body {
@@ -69,3 +66,21 @@ body {
         padding: 0px 10px 5px 10px;
     }
  }
+
+ @media all and (max-width: 900px) {
+    body {
+        padding: 0px;
+        margin: 0px;
+     }
+ }
+
+
+
+ @media all and (max-width: 600px) {
+
+ .styles_modal__gNwvD {
+    width: 100%;
+    padding-top: 5%;
+    
+    }
+}

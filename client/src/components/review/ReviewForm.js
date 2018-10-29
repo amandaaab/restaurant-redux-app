@@ -113,12 +113,9 @@ class ReviewForm extends Component {
         
             <Modal open={this.state.open} onClose={this.onCloseModal}>
             <Form onSubmit={this.save}>
-                <br></br>
                 <h3>Hur var din upplevlse på {this.props.name}?</h3>
-                <span>Skriv en recension</span>
-                <br></br>
                 <div className="form-group">
-                    <FormBox style={{textAlign: 'center'}}>
+                    <FormBox>
                     <label className="label-for-rating">Ge ditt betyg</label>
                     <StarRating sendSum={this.showSum}/>
                     {this.state.ratingNumberError}
@@ -137,7 +134,7 @@ class ReviewForm extends Component {
                            {this.state.nameError}
                         </FormBox>
 
-                        <FormBox className="boxTwo">
+                        <FormBox>
                     <label>Ditt omdöme</label>
                     <textarea name="text"
                                 className="form-control"
@@ -149,8 +146,9 @@ class ReviewForm extends Component {
                                />
                                {this.state.textError}
                                </FormBox>
-                    <SubmitButton className="btn btn-primary">Skicka</SubmitButton>
                 </div>
+                <SubmitButton id="sendButton" className="btn btn-primary">Skicka</SubmitButton>
+
             </Form>
             </Modal>
             
@@ -200,11 +198,15 @@ display:flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-height:90%;
-width: 90%;
+height:100%;
+width: 100%;
 margin: auto;
 font-family: 'Source Sans Pro', sans-serif;
 
+#sendButton {
+    border: none;
+    background: #2c2d2d;
+}
 .label-for-rating {
  margin-bottom: -20px;
 }
@@ -214,11 +216,21 @@ font-family: 'Source Sans Pro', sans-serif;
 
 .form-control {
     width: 75vh;
+
+     @media all and (max-width: 500px) {
+         width: 100%;
+     }
+
+}
+
+h3 {
+    @media all and (max-width: 500px) {
+         font-size: 18px;
+     }
 }
 `
 const FormBox = styled.div `
     margin: 2vh 0vh;
-
       #textarea {
         height: 120px;
     }

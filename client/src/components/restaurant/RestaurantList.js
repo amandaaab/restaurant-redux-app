@@ -119,7 +119,7 @@ const Container = styled.div `
     flex-flow: row wrap;
     font-family: 'Ubuntu', sans-serif;
     background-color:rgb(224, 226, 229);
-    width: 100%;
+    max-width: 100%;
     
 
      @media all and (max-width: 760px) {

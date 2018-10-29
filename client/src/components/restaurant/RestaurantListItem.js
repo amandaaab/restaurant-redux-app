@@ -60,6 +60,7 @@ const Container = styled.div`
     align-items: center;
     background-color: white;
     border: 1px solid rgb(239, 240, 242);
+    max-width: 100%;
 
     @media all and (max-width: 500px) {
      max-width: 100%;
@@ -71,13 +72,8 @@ const Container = styled.div`
 
 const Image = styled.img`
     cursor: pointer;
-    width: 340px;
+    width: 320px;
     height: 220px;
-
-     @media all and (max-width: 500px) {
-     max-width: 100%;
-     
-    }
  
 `
 

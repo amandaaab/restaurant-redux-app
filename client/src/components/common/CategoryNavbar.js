@@ -83,7 +83,7 @@ const CategoryList= styled.div`
     width: 300px;
 
     @media all and (max-width: 700px) {
-    width: 400px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     flex-flow: row;

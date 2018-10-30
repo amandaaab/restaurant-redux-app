@@ -4,36 +4,31 @@ import SaveRestaurant from '../../containers/SaveRestaurant';
 import CalculateRate from '../CalculateRate'
 import styled from 'styled-components';
 
-// Component
-class RestaurantListItem extends React.Component {
-  
-  render(){
-        const { name, img, category} = this.props.restaurant;    
-        const { id } = this.props;
+const RestaurantListItem = (props) => {
+
+        const { name, img, category} = props.restaurant;    
+        const { id } = props;
     
         return (
-          
-        <Container>
-            
-               <Image onClick={() => this.props.handleClick(this.props.restaurant)} alt="restaurant" src={require(`../../images/${img}`)}/>
-
+        <Container>  
+               <Image onClick={() => props.handleClick(props.restaurant)} alt="restaurant" src={require(`../../images/${img}`)}/>
               <Content>
                   <TextSection>
-                      <div onClick={() => this.props.handleClick(this.props.restaurant)} className="card-title">{name}</div>
+                      <div onClick={() => props.handleClick(props.restaurant)} className="card-title">{name}</div>
                     <h5 className="body-text">{category}</h5>
                  </TextSection>
 
               <IconSection>
                 <div className="icon">
-                  <SaveRestaurant from={'renderRestaurant'} restaurantToSave={this.props.restaurant} />
+                  <SaveRestaurant from={'renderRestaurant'} restaurantToSave={props.restaurant} />
                 </div>
-                  <CalculateRate reviews={this.props.reviews} id={id}/>
+                  <CalculateRate reviews={props.reviews} id={id}/>
               </IconSection>                         
             </Content>
           </Container>
         )
     }
-  }
+  
 
    RestaurantListItem.propTypes = {
       restaurant: PropTypes.shape({

@@ -4,8 +4,7 @@ import RestaurantList from '../components/restaurant/RestaurantList';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import CategoryNavbar from '../components/common/CategoryNavbar';
-import {Collapse} from 'react-collapse';
-import image from '../images/chark.jpg';
+import { Collapse } from 'react-collapse';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { withRouter } from 'react-router';
 

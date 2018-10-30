@@ -98,6 +98,7 @@ const CategoryList= styled.div`
     
     .select {
         width: 80%;
+        margin-left: 2%;
 
         @media all and (max-width: 700px) {
         width: 50%;

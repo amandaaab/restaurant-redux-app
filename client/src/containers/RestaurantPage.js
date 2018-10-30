@@ -55,10 +55,6 @@ pushNew = (selectedOpt) => {
 
 
   render() {
-
-    if(this.props.history.location.state){
-      console.log('nu är den längre än två')
-    }
     // Render error, loading, or resturantpage
     const { error, loading } = this.props;
     
@@ -74,9 +70,9 @@ pushNew = (selectedOpt) => {
     
       else {    
      // console.log("All selected här",this.state.allSelected)
-      let hihi = this.state.allSelected.map((sel) => { return sel.cityId }).join("");
+      let city = this.state.allSelected.map((sel) => { return sel.cityId }).join("");
       //console.log('HÄR ÄR DEN', hihi);
-      let hihi2 = this.state.allSelected.map((sel) => { return sel.foodId }).join("");
+      let food = this.state.allSelected.map((sel) => { return sel.foodId }).join("");
 
    //console.log(hihi2);
    
@@ -110,8 +106,8 @@ pushNew = (selectedOpt) => {
                   <List>
                        {this.state.allSelected ?                  
                           <RestaurantList   
-                                            cityCat={hihi}
-                                            foodCat={hihi2}
+                                            cityCat={city}
+                                            foodCat={food}
                                             restaurants={this.props.restaurants}
                                             restaurantP={this.props.restaurantP}
                                             reviews={this.props.reviews}

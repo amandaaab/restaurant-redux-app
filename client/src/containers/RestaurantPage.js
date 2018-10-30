@@ -12,8 +12,6 @@ import { withRouter } from 'react-router';
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
-
-    console.log('HISTORY I RESTAURANTP CONSTR', this.props.history.location.state)
    
     this.state = {
       show: false,

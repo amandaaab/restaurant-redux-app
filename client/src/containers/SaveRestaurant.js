@@ -16,9 +16,6 @@ class SaveRestaurant extends Component {
         this.delete = this.delete.bind(this)
     }
 
-    componentDidMount() {
-       // this.props.dispatch(fetchSavedRestaurants());
-    }
 
     delete = (id) => {
         this.props.dispatch(deleteSavedRestaurant(id));

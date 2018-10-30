@@ -71,10 +71,9 @@ pushNew = (selectedOpt) => {
       else {    
      // console.log("All selected här",this.state.allSelected)
       let city = this.state.allSelected.map((sel) => { return sel.cityId }).join("");
-      //console.log('HÄR ÄR DEN', hihi);
+
       let food = this.state.allSelected.map((sel) => { return sel.foodId }).join("");
 
-   //console.log(hihi2);
    
      return (
           <Container>

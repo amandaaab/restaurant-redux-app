@@ -67,6 +67,9 @@ const Container = styled.div`
      margin: 0px;
      border: none;
     }
+    @media all and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape ){
+        margin: 1px;
+    }
  
 `
 
@@ -74,7 +77,6 @@ const Image = styled.img`
     cursor: pointer;
     width: 320px;
     height: 220px;
- 
 `
 
 const Content = styled.div `

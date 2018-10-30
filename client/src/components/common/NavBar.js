@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
+//import logo from './images/maplogo.png'
 
 
 // Component
@@ -18,7 +19,7 @@ class Navbar extends Component {
         return (
             <div>
                 <Container>
-                    <NavLink onClick={this.refresh} className="navItem" activeClassName="selected" to="/" exact> RESTAURANGKARTAN</NavLink>
+                    <NavLink onClick={this.refresh} className="navItem" activeClassName="selected" to="/" exact>RESTAURANGKARTAN</NavLink>
                     <NavLink className="navItem" id="favo" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
                 </Container>
     
@@ -41,11 +42,18 @@ const Container = styled.div`
     align-items: center;
     max-width: 100%;
 
-    @media all and (max-width: 700px) {
+    @media all and (max-width: 700px){
     justify-content: center;
     flex-direction: column;
     margin: 5px 0px;    
     height: 78px;
+    }
+    @media all and (min-width: 400px) AND (max-width: 1024px) and (orientation: landscape ){
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 5px 0px;    
+    height: 44px;
+    padding: 0px 6px;
     }
 
 h3{
@@ -68,6 +76,13 @@ h3{
         margin: 1%;
         
         }
+    }
+
+    .logo {
+        width: 100px;
+        height: 90px;
+
+    
     }
 
 

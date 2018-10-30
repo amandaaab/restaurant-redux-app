@@ -169,8 +169,12 @@ const Container = styled.div `
       justify-content: center;
       align-items:center;
       height: 70px;
-     max-width: 100%;
+      max-width: 100%;
       font-family: 'Source Sans Pro', sans-serif;
+
+    @media all and (min-width: 400px) AND (max-width: 1024px) and (orientation: landscape ){
+      height: 42px;
+    }
     }
 
 .filter{

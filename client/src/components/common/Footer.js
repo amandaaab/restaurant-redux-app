@@ -10,7 +10,7 @@ import { FaRegCopyright } from 'react-icons/fa';
         return (
             <Container>
             <div className="kontaktUppgifter">
-                <p>Restaurangguiden</p>
+                <p>Restaurangkartan</p>
                 <p>info@rkartan.se</p>
                 <p>031 21 32 43</p>
             </div>
@@ -37,20 +37,23 @@ const Container = styled.div `
     height: 200px;
     background-color: rgb(51, 51, 51);
     color: white;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     max-width: 100%;
     font-size: 14px;
     display:flex;
     align-items: center;
     justify-content: space-around;
     margin-top:60px;
-    /*font-family: 'Source Sans Pro', sans-serif;*/
-    font-family: 'Yantramanav';
+    font-family: 'Open Sans', sans-serif;
+
+     @media all and (min-width: 400px) AND (max-width: 1024px) and (orientation: landscape ){
+        margin-top: 20px;
+        height: 142px;
+    }
 
     @media all and (max-width: 800px) {
         justify-content: space-between;
         height: 200px;
-        /*background: blue;*/
         margin: 0px;
         padding: 0px 10px;
     }
@@ -75,6 +78,8 @@ const Container = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     margin-left: 5%;
+   
+}
     @media all and (max-width: 800px) {
         /*background: yellow;*/
         width: 50%;
@@ -108,7 +113,7 @@ const Container = styled.div `
     flex-direction: row;
     justify-content: space-around;
     width: 75%;
-
+}
     @media all and (max-width: 800px) {
         display: flex;
         flex-direction: column;
@@ -123,6 +128,7 @@ const Container = styled.div `
 }
 
 .länkar{
+ 
 
         @media all and (max-width: 800px) {
             /*background: red;*/

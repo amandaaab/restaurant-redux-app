@@ -121,12 +121,14 @@ const Container = styled.div `
     background-color:rgb(224, 226, 229);
     max-width: 100%;
     
+    @media all and (max-width: 1090px) and (orientation: landscape){
+      background-color: white;
+      padding: 0px;
+    }
 
      @media all and (max-width: 760px) {
       background-color: white;
       padding: 0px;
-
-
     }
 
 `

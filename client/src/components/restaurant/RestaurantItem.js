@@ -154,7 +154,6 @@ const RestaurantContent = styled.div `
 }
 
   @media all and (max-width: 700px) and (orientation:landscape) {
-        margin-top: 5%;
         display: flex;
        flex-direction: column;
         align-items: center;

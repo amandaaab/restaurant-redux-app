@@ -61,7 +61,6 @@ export default RestaurantItem;
 
 const Container = styled.div`
 width: 100%;
-background-color: white;
 padding: 30px 100px;
 font-family: 'Source Sans Pro', sans-serif;
 background-color: rgb(224, 226, 229);
@@ -76,16 +75,28 @@ background-color: rgb(224, 226, 229);
 
 
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
        padding: 0px;
        background-color: white;
     }
 
 
+
+
 .faArrowLeft {
     font-size: 20px;
     cursor: pointer;
-    margin-right: 120px;
+    margin-left: 20px;
+    @media all and (max-width: 900px) and (orientation: landscape) {
+        margin-left: 30px;
+        font-size: 25px;
+}
+
+ @media all and (min-width: 900px) and (orientation: landscape) {
+        font-size: 30px;
+        margin: 5%;
+}
+
 }
 
 .faArrowLeft:hover {
@@ -122,6 +133,11 @@ const Content = styled.div`
         height: 180px;
 }
 
+    @media all and (max-width: 900px) and (orientation: landscape) {
+        width: 350px;
+        height: 210px;
+    }
+
 }
 
 `
@@ -130,14 +146,33 @@ const RestaurantContent = styled.div `
     flex-direction: row;
     align-items: center;
     justify-content:center;
-    @media all and (max-width: 900px) {
+    @media all and (max-width: 900px) and (orientation: portrait) {
         margin-top: 5%;
         display: flex;
        flex-direction: column;
         align-items: center;
 }
 
+  @media all and (max-width: 700px) and (orientation:landscape) {
+        display: flex;
+       flex-direction: column;
+        align-items: center;
+}
+
+ /*@media all and (max-width: 900px) and (orientation: landscape) {
+        margin-top: 5%;
+        display: flex;
+       flex-direction: column;
+        align-items: center;
+}*/
+
     .imageDiv {
+        @media all and (max-width: 900px) and (orientation: landscape) {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     
     }
 
@@ -169,6 +204,11 @@ const RestaurantContent = styled.div `
                 padding:30px;
                 text-align: center;
                 /*background: blue;*/
+            }
+
+            @media all and (max-width: 900px) and (orientation: landscape) {
+                 width: 100%;
+                 padding-left: 0px;
             }
     }
 
@@ -222,6 +262,10 @@ const LeftBox = styled.div`
 
 
 const InfoWrapper = styled.div`
+
+ @media all and (max-width: 900px) and (orientation: landscape) {
+    width: 50%;
+    }
 
 .saveDiv {
     display: flex;

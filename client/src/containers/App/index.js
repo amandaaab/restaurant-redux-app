@@ -14,13 +14,11 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import HomePage from '../HomePage';
-import RestaurantPage from '../RestaurantPage';
 import ProductPage from '../ProductPage'
 import SavePage from '../SavePage';
 import NavBar from '../../components/common/NavBar';
 import Footer from '../../components/common/Footer';
 import { BrowserRouter as Router } from 'react-router-dom';
-//import { connect } from 'http2';??
 import { connect } from 'react-redux';
 import { fetchReviews} from '../../actions/reviewAction';
 import { fetchRestaurants } from '../../actions/restaurantAction';

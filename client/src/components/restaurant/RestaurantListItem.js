@@ -2,14 +2,11 @@ import React from "react";
 import PropTypes from 'prop-types';
 import SaveRestaurant from '../../containers/SaveRestaurant';
 import CalculateRate from '../CalculateRate'
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Component
 class RestaurantListItem extends React.Component {
-  constructor(props){
-    super(props)
-  }
+  
   render(){
         const { name, img, category} = this.props.restaurant;    
         const { id } = this.props;

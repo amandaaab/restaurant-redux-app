@@ -34,10 +34,11 @@ render(){
        
         restauranten.map(restaurant => 
         <RestaurantItem 
-                      restaurant={restaurant}
-                      reviews={this.props.reviews}
-                      handleClick={this.openItem}
-                      handleClose={this.closeItem}
+                    key={restaurant.id}
+                    restaurant={restaurant}
+                    reviews={this.props.reviews}
+                    handleClick={this.openItem}
+                    handleClose={this.closeItem}
       />
       )
 

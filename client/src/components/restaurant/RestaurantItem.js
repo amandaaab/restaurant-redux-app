@@ -9,9 +9,6 @@ import styled from 'styled-components';
 const RestaurantItem = (props) => {
 
     const { restaurant } = props;
-    console.log('restaurangen', restaurant)
-    console.log('restaurangens namn', restaurant.name)
-
       
     return (
             
@@ -58,50 +55,46 @@ const RestaurantItem = (props) => {
 export default RestaurantItem;
 
 
-
 const Container = styled.div`
-width: 100%;
-padding: 30px 100px;
-font-family: 'Source Sans Pro', sans-serif;
-background-color: rgb(224, 226, 229);
+    width: 100%;
+    padding: 30px 100px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: rgb(224, 226, 229);
 
-@media all and (max-width: 1400px) {
-       padding: 10px 50px;
+    @media all and (max-width: 1400px) {
+        padding: 10px 50px;
     }
 
-@media all and (max-width: 1200px) {
-       padding: 5px 10px;
+    @media all and (max-width: 1200px) {
+        padding: 5px 10px;
+    }
+
+    @media all and (max-width: 1050px) {
+        padding: 0px;
+        background-color: white;
     }
 
 
+    .faArrowLeft {
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 20px;
 
-@media all and (max-width: 1050px) {
-       padding: 0px;
-       background-color: white;
+        @media all and (max-width: 900px) and (orientation: landscape) {
+            margin-left: 30px;
+            font-size: 25px;
     }
 
+        @media all and (min-width: 900px) and (orientation: landscape) {
+                font-size: 30px;
+                margin: 5%;
+        }
 
+    }
 
-
-.faArrowLeft {
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 20px;
-    @media all and (max-width: 900px) and (orientation: landscape) {
-        margin-left: 30px;
-        font-size: 25px;
-}
-
- @media all and (min-width: 900px) and (orientation: landscape) {
-        font-size: 30px;
-        margin: 5%;
-}
-
-}
-
-.faArrowLeft:hover {
-    color: rgb(112, 112, 112);
-}
+    .faArrowLeft:hover {
+        color: rgb(112, 112, 112);
+    }
 `
 const Content = styled.div`
     display:flex;
@@ -118,20 +111,20 @@ const Content = styled.div`
 }
 
 
-@media all and (max-width: 750px) {
-        width: 400px;
-        height: 230px;
-}
+    @media all and (max-width: 750px) {
+            width: 400px;
+            height: 230px;
+    }
 
-@media all and (max-width: 450px) {
-        width: 350px;
-        height: 210px;
-}
+    @media all and (max-width: 450px) {
+            width: 350px;
+            height: 210px;
+    }
 
     @media all and (max-width: 370px) {
         width: 300px;
         height: 180px;
-}
+    }
 
     @media all and (max-width: 900px) and (orientation: landscape) {
         width: 350px;
@@ -145,7 +138,8 @@ const RestaurantContent = styled.div `
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:center;
+    justify-content:center; 
+
     @media all and (max-width: 900px) and (orientation: portrait) {
         margin-top: 5%;
         display: flex;
@@ -153,70 +147,59 @@ const RestaurantContent = styled.div `
         align-items: center;
 }
 
-  @media all and (max-width: 700px) and (orientation:landscape) {
+    @media all and (max-width: 700px) and (orientation:landscape) {
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
         align-items: center;
 }
 
- /*@media all and (max-width: 900px) and (orientation: landscape) {
-        margin-top: 5%;
-        display: flex;
-       flex-direction: column;
-        align-items: center;
-}*/
-
     .imageDiv {
         @media all and (max-width: 900px) and (orientation: landscape) {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     .category {
         margin-top: -8px;
         font-style: italic;
     }
+
     .information {
         width: 90%;
         padding: 30px;
 
-         @media all and (max-width: 1200px){
-
+        @media all and (max-width: 1200px){
             width: 95%;
             padding:15px;
-            /*background: blue;*/
         }
 
         @media all and (max-width: 1000px){
-
             width: 100%;
             padding:15px;
-            /*background: blue;*/
-            }
+        }
 
-            @media all and (max-width: 900px){
+        @media all and (max-width: 900px){
+            width: 90%;
+            padding:30px;
+            text-align: center;
+        }
 
-                width: 90%;
-                padding:30px;
-                text-align: center;
-                /*background: blue;*/
-            }
+        @media all and (max-width: 900px) and (orientation: landscape) {
+                width: 100%;
+                padding-left: 0px;
+        }
 
-            @media all and (max-width: 900px) and (orientation: landscape) {
-                 width: 100%;
-                 padding-left: 0px;
-            }
     }
 
     .rateDiv {
         margin-top: 14px;
+
         @media all and (max-width: 1000px){
              margin-top: 10px;
-         }
+        }
 
          @media all and (max-width: 900px){
              margin-top: 14px;
@@ -246,38 +229,33 @@ const LeftBox = styled.div`
     justify-content: center;
     align-items: center;
 
-     .name {
-         
-         @media all and (max-width: 1000px){
-             font-size: 18px;
-         }
-         @media all and (max-width: 900px){
-             font-size: 24px;
-         }
+    .name {
+        
+        @media all and (max-width: 1000px){
+            font-size: 18px;
+        }
+
+        @media all and (max-width: 900px){
+            font-size: 24px;
+        }
 }
 `
 
-    
-
-
-
 const InfoWrapper = styled.div`
 
- @media all and (max-width: 900px) and (orientation: landscape) {
-    width: 50%;
+    @media all and (max-width: 900px) and (orientation: landscape) {
+        width: 50%;
     }
 
-.saveDiv {
-    display: flex;
-    justify-content: flex-end;
-    padding: 16px 60px;
+    .saveDiv {
+        display: flex;
+        justify-content: flex-end;
+        padding: 16px 60px;
 
-      @media all and (max-width: 1200px){
-        padding: 10px 30px;
+        @media all and (max-width: 1200px){
+            padding: 10px 30px;
+    }
 }
-
-
-    }
   
 
    

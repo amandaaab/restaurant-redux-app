@@ -47,9 +47,9 @@ class StarRating extends Component {
                 this.trimSum()
             })         
          }
-       // console.log("totalen", this.state.totalSum)
+    // console.log("totalen", this.state.totalSum)
 
-       // return this.state.totalSum;    
+    // return this.state.totalSum;    
     //  console.log(this.state.ratingSum.indexOf(this.state.ratingSum))
     // console.log("i calculate function", this.state.ratingSum.length)
     }

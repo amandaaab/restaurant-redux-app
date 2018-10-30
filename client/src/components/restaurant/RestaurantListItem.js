@@ -69,7 +69,6 @@ const Container = styled.div`
     }
  
 `
-
 const Image = styled.img`
     cursor: pointer;
     width: 320px;

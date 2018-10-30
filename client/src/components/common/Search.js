@@ -10,8 +10,7 @@ class Search extends Component {
             search: ''
         }
 
-        this.onChange = this.onChange.bind(this)
-        
+        this.onChange = this.onChange.bind(this) 
     }
 
     onChange = (e) => {

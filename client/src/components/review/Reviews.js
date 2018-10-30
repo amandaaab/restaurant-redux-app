@@ -25,41 +25,35 @@ const Reviews = (props) => {
                                                     <td>{review.text}</td>
                                                     <td>{review.rating}</td>
                                                 </tr>
-                                            </tbody>
-                                       )}
-            {props.isDisplayed ? (
+                                            </tbody>    
+                                        )
+                                    }
+
+                {props.isDisplayed ? (
 
 
-               props.reviews.filter(review => review.id === props.id).slice(3)
-
-                .map((review, i) => 
-                        
-                            <tbody>
-                                <tr>
-                                    <td>{review.name}</td>
-                                    <td>{review.text}</td>
-                                    <td>{review.rating}</td>
-                                </tr>
-                            </tbody>
-                          
-                       )) : null}
-            </Table>
-
-
-                    {props.isDisplayed ? (
-                                     <ShowHide onClick={props.display}>Visa mindre...</ShowHide>
-                    ) :              <ShowHide onClick={props.display}>Visa mer...</ShowHide>}
+                    props.reviews.filter(review => review.id === props.id).slice(3)
+                                    .map((review, i) => 
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{review.name}</td>
+                                                        <td>{review.text}</td>
+                                                        <td>{review.rating}</td>
+                                                    </tr>
+                                                </tbody>
+                                            
+                                        )
+                        ) : null }
+                </Table>
 
 
-
-
-
-
+                {props.isDisplayed ? (
+                        <ShowHide onClick={props.display}>Visa mindre...</ShowHide> )  
+                    :   <ShowHide onClick={props.display}>Visa mer...</ShowHide>
+                }
 
         </Container>
-    )
-
-    
+    )    
 }
 
 
@@ -86,13 +80,12 @@ const Container = styled.div `
     }
 
   h3 {
-      margin-bottom: 40px; 
-
+        margin-bottom: 40px; 
     
-  @media all and (max-width: 500px) {
-      margin-bottom: 15px;
+        @media all and (max-width: 500px) {
+            margin-bottom: 15px;
+        }
     }
-  }
 
 `
 const Table = styled.table`

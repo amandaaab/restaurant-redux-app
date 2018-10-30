@@ -13,19 +13,16 @@ class Navbar extends Component {
         window.location.reload()
     }
 
-   
     render(){
-    
         return (
             <div>
                 <Container>
                     <NavLink onClick={this.refresh} className="navItem" activeClassName="selected" to="/" exact>RESTAURANGKARTAN</NavLink>
                     <NavLink className="navItem" id="favo" activeClassName="selected" to="/favoriter" exact><FaHeart className="favo"/> FAVORITER</NavLink> 
                 </Container>
-    
           </div>       
-    )
-}
+        )
+    }
 }
 
 export default withRouter(Navbar); 
@@ -81,10 +78,7 @@ h3{
     .logo {
         width: 100px;
         height: 90px;
-
-    
     }
-
 
  .favo {
         color: rgb(221, 79, 86);

@@ -24,8 +24,8 @@ class ReviewForm extends Component {
         this.showSum = this.showSum.bind(this)
         this.validate = this.validate.bind(this)
         this.change = this.change.bind(this)
-        
     }
+
 
     onOpenModal = () => {
         this.setState({
@@ -40,7 +40,6 @@ class ReviewForm extends Component {
     }
 
     validate = () => {
-
         let isError = false;
 
         const nameLength = this.state.name.length;
@@ -60,7 +59,6 @@ class ReviewForm extends Component {
             isError = true;
             errors.nameError = 'Du har använt 15 av 15 tecken'
         }
-
         if(this.state.text.length <= 0){
             isError = true;
             errors.textError = <Error>* Vänligen skriv vad du tycker om restaurangen</Error>
@@ -73,6 +71,7 @@ class ReviewForm extends Component {
             isError = true;
             errors.ratingNumberError = <Error>* Vänligen ge restaurangen ett betyg</Error>
         }
+
         this.setState({
             ...this.state,
             ...errors
@@ -105,55 +104,50 @@ class ReviewForm extends Component {
     }
 
     render(){
-
-        return(
-        
+        return (
         <React.Fragment>
+
             <CreateReviewButton onClick={this.onOpenModal}>Ge ditt omdöme</CreateReviewButton>
         
             <Modal open={this.state.open} onClose={this.onCloseModal}>
-            <Form onSubmit={this.save}>
-                <h3>Hur var din upplevlse på {this.props.name}?</h3>
-                <div className="form-group">
-                    <FormBox>
-                    
-                    <StarRating sendSum={this.showSum}/>
-                    {this.state.ratingNumberError}
-                    </FormBox>
-
-                    <FormBox>
-                    <label id="nameBox">Ditt namn</label>
-                    <input name="name"
-                            id="form-name"
-                            type="text"
-                            className="form-control" 
-                            placeholder="Namn" 
-                            value={this.state.name}
-                            maxLength="15"
-                            onChange={e => this.change(e)}
-                           />
-                           {this.state.nameError}
+                <Form onSubmit={this.save}>
+                    <h3>Hur var din upplevlse på {this.props.name}? </h3>
+                    <div className="form-group">
+                        <FormBox>
+                            <StarRating sendSum={this.showSum}/>
+                            {this.state.ratingNumberError}
                         </FormBox>
 
                         <FormBox>
-                    <label>Ditt omdöme</label>
-                    <textarea name="text"
-                                className="form-control"
-                                placeholder="Berätta om din upplevelse..."
-                                value={this.state.text}
-                                id="textarea"
-                                maxLength="450"
-                                onChange={e => this.change(e)}
-                               />
-                               {this.state.textError}
-                               </FormBox>
-                </div>
-                <SubmitButton id="sendButton" className="btn btn-primary">Skicka</SubmitButton>
+                            <label id="nameBox">Ditt namn</label>
+                            <input name="name"
+                                    id="form-name"
+                                    type="text"
+                                    className="form-control" 
+                                    placeholder="Namn" 
+                                    value={this.state.name}
+                                    maxLength="15"
+                                    onChange={e => this.change(e)}
+                                />
+                                {this.state.nameError}
+                        </FormBox>
 
-            </Form>
+                        <FormBox>
+                            <label>Ditt omdöme</label>
+                            <textarea name="text"
+                                        className="form-control"
+                                        placeholder="Berätta om din upplevelse..."
+                                        value={this.state.text}
+                                        id="textarea"
+                                        maxLength="450"
+                                        onChange={e => this.change(e)}
+                                    />
+                                    {this.state.textError}
+                        </FormBox>
+                    </div>
+                    <SubmitButton id="sendButton" className="btn btn-primary">Skicka</SubmitButton>
+                </Form>
             </Modal>
-            
-            
         </React.Fragment>
       
         )
@@ -195,72 +189,65 @@ const CreateReviewButton = styled.button`
 
 const Form = styled.form `
 
-display:flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-height:100%;
-width: 100%;
-margin: auto;
-font-family: 'Source Sans Pro', sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+    margin: auto;
+    font-family: 'Source Sans Pro', sans-serif;
 
-  @media all and (max-width: 399px){
+    @media all and (max-width: 399px){
             margin-top:70px;
     }
 
-#sendButton {
-    border: none;
-    background: #2c2d2d;
-}
-.label-for-rating {
- margin-bottom: -20px;
-}
-.label-for-name {
-    margin-top:-50px;
-}
+    #sendButton {
+        border: none;
+        background: #2c2d2d;
+    }
+    .label-for-rating {
+    margin-bottom: -20px;
+    }
+    .label-for-name {
+        margin-top:-50px;
+    }
 
-.form-control {
-    width: 75vh;
+    .form-control {
+        width: 75vh;
 
-     @media all and (max-width: 500px) {
-         width: 100%;
-     }
+        @media all and (max-width: 500px) {
+            width: 100%;
+        }
+    }
 
-}
+    h3 {
 
-h3 {
-    @media all and (max-width: 500px) {
-         font-size: 18px;
-         
-     }
+        @media all and (max-width: 500px) {
+            font-size: 18px;
+        }
 
-       @media all and (max-width: 399px){
+        @media all and (max-width: 399px){
             text-align: center;
         }
-}
+    }
 `
 const FormBox = styled.div `
     margin: 2vh 0vh;
 
-      #textarea {
+    #textarea {
         height: 110px;
 
         @media all and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape ){
             height: 70px;
         }
 
-         @media all and (max-width: 399px){
-            height: 70px;
-            width: 280px;
+        @media all and (max-width: 399px){
+        height: 70px;
+        width: 280px;
         }
-
-
-}
-
-
     }
-
-
+}
 
 `
 const SubmitButton = styled.button `

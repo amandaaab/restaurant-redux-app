@@ -67,8 +67,6 @@ class RestaurantList extends Component {
                     </Container>
                 )
         }
-    
-        
 }
 
 

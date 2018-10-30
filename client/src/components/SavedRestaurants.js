@@ -4,7 +4,10 @@ import RestaurantList from './restaurant/RestaurantList';
 
 const SavedRestaurants = (props) => {
     return(
-      <RestaurantList reviews={props.reviews} restaurants={props.restaurants} cityCat={""} foodCat={""}/>
+      <RestaurantList reviews={props.reviews} 
+                      restaurants={props.restaurants} 
+                      cityCat={""} 
+                      foodCat={""}/>
     )
 }
 

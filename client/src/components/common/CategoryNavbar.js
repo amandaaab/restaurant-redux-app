@@ -10,13 +10,13 @@ constructor(props){
     this.state = {
         selectedOption: null,
       }
+
       this.handleChange = this.handleChange.bind(this)
-     
 }
 
 
 handleChange = (selectedOption) => {
-    console.log(`Option selected:`, selectedOption.value);
+    //console.log(`Option selected:`, selectedOption.value);
     this.setState({ selectedOption });
 
     this.props.onFilter(selectedOption);
@@ -50,21 +50,18 @@ render(){
 
     return (
      
-    <CategoryList>
-            
-                 <span>{this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)}</span>
-            
-                <Select 
-                    className="select"
-                    placeholder={`Välj ${this.props.category}`}
-                    options={options}
-                    value={this.state.selectedOption}
-                    onChange={this.handleChange}
-                /> 
+        <CategoryList>
+            <span>{this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)}</span>
+        
+            <Select 
+                className="select"
+                placeholder={`Välj ${this.props.category}`}
+                options={options}
+                value={this.state.selectedOption}
+                onChange={this.handleChange}
+            /> 
 
-                
-
-   </CategoryList>     
+        </CategoryList>     
   
     )
 }

@@ -62,7 +62,6 @@ render(){
                     onChange={this.handleChange}
                 /> 
 
-                
 
    </CategoryList>     
   

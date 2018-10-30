@@ -4,9 +4,7 @@ import SaveRestaurant from '../../containers/SaveRestaurant';
 import CalculateRate from '../CalculateRate'
 import styled from 'styled-components';
 
-// Component
 const RestaurantListItem = (props) => {
-  
 
         const { name, img, category} = props.restaurant;    
         const { id } = props;

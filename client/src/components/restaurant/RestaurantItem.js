@@ -8,10 +8,7 @@ import styled from 'styled-components';
 
 const RestaurantItem = (props) => {
 
-    const { restaurant } = props;
-    console.log('restaurangen', restaurant)
-    console.log('restaurangens namn', restaurant.name)
-
+    const { restaurant, reviews } = props;
       
     return (
             
@@ -29,7 +26,7 @@ const RestaurantItem = (props) => {
                                 <div className="category">{restaurant.category}</div>
                                 <div className="rateDiv">
                                 <CalculateRate 
-                                    reviews={props.reviews}
+                                    reviews={reviews}
                                     id={restaurant.id} 
                                 />
                             </div>
@@ -159,12 +156,6 @@ const RestaurantContent = styled.div `
         align-items: center;
 }
 
- /*@media all and (max-width: 900px) and (orientation: landscape) {
-        margin-top: 5%;
-        display: flex;
-       flex-direction: column;
-        align-items: center;
-}*/
 
     .imageDiv {
         @media all and (max-width: 900px) and (orientation: landscape) {
@@ -188,14 +179,12 @@ const RestaurantContent = styled.div `
 
             width: 95%;
             padding:15px;
-            /*background: blue;*/
         }
 
         @media all and (max-width: 1000px){
 
             width: 100%;
             padding:15px;
-            /*background: blue;*/
             }
 
             @media all and (max-width: 900px){
@@ -203,7 +192,6 @@ const RestaurantContent = styled.div `
                 width: 90%;
                 padding:30px;
                 text-align: center;
-                /*background: blue;*/
             }
 
             @media all and (max-width: 900px) and (orientation: landscape) {

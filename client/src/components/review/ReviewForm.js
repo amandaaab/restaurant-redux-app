@@ -116,7 +116,7 @@ class ReviewForm extends Component {
                 <h3>Hur var din upplevlse på {this.props.name}?</h3>
                 <div className="form-group">
                     <FormBox>
-                    <label className="label-for-rating">Ge ditt betyg</label>
+                    
                     <StarRating sendSum={this.showSum}/>
                     {this.state.ratingNumberError}
                     </FormBox>
@@ -124,6 +124,7 @@ class ReviewForm extends Component {
                     <FormBox>
                     <label id="nameBox">Ditt namn</label>
                     <input name="name"
+                            id="form-name"
                             type="text"
                             className="form-control" 
                             placeholder="Namn" 
@@ -203,6 +204,10 @@ width: 100%;
 margin: auto;
 font-family: 'Source Sans Pro', sans-serif;
 
+  @media all and (max-width: 399px){
+            margin-top:70px;
+    }
+
 #sendButton {
     border: none;
     background: #2c2d2d;
@@ -226,14 +231,35 @@ font-family: 'Source Sans Pro', sans-serif;
 h3 {
     @media all and (max-width: 500px) {
          font-size: 18px;
+         
      }
+
+       @media all and (max-width: 399px){
+            text-align: center;
+        }
 }
 `
 const FormBox = styled.div `
     margin: 2vh 0vh;
+
       #textarea {
-        height: 120px;
+        height: 110px;
+
+        @media all and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape ){
+            height: 70px;
+        }
+
+         @media all and (max-width: 399px){
+            height: 70px;
+            width: 280px;
+        }
+
+
+}
+
+
     }
+
 
 
 `

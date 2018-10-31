@@ -9,6 +9,7 @@ import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { withRouter } from 'react-router';
 
 
+
 class RestaurantPage extends Component {
   constructor(props){
     super(props)
@@ -20,23 +21,25 @@ class RestaurantPage extends Component {
 
     this.showCategory = this.showCategory.bind(this);
     this.onFilter = this.onFilter.bind(this)
-    this.pushNew = this.pushNew.bind(this)
+    //this.pushNew = this.pushNew.bind(this)
   } 
 
   onFilter = (selectedOpt) => {
-   // console.log('vald kategori', selectedOpt.category)
-    let newArray = this.state.allSelected.filter(obj => (obj.category !== selectedOpt.category));
-    this.setState({
-        allSelected: newArray
-    }, () => this.pushNew(selectedOpt))
+    if(this.props.selectedOptions.length < 2){
+      this.props.sendOption(selectedOpt);
+    } else {
+      console.log('vald kategori', selectedOpt.category)
+      let newArray = this.props.selectedOptions.filter(obj => (obj.category !== selectedOpt.category));
+      this.props.sendArray(newArray)
+       this.props.sendOption(selectedOpt);
+   
+       console.log('Ny array', newArray);
+
+    }
+  
 
 }
 
-pushNew = (selectedOpt) => {
-    this.setState({
-        allSelected: [...this.state.allSelected, selectedOpt]
-      }, () => console.log('i navbar array', this.state.allSelected))
-}
 
   showCategory = () => {
     this.setState(prevState => ({
@@ -53,6 +56,9 @@ pushNew = (selectedOpt) => {
 
 
   render() {
+
+    console.log('FRÅN REDUX', this.props.selectedOptions)
+
     // Render error, loading, or resturantpage
     const { error, loading } = this.props;
     
@@ -68,9 +74,9 @@ pushNew = (selectedOpt) => {
     
       else {    
      // console.log("All selected här",this.state.allSelected)
-      let city = this.state.allSelected.map((sel) => { return sel.cityId }).join("");
+      let city = this.props.selectedOptions.map((sel) => { return sel.cityId }).join("");
 
-      let food = this.state.allSelected.map((sel) => { return sel.foodId }).join("");
+      let food = this.props.selectedOptions.map((sel) => { return sel.foodId }).join("");
 
    
      return (
@@ -139,7 +145,16 @@ const mapStateToProps = (state) => {
       reviews: state.reviews.reviews,
       categories: state.categories.categories,
       foodCategories: state.categories.foodCategories,
-      cityCategories: state.categories.cityCategories
+      cityCategories: state.categories.cityCategories,
+      selectedOptions: state.filter.selectedOptions
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sendOption: (selectedOpt) => dispatch({type: 'UPDATE_OPTION', payload: selectedOpt}),
+    sendArray: (array) => dispatch({type: 'UPDATE_OPTIONS', payload: array}),
 
   }
 }
@@ -214,4 +229,4 @@ const LoadingSpinner = styled.div `
     height: 100vh;
 `
 
-export default withRouter(connect(mapStateToProps)(RestaurantPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RestaurantPage));

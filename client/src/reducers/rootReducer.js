@@ -5,6 +5,7 @@ import restaurants from './restaurants';
 import reviews from './reviewReducer';
 import save from './save';
 import categories from './categories'
+import filter from './filterReducer';
 
 
 
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     reviews, 
     restaurants,
     save,
-    categories
+    categories,
+    filter,
     //restaurantList,//alltså för homepagen
     //reviewList
 });
